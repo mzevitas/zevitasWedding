@@ -1,0 +1,20 @@
+{
+  "name": "bb-scaffold",
+  "version": "1.0.0",
+  "authors": [
+    "Sarah Lamont"
+  ],
+  "description": "Barebones Scaffold",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "components/libs"
+  ],
+  "dependencies": {
+    "bootstrap": "3.3.2"
+  }
+}
