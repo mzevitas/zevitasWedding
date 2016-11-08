@@ -484,10 +484,13 @@ p {
   margin: 0 auto;
   position: relative; }
 
-.photo-block, .hero-header {
+.photo-panel, .hero-header {
   background: #000;
   color: #fff;
   padding: 50px; }
+  .photo-panel.white, .white.hero-header {
+    background: none;
+    color: #000; }
 
 .hero-header p {
   font-style: italic;

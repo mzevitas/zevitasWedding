@@ -41,16 +41,20 @@ p {
   position: relative;
 }
 
-.photo-block{
+.photo-panel{
   background:#000;
   color:#fff;
   padding:50px;
+  &.white{
+    background: none;
+    color:#000;
+  }
 }
 
 .hero-header{
   @extend .container-fluid;
   @extend .text-center;
-  @extend .photo-block;
+  @extend .photo-panel;
   p{
     font-style: italic;
     max-width:600px;
