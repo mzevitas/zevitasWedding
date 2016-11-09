@@ -1,0 +1,19 @@
+// .parallax-bg{
+// 	background-attachment: fixed;
+// 	background-size:cover;
+// }
+
+#background01{
+	background-image:url('../images/panels/hero.jpg');
+	height:290px;
+}
+
+#background02{
+	min-height:290px;
+	background-image:url('../images/panels/mizumi.jpg');
+}
+
+#background03{
+	min-height:290px;
+	background-image:url('../images/panels/concierge.jpg');
+}

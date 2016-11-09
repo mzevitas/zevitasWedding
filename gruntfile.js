@@ -6,7 +6,7 @@ module.exports = function(grunt){
 				separator: '\n\n//---------------------------\n\n'
 			},
 			dist : { //name of job for that task
-				src: ['assets/js/script/*.js'],
+				src: ['assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js','assets/js/libs/jquery.stellar/jquery.stellar.min.js','assets/js/libs/jquery.nicescroll/dist/jquery.nicescroll.min.js','assets/js/script/*.js'],
 				dest: 'assets/js/script.js'
 			}
 		},//concat
@@ -95,7 +95,7 @@ module.exports = function(grunt){
 			},
 			scripts: {
 				files: ['**/*.html', 
-				'assets/scripts/**/*.js',
+				'assets/js/**/*.js',
 				'assets/sass/**/*.scss'],
 				tasks: ['concat','sass']
 			}
@@ -111,7 +111,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-bower-concat');
-	grunt.registerTask('default', ['bower_concat', 'concat', 'sass', 'connect', 'watch']);
+	grunt.registerTask('default', ['concat', 'sass', 'connect', 'watch']);
 	grunt.registerTask('dist', ['bower_concat', 'concat', 'sass', 'copy', 'uglify', 'cssmin', 'processhtml']);
 
 
