@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	$("html").niceScroll({
 			cursorwidth:6,
-			cursorcolor:"#de2e29",
+			cursorcolor:"#181818",
 			cursoropacitymin:.5,
 			background:"#cccccc",
 			cursorborder: "0px solid #fff", // css definition for cursor border
