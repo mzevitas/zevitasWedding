@@ -517,6 +517,50 @@ p {
     border: 0;
     min-height: 470px; }
 
+/*=================== useful link =================*/
+.links-panel {
+  background-color: #3e413e;
+  color: #fff; }
+  .links-panel .container {
+    margin-top: 40px;
+    margin-bottom: 10px; }
+  .links-panel .useful-link-title {
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: 100; }
+    .links-panel .useful-link-title span:last-child {
+      display: inline-block;
+      position: relative;
+      bottom: 15px; }
+  .links-panel .link-menu {
+    letter-spacing: 1px;
+    font-weight: 100; }
+    .links-panel .link-menu p {
+      font-size: 28px;
+      margin: 0; }
+      .links-panel .link-menu p img {
+        position: absolute; }
+      .links-panel .link-menu p .drink {
+        top: -6px; }
+      .links-panel .link-menu p .lost {
+        top: -1px;
+        width: 35px;
+        height: 35px; }
+      .links-panel .link-menu p .eat {
+        top: -1px; }
+      .links-panel .link-menu p .travel {
+        top: 6px; }
+    .links-panel .link-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      .links-panel .link-menu ul li {
+        line-height: 1; }
+        .links-panel .link-menu ul li a {
+          font-size: 14px;
+          color: #239ed1;
+          word-wrap: break-word; }
+
 .footer, footer {
   background: #000;
   padding: 12px 0; }
@@ -525,3 +569,33 @@ p {
     font-size: 0.5em;
     margin: 0px auto 2px auto;
     text-transform: uppercase; }
+
+@media screen and (max-width: 942px) {
+  /*=================== useful link =================*/
+  .links-panel .link-menu p {
+    font-size: 24px; } }
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  /*=================== useful link =================*/
+  .links-panel .container {
+    margin-top: 20px; }
+  .links-panel .useful-link-title {
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .links-panel .useful-link-title span:last-child {
+      display: inline-block;
+      position: static;
+      padding-left: 20px; }
+  .links-panel .link-menu {
+    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .links-panel .link-menu p .drink {
+      top: -10px; }
+    .links-panel .link-menu p .lost {
+      top: -8px; }
+    .links-panel .link-menu p .eat {
+      top: -6px; }
+    .links-panel .link-menu p .travel {
+      top: 1px; } }
