@@ -20,17 +20,25 @@ h1 {
 }
 
 h2{
-    font-size:20px;
-    font-weight: bold;
-    text-transform: uppercase;
-    .sub{
-      font-size:15px;
-      font-style: italic;
-      display: block;
-      text-transform: none;
-      font-weight: normal;
-    }
+  font-size:20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  .sub{
+    font-size:15px;
+    font-style: italic;
+    display: block;
+    text-transform: none;
+    font-weight: normal;
   }
+}
+
+a{
+  -webkit-transition: all .25s linear;
+     -moz-transition: all .25s linear;
+      -ms-transition: all .25s linear;
+       -o-transition: all .25s linear;
+          transition: all .25s linear;
+}
 
 p {
   font-size: 0.65em;
@@ -65,10 +73,18 @@ p {
   @extend .container;
   background:#000;
   color:#fff;
-  padding:80px 0;
+  padding:55px;
   &.white{
     background: none;
     color:#000;
+  }
+  .content-wrapper{
+    width:60%;
+    float:right;
+    text-align: left;
+    @media #{$mobile} {
+      width:100%;
+    }
   }
 }
 .content-panel{
@@ -83,7 +99,28 @@ p {
         }
     }
 }
-
+.panel-profile {
+  text-align: center;
+  padding-top: 20px;
+  .profile-pic {
+      img {
+        width: 106px;
+        height: 106px;
+        border-radius: 50%;  
+      }
+  }
+  .profile-name {
+      font-size: 12px;
+      font-weight: bold;
+      color: $red;
+      margin-bottom: 0;
+      font-style: italic;
+  }
+  .profile-title {
+    font-size: 11px;
+    margin: 0;
+  }
+}
 .footer, footer{
   @extend .text-center;
   background:#000;
