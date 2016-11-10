@@ -67,15 +67,51 @@ p {
     color:#000;
   }
 }
-
+/*=================== Our Panel =================*/
 .content-panel{
-  padding:40px 50px;
-  h2{
-    .colored{
-      color:$red;
+    padding:40px 50px;
+    h2 {
+        text-align: center;
+        font-size: 22px;
+        letter-spacing: 1px;
+        padding-bottom: 40px;
+        .colored {
+            color: $red;
+        }
     }
-    text-align: center;
-  }
+    .panel-body {
+        strong {
+            font-size: 14px;
+        }
+        p {
+            font-size: 12px;
+            strong {
+                color: $red;
+                font-weight: 100;
+            }
+        }
+    }
+    .panel-profile {
+        text-align: center;
+        padding-top: 40px;
+        .profile-pic {
+            img {
+              width: 120px;
+                height: 120px;
+                border-radius: 50%;  
+            }
+        }
+        .profile-name {
+            font-size: 12px;
+            font-weight: bold;
+            color: $red;
+            margin-bottom: 0;
+        }
+        .profile-title {
+            font-size: 11px;
+            margin: 0;
+        }
+    }
 }
 
 .hero-header{
@@ -125,56 +161,41 @@ p {
     min-height:270px;
   }
 }
-/*=================== useful link =================*/
+/*=================== Useful Link =================*/
 .links-panel {
     background-color: #3e413e;
     color: #fff;
-    .container {
+    .useful-link-box {
         margin-top: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
     .useful-link-title {
-        font-size: 40px;
-        letter-spacing: 1px;
-        font-weight: 100;
-        span:last-child {
-            display: inline-block;
-            position: relative;
-            bottom: 15px;
+        padding-top: 5px;
+        p {
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: 1px;
+            font-weight: 100;
+            line-height: 1.2;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+        }
+        .travel {
+            width: 25px;
         }
     }
     .link-menu {
-        letter-spacing: 1px;
-        font-weight: 100;
-        p {
-            font-size: 28px;
-            margin: 0;
-            img {
-                position: absolute;
-            }
-            .drink {
-                top: -6px;
-            }
-            .lost {
-                top: -1px;
-                width: 35px;
-                height: 35px;
-            }
-            .eat {
-                top: -1px;
-            }
-            .travel {
-                top: 6px;
-            }
-        }
         ul {
             margin: 0;
             padding: 0;
             list-style-type: none;
             li {
-                line-height: 1;
+                letter-spacing: 1px;
+                font-size: 12px;
+                line-height: 1.5;
                 a {
-                    font-size: 14px;
                     color: #239ed1;
                     word-wrap: break-word;
                 }
@@ -195,50 +216,19 @@ p {
   }
 }
 
-@media screen and (max-width: 942px) { 
-    /*=================== useful link =================*/
-    .links-panel {
-        .link-menu {
-            p {
-                font-size: 24px;
-            }
-        }
-    }
-}
 
-@media screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
     /*=================== useful link =================*/
     .links-panel {
-        .container {
-            margin-top: 20px;
+        .useful-link-box {
+            text-align: center;
         }
         .useful-link-title {
-            padding-bottom: 30px;
-            padding-left: 10px;
-            padding-right: 10px;
-            span:last-child {
-                display: inline-block;
-                position: static;
-                padding-left: 20px;
-            }
-        }
-        .link-menu {
-            margin-bottom: 25px;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-bottom: 20px;
             p {
-                .drink {
-                    top: -10px;
-                }
-                .lost {
-                    top: -8px;
-                }
-                .eat {
-                    top: -6px;
-                }
-                .travel {
-                    top: 1px;
-                }
+                display: inline-block;
+                padding-left: 4px;
+                padding-right: 4px;
             }
         }
     }
