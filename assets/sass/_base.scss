@@ -35,8 +35,8 @@ h2{
 p {
   font-size: 0.65em;
   line-height: 1.5em;
-  margin-bottom: 10px;
-  margin-top: 7px;
+  margin-bottom: 6px;
+  margin-top: 6px;
   &.callout{
     font-weight: bold;
     font-size:.75em;
@@ -45,6 +45,10 @@ p {
 }
 
 .container-fluid{
+  -moz-box-shadow: 0px 0px 14px #666;
+  -webkit-box-shadow: 0px 0px 14px #666;
+  box-shadow: 0px 0px 14px #666;
+  max-width: 700px;
   padding:0;
   &.logo-panel{
     padding:20px 0;
@@ -53,7 +57,6 @@ p {
 
 .container {
   width: 100%;
-  max-width: 700px;
   margin: 0 auto;
   position: relative;
 }
@@ -69,36 +72,42 @@ p {
 }
 /*=================== Our Panel =================*/
 .content-panel{
-    padding:40px 50px;
+    padding:20px 50px;
     h2 {
         text-align: center;
         font-size: 22px;
-        letter-spacing: 1px;
-        padding-bottom: 40px;
+        letter-spacing: 0px;
+        padding:20px 0;
         .colored {
             color: $red;
         }
     }
     .panel-body {
+      padding:10px 15px;
         strong {
-            font-size: 14px;
+          font-family: $headFont;
+          font-size: 14px;
+          text-transform: uppercase;
         }
         p {
             font-size: 12px;
             strong {
-                color: $red;
-                font-weight: 100;
+              font-size: 12px;
+              font-family: $bodyFont;
+              color: $red;
+              font-weight: bold;
+              margin-right:15px;
             }
         }
     }
     .panel-profile {
         text-align: center;
-        padding-top: 40px;
+        padding-top: 20px;
         .profile-pic {
             img {
-              width: 120px;
-                height: 120px;
-                border-radius: 50%;  
+              width: 106px;
+              height: 106px;
+              border-radius: 50%;  
             }
         }
         .profile-name {
@@ -106,10 +115,11 @@ p {
             font-weight: bold;
             color: $red;
             margin-bottom: 0;
+            font-style: italic;
         }
         .profile-title {
-            font-size: 11px;
-            margin: 0;
+          font-size: 11px;
+          margin: 0;
         }
     }
 }

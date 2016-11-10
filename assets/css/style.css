@@ -450,6 +450,9 @@ table {
 .text-center, .hero-header, .footer, footer {
   text-align: center; }
 
+.bump-down {
+  margin-bottom: 20px; }
+
 * {
   box-sizing: border-box; }
 
@@ -480,21 +483,24 @@ h2 {
 p {
   font-size: 0.65em;
   line-height: 1.5em;
-  margin-bottom: 10px;
-  margin-top: 7px; }
+  margin-bottom: 6px;
+  margin-top: 6px; }
   p.callout {
     font-weight: bold;
     font-size: .75em;
     margin: 15px 0; }
 
 .container-fluid {
+  -moz-box-shadow: 0px 0px 14px #666;
+  -webkit-box-shadow: 0px 0px 14px #666;
+  box-shadow: 0px 0px 14px #666;
+  max-width: 700px;
   padding: 0; }
   .container-fluid.logo-panel {
     padding: 20px 0; }
 
 .container, .hero-header {
   width: 100%;
-  max-width: 700px;
   margin: 0 auto;
   position: relative; }
 
@@ -508,33 +514,41 @@ p {
 
 /*=================== Our Panel =================*/
 .content-panel {
-  padding: 40px 50px; }
+  padding: 20px 50px; }
   .content-panel h2 {
     text-align: center;
     font-size: 22px;
-    letter-spacing: 1px;
-    padding-bottom: 40px; }
+    letter-spacing: 0px;
+    padding: 20px 0; }
     .content-panel h2 .colored {
       color: #de2c27; }
-  .content-panel .panel-body strong {
-    font-size: 14px; }
-  .content-panel .panel-body p {
-    font-size: 12px; }
-    .content-panel .panel-body p strong {
-      color: #de2c27;
-      font-weight: 100; }
+  .content-panel .panel-body {
+    padding: 10px 15px; }
+    .content-panel .panel-body strong {
+      font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+      font-size: 14px;
+      text-transform: uppercase; }
+    .content-panel .panel-body p {
+      font-size: 12px; }
+      .content-panel .panel-body p strong {
+        font-size: 12px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #de2c27;
+        font-weight: bold;
+        margin-right: 15px; }
   .content-panel .panel-profile {
     text-align: center;
-    padding-top: 40px; }
+    padding-top: 20px; }
     .content-panel .panel-profile .profile-pic img {
-      width: 120px;
-      height: 120px;
+      width: 106px;
+      height: 106px;
       border-radius: 50%; }
     .content-panel .panel-profile .profile-name {
       font-size: 12px;
       font-weight: bold;
       color: #de2c27;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-style: italic; }
     .content-panel .panel-profile .profile-title {
       font-size: 11px;
       margin: 0; }
@@ -627,12 +641,12 @@ p {
 
 #background01 {
   background-image: url("../images/panels/hero.jpg");
-  height: 290px; }
+  min-height: 290px; }
 
 #background02 {
   min-height: 290px;
-  background-image: url("../images/panels/mizumi.jpg"); }
+  background-image: url("../images/panels/mizumix15.jpg"); }
 
 #background03 {
   min-height: 290px;
-  background-image: url("../images/panels/concierge.jpg"); }
+  background-image: url("../images/panels/conciergex15.jpg"); }
