@@ -168,7 +168,7 @@ mark {
 /**
  * Address margins set differently in IE 6/7.
  */
-p,
+p, .map-panel .address-panel ul,
 pre {
   margin: 1em 0; }
 
@@ -447,7 +447,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.text-center, .hero-header, .footer, footer {
+.text-center, .footer, footer, .hero-panel {
   text-align: center; }
 
 .bump-down {
@@ -457,7 +457,7 @@ table {
   box-sizing: border-box; }
 
 body {
-  background: #fff;
+  background: #282828;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2em; }
 
@@ -480,94 +480,71 @@ h2 {
     text-transform: none;
     font-weight: normal; }
 
-p {
+p, .map-panel .address-panel ul {
   font-size: 0.65em;
   line-height: 1.5em;
   margin-bottom: 6px;
   margin-top: 6px; }
-  p.callout {
+  p.callout, .map-panel .address-panel ul.callout {
     font-weight: bold;
     font-size: .75em;
     margin: 15px 0; }
 
 .container-fluid {
-  -moz-box-shadow: 0px 0px 14px #666;
-  -webkit-box-shadow: 0px 0px 14px #666;
-  box-shadow: 0px 0px 14px #666;
+  background: #fff;
   max-width: 700px;
   padding: 0; }
   .container-fluid.logo-panel {
     padding: 20px 0; }
 
-.container, .hero-header {
+.container, .photo-panel, .hero-panel, .ourpanel-panel, .links-panel {
   width: 100%;
   margin: 0 auto;
   position: relative; }
 
-.photo-panel, .hero-header {
+/*Base Panel Styles*/
+.photo-panel, .hero-panel {
   background: #000;
   color: #fff;
   padding: 80px 0; }
-  .photo-panel.white, .white.hero-header {
+  .photo-panel.white, .white.hero-panel {
     background: none;
     color: #000; }
 
-/*=================== Our Panel =================*/
-.content-panel {
+.content-panel, .ourpanel-panel, .map-panel .address-panel {
   padding: 20px 50px; }
-  .content-panel h2 {
+  .content-panel h2, .ourpanel-panel h2, .map-panel .address-panel h2 {
     text-align: center;
     font-size: 22px;
     letter-spacing: 0px;
     padding: 20px 0; }
-    .content-panel h2 .colored {
+    .content-panel h2 .colored, .ourpanel-panel h2 .colored, .map-panel .address-panel h2 .colored {
       color: #de2c27; }
-  .content-panel .panel-body {
-    padding: 10px 15px; }
-    .content-panel .panel-body strong {
-      font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-      font-size: 14px;
-      text-transform: uppercase; }
-    .content-panel .panel-body p {
-      font-size: 12px; }
-      .content-panel .panel-body p strong {
-        font-size: 12px;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #de2c27;
-        font-weight: bold;
-        margin-right: 15px; }
-  .content-panel .panel-profile {
-    text-align: center;
-    padding-top: 20px; }
-    .content-panel .panel-profile .profile-pic img {
-      width: 106px;
-      height: 106px;
-      border-radius: 50%; }
-    .content-panel .panel-profile .profile-name {
-      font-size: 12px;
-      font-weight: bold;
-      color: #de2c27;
-      margin-bottom: 0;
-      font-style: italic; }
-    .content-panel .panel-profile .profile-title {
-      font-size: 11px;
-      margin: 0; }
 
-.hero-header h1 {
+.footer, footer {
+  background: #000;
+  padding: 12px 0; }
+  .footer p, .footer .map-panel .address-panel ul, .map-panel .address-panel .footer ul, footer p, footer .map-panel .address-panel ul, .map-panel .address-panel footer ul {
+    color: #999;
+    font-size: 0.25em;
+    margin: 0px auto 2px auto;
+    text-transform: uppercase; }
+
+.hero-panel h1 {
   font-size: 27px;
   font-weight: bold; }
-  .hero-header h1 .sub {
+  .hero-panel h1 .sub {
     display: block;
     font-size: 18px;
     margin-bottom: 6px; }
 
-.hero-header p {
+.hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
   font-style: italic;
   max-width: 700px;
   margin: 20px auto 15px;
   padding: 0 60px; }
 
-.hero-header .btn-default {
+.hero-panel .btn-default {
   font-size: 0.6em;
   background: transparent;
   color: #fff;
@@ -578,11 +555,77 @@ p {
   -ms-transition: all .25s linear;
   -o-transition: all .25s linear;
   transition: all .25s linear; }
-  .hero-header .btn-default:hover {
+  .hero-panel .btn-default:hover {
     background: rgba(255, 255, 255, 0.25); }
+
+.ourpanel-panel .panel-body {
+  padding: 10px 15px; }
+  .ourpanel-panel .panel-body strong {
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 14px;
+    text-transform: uppercase; }
+  .ourpanel-panel .panel-body p, .ourpanel-panel .panel-body .map-panel .address-panel ul, .map-panel .address-panel .ourpanel-panel .panel-body ul {
+    font-size: 12px; }
+    .ourpanel-panel .panel-body p strong, .ourpanel-panel .panel-body .map-panel .address-panel ul strong, .map-panel .address-panel .ourpanel-panel .panel-body ul strong {
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #de2c27;
+      font-weight: bold;
+      margin-right: 15px; }
+
+.ourpanel-panel .panel-profile {
+  text-align: center;
+  padding-top: 20px; }
+  .ourpanel-panel .panel-profile .profile-pic img {
+    width: 106px;
+    height: 106px;
+    border-radius: 50%; }
+  .ourpanel-panel .panel-profile .profile-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #de2c27;
+    margin-bottom: 0;
+    font-style: italic; }
+  .ourpanel-panel .panel-profile .profile-title {
+    font-size: 11px;
+    margin: 0; }
 
 .map-panel {
   padding: 0; }
+  .map-panel .address-panel {
+    padding: 20px 10px 20px 50px; }
+    .map-panel .address-panel div {
+      padding: 0; }
+    .map-panel .address-panel ul {
+      padding: 0; }
+    .map-panel .address-panel li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      padding-left: 20px;
+      background-repeat: no-repeat;
+      background-position: 0 2px;
+      margin-bottom: 5px; }
+      .map-panel .address-panel li.address {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE1IiB2aWV3Qm94PSIwIDAgMTIgMTUiPgogIDxpbWFnZSB4bGluazpocmVmPSJkYXRhOmltZy9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFCY0FBQUFmQ0FNQUFBQTdwNmIvQUFBQUJHZEJUVUVBQUxHUEMveGhCUUFBQUNCalNGSk5BQUI2SmdBQWdJUUFBUG9BQUFDQTZBQUFkVEFBQU9wZ0FBQTZtQUFBRjNDY3VsRThBQUFDR1ZCTVZFVUFBQUFYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVBQUFEOGxaVWlBQUFBc1hSU1RsTUFBUkUxZzhqdy9QSEtoallTREZHdzgvN3ExYzNUNmYzMXRWY09Dby9FYWpvckp5bzVac0hza3daZFVyNEpDNDFFUE0rWkRVL3JTQVFDTFdGeVl6RUQ3VmdRcldTTDNKK2IyaE8zTDhrSW94ZWd1L2czZkc2cUdCYW5mOElhNWNidVB1RE1UQ0x2eTB1MldSMzAwQ1hvMlVNZ3grSXU0MGsvS2RpZCtrZFZJNlJUaUgyc1ZBVVZxSUo2WCtGVzBybGJNQm1wRHhUQWMyejVLTEdIKzdva1NpSGVaNmF1Z1huYk0vWmFoTlNybUtKRy8rUzBBQUFBQVdKTFIwUUFpQVVkU0FBQUFBbHdTRmx6QUFBTEVnQUFDeElCMHQxKy9BQUFBZmhKUkVGVUtNOWpZQUFCUmlabUZsWTJkZzVPTG00ZVJnWTQ0T1hqRnhBVUVoWVJGUk9Ya0pTU2hnbkx5QXB0bEpOWFVGUlNWbEZWMjZpdUlRTVIxcFRjeUtZRjE2MnR2bEZIRjhUUTB4Y1VOa0FZeW1ob0pHaHNBcVJOeGN6TUxSZ1lMSzJzYld6dDdJRU1BeUVIUjBzR0oyZEJGMHNHQmlaWE4zY1dEMDhOTDZDRTQwWnZIZ1lmQVYrZ0lYNGUvZ0ZBUTd3OEF2V0FWRkJ3Q0VPb29EeVFGUlllQVRZOU1pb2FTR3F4Y3pIRXFJY0FUUkVMZ1ZwcnBSN0x3R0FYRjgrUUlLekV3SkNZQkhkUGNnb0RRMnB5R2dON2Vpb0RRNFl2WER3emk0RWhPNGFkSVNjM2o0R0JPVjhUS214ZlVNakFVRlFzd1NCY1VncjBjbGs1Vkx3aUFlaW55b0lxaHVxYVdpQzN6anNQNUdYR2VtOVZrS1JFQTBPallCTklvTG1sTmFDdDNiU2pFK2gxaHE2TjNReEZQVzZXb0tEdXpleEw3K3VmWUFJeXpFZ3NqNEhYWFZBS1luVGt4RWtRUnNiR3lWTVlHSHNUK3RvWmtJRlhMa2MzMExLcDAycW1XeUlKTTg2WTZSc0xZdlJ1RkptRkpKNGF2OUVGekxDY3pUN0hIaTVzMlR4M1hodUVPVjg0WVFGY1BGR3NTZ2xtWWpkSDNFSW9PM2FSeEdLNGJTWkxOclk0Z1ZsVHdqY3U5VUxZcFNRcXNjd1BsRFNXQzZ6d1FYYnp5aklITFZBaUVSTkxSUEVMZytPcUdtNEc1VldyVnFNS00raXRtYm0yVjZSRzN3Uk5uR0dxT3pzYis3cEpEQmhneW5xMkRUeHdIZ0E5RW10UXNCUFlvUUFBQUFCSlJVNUVya0pnZ2c9PSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjE1Ii8+Cjwvc3ZnPgo="); }
+      .map-panel .address-panel li.phone {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjkiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCA5IDEzIj4KICA8aW1hZ2UgeGxpbms6aHJlZj0iZGF0YTppbWcvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQklBQUFBYUNBTUFBQUNOUS93SUFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUFDQmpTRkpOQUFCNkpnQUFnSVFBQVBvQUFBQ0E2QUFBZFRBQUFPcGdBQUE2bUFBQUYzQ2N1bEU4QUFBQVBGQk1WRVVBQUFBWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVQUFBQ1MweEJBQUFBQUVuUlNUbE1BQ3B6M29QbkRZSEIyOE1DdDRRSDlhSjBkQlU2NUFBQUFBV0pMUjBRQWlBVWRTQUFBQUFsd1NGbHpBQUFMRWdBQUN4SUIwdDErL0FBQUFGUkpSRUZVR05QdDBjc09nQ0FNUk5FV0tBTHluUC8vV0EyRXBMcHo3MWxON25hSWpZVmlEWlBEaXlPQlB4UVBJU0NRRW9BL2ZVNVJwemhUT3BVMDA1THpYdmNkVTZtMXJDWDd0Tlo3MjZmeGVGNDcrQUlyOWc0ZCsrYzdVd0FBQUFCSlJVNUVya0pnZ2c9PSIgd2lkdGg9IjkiIGhlaWdodD0iMTMiLz4KPC9zdmc+"); }
+      .map-panel .address-panel li.email {
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCAxMiA4Ij4KICA8aW1hZ2UgeGxpbms6aHJlZj0iZGF0YTppbWcvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQmNBQUFBUUNBTUFBQURLOFJRcUFBQUFCR2RCVFVFQUFMR1BDL3hoQlFBQUFDQmpTRkpOQUFCNkpnQUFnSVFBQVBvQUFBQ0E2QUFBZFRBQUFPcGdBQUE2bUFBQUYzQ2N1bEU4QUFBQW1WQk1WRVVBQUFBWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVVhGUlVYRlJVWEZSVUFBQUNsNWQ3NEFBQUFNWFJTVGxNQVlmRHRZUFRtWm0vNy9IVjZBaTdHeHk4QlplNHN4WXdNRmFDaEZndUw0MU0vMTBCUnRTRUg3L1o0Q1FycWtHNzF1c3VZTFFBQUFBRmlTMGRFQUlnRkhVZ0FBQUFKY0VoWmN3QUFDeElBQUFzU0FkTGRmdndBQUFDTVNVUkJWQmpUZGN2ckZvRlFGQVRnb1JJNWxjdkpuUkxkTDh6N3Z4ekphcUZqZnUzNTFoNE1odXhIMDZGaTBvQ205QkZNcFp2QWVOSlRhd29JMjNGL2VEYTNCZWc2aTZYOFVHbmEzb3A0cnRhYjdhN2ovZUY0c3RnNDZRYzRoeThOTDdqNnpZSDJLNG9Ua1RJVlNSeTE4SFptZVZGNlpaRm4vSGF5cW05MTFUVlFuYjl1S1BrT1hTcFk2Zzhwd0QyMVN3S3Vud0FBQUFCSlJVNUVya0pnZ2c9PSIgd2lkdGg9IjEyIiBoZWlnaHQ9IjgiLz4KPC9zdmc+");
+        background-position: 0 5px; }
+    .map-panel .address-panel a {
+      text-decoration: none;
+      color: inherit;
+      -webkit-transition: all .25s linear;
+      -moz-transition: all .25s linear;
+      -ms-transition: all .25s linear;
+      -o-transition: all .25s linear;
+      transition: all .25s linear; }
+      .map-panel .address-panel a:hover {
+        color: #de2c27; }
   .map-panel iframe {
     border: 0;
     min-height: 270px; }
@@ -592,11 +635,10 @@ p {
   background-color: #3e413e;
   color: #fff; }
   .links-panel .useful-link-box {
-    margin-top: 40px;
-    margin-bottom: 20px; }
+    margin: 40px 0; }
   .links-panel .useful-link-title {
     padding-top: 5px; }
-    .links-panel .useful-link-title p {
+    .links-panel .useful-link-title p, .links-panel .useful-link-title .map-panel .address-panel ul, .map-panel .address-panel .links-panel .useful-link-title ul {
       margin: 0;
       font-size: 18px;
       letter-spacing: 1px;
@@ -619,22 +661,13 @@ p {
         color: #239ed1;
         word-wrap: break-word; }
 
-.footer, footer {
-  background: #000;
-  padding: 12px 0; }
-  .footer p, footer p {
-    color: #999;
-    font-size: 0.25em;
-    margin: 0px auto 2px auto;
-    text-transform: uppercase; }
-
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   /*=================== useful link =================*/
   .links-panel .useful-link-box {
     text-align: center; }
   .links-panel .useful-link-title {
     padding-bottom: 20px; }
-    .links-panel .useful-link-title p {
+    .links-panel .useful-link-title p, .links-panel .useful-link-title .map-panel .address-panel ul, .map-panel .address-panel .links-panel .useful-link-title ul {
       display: inline-block;
       padding-left: 4px;
       padding-right: 4px; } }

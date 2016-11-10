@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background: #fff;
+  background: #282828;
   font-family: $bodyFont;
   font-size: 1.2em;
 }
@@ -45,9 +45,7 @@ p {
 }
 
 .container-fluid{
-  -moz-box-shadow: 0px 0px 14px #666;
-  -webkit-box-shadow: 0px 0px 14px #666;
-  box-shadow: 0px 0px 14px #666;
+  background: #fff;
   max-width: 700px;
   padding:0;
   &.logo-panel{
@@ -61,7 +59,10 @@ p {
   position: relative;
 }
 
+/*Base Panel Styles*/
+
 .photo-panel{
+  @extend .container;
   background:#000;
   color:#fff;
   padding:80px 0;
@@ -70,7 +71,6 @@ p {
     color:#000;
   }
 }
-/*=================== Our Panel =================*/
 .content-panel{
     padding:20px 50px;
     h2 {
@@ -80,136 +80,6 @@ p {
         padding:20px 0;
         .colored {
             color: $red;
-        }
-    }
-    .panel-body {
-      padding:10px 15px;
-        strong {
-          font-family: $headFont;
-          font-size: 14px;
-          text-transform: uppercase;
-        }
-        p {
-            font-size: 12px;
-            strong {
-              font-size: 12px;
-              font-family: $bodyFont;
-              color: $red;
-              font-weight: bold;
-              margin-right:15px;
-            }
-        }
-    }
-    .panel-profile {
-        text-align: center;
-        padding-top: 20px;
-        .profile-pic {
-            img {
-              width: 106px;
-              height: 106px;
-              border-radius: 50%;  
-            }
-        }
-        .profile-name {
-            font-size: 12px;
-            font-weight: bold;
-            color: $red;
-            margin-bottom: 0;
-            font-style: italic;
-        }
-        .profile-title {
-          font-size: 11px;
-          margin: 0;
-        }
-    }
-}
-
-.hero-header{
-  @extend .container;
-  @extend .text-center;
-  @extend .photo-panel;
-  h1{
-    .sub{
-      display: block;
-      font-size:18px;
-      margin-bottom:6px;
-    }
-    font-size:27px;
-    font-weight: bold;
-  }
-  p{
-    font-style: italic;
-    max-width:700px;
-    margin:20px auto 15px;
-    padding:0 60px;
-  }
-  .btn-default{
-    font-size:0.6em;
-    background:transparent;
-    color:#fff;
-    text-transform:uppercase;
-    padding:10px 40px;
-    -webkit-transition: all .25s linear;
-       -moz-transition: all .25s linear;
-        -ms-transition: all .25s linear;
-         -o-transition: all .25s linear;
-            transition: all .25s linear;
-    &:hover{
-      background:rgba(255,255,255,.25);
-    }
-  }
-}
-
-.map-panel{
-  padding:0;
-
-  .address-panel{
-    
-  }
-  iframe{
-    border:0;
-    min-height:270px;
-  }
-}
-/*=================== Useful Link =================*/
-.links-panel {
-    background-color: #3e413e;
-    color: #fff;
-    .useful-link-box {
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-    .useful-link-title {
-        padding-top: 5px;
-        p {
-            margin: 0;
-            font-size: 18px;
-            letter-spacing: 1px;
-            font-weight: 100;
-            line-height: 1.2;
-        }
-        img {
-            width: 20px;
-            height: 20px;
-        }
-        .travel {
-            width: 25px;
-        }
-    }
-    .link-menu {
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            li {
-                letter-spacing: 1px;
-                font-size: 12px;
-                line-height: 1.5;
-                a {
-                    color: #239ed1;
-                    word-wrap: break-word;
-                }
-            }
         }
     }
 }
@@ -224,22 +94,4 @@ p {
     margin:0px auto 2px auto;
     text-transform: uppercase;
   }
-}
-
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    /*=================== useful link =================*/
-    .links-panel {
-        .useful-link-box {
-            text-align: center;
-        }
-        .useful-link-title {
-            padding-bottom: 20px;
-            p {
-                display: inline-block;
-                padding-left: 4px;
-                padding-right: 4px;
-            }
-        }
-    }
 }
