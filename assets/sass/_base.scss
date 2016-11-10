@@ -11,32 +11,49 @@ body {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: $headFont;
-  font-size: 3em;
+  font-size: 1em;
   margin:0;
 }
 
 h1 {
-  font-size: 3em;
-}
-
-h2 {
   font-size: 1.5em;
 }
 
+h2{
+    font-size:20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    .sub{
+      font-size:15px;
+      font-style: italic;
+      display: block;
+      text-transform: none;
+      font-weight: normal;
+    }
+  }
+
 p {
-  font-size: .8em;
-  line-height: 1.6em;
-  margin-bottom: 20px;
-  margin-top: 15px;
+  font-size: 0.65em;
+  line-height: 1.5em;
+  margin-bottom: 10px;
+  margin-top: 7px;
+  &.callout{
+    font-weight: bold;
+    font-size:.75em;
+    margin:15px 0;
+  }
 }
 
 .container-fluid{
-  padding:20px 0;
+  padding:0;
+  &.logo-panel{
+    padding:20px 0;
+  }
 }
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 700px;
   margin: 0 auto;
   position: relative;
 }
@@ -44,21 +61,41 @@ p {
 .photo-panel{
   background:#000;
   color:#fff;
-  padding:50px;
+  padding:80px 0;
   &.white{
     background: none;
     color:#000;
   }
 }
 
+.content-panel{
+  padding:40px 50px;
+  h2{
+    .colored{
+      color:$red;
+    }
+    text-align: center;
+  }
+}
+
 .hero-header{
-  @extend .container-fluid;
+  @extend .container;
   @extend .text-center;
   @extend .photo-panel;
+  h1{
+    .sub{
+      display: block;
+      font-size:18px;
+      margin-bottom:6px;
+    }
+    font-size:27px;
+    font-weight: bold;
+  }
   p{
     font-style: italic;
-    max-width:600px;
-    margin:40px auto 30px;
+    max-width:700px;
+    margin:20px auto 15px;
+    padding:0 60px;
   }
   .btn-default{
     font-size:0.6em;
@@ -78,7 +115,6 @@ p {
 }
 
 .map-panel{
-  @extend .container-fluid;
   padding:0;
 
   .address-panel{
@@ -86,7 +122,7 @@ p {
   }
   iframe{
     border:0;
-    min-height:470px;
+    min-height:270px;
   }
 }
 /*=================== useful link =================*/
@@ -153,7 +189,7 @@ p {
   padding:12px 0;
   p{
     color:#999;
-    font-size:0.5em;
+    font-size:0.25em;
     margin:0px auto 2px auto;
     text-transform: uppercase;
   }
