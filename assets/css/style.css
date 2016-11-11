@@ -609,6 +609,19 @@ p, .map-panel .address-panel ul {
       font-weight: bold;
       margin-right: 15px; }
 
+.ourpanel-panel .mobile-show {
+  display: none; }
+
+@media only screen and (max-width: 600px) {
+  .ourpanel-panel .mobile-hide {
+    display: none; }
+  .ourpanel-panel .mobile-show {
+    display: block; }
+  .ourpanel-panel .mobile-width {
+    width: 100%; }
+  .ourpanel-panel .panel-body {
+    margin: 0; } }
+
 .map-panel {
   padding: 0; }
   .map-panel .address-panel {
@@ -715,9 +728,11 @@ p, .map-panel .address-panel ul {
       .thoughtleaders-panel li .profile-title a {
         text-decoration: none; }
 
-/*=================== Useful Link =================*/
 .links-panel {
   background-color: #3e413e;
+  background-image: url(../images/useful-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff; }
   .links-panel .useful-link-box {
     margin: 40px 0; }
@@ -747,7 +762,6 @@ p, .map-panel .address-panel ul {
         word-wrap: break-word; }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  /*=================== useful link =================*/
   .links-panel .useful-link-box {
     text-align: center; }
   .links-panel .useful-link-title {
