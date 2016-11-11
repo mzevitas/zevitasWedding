@@ -112,7 +112,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-bower-concat');
 	grunt.registerTask('default', ['concat', 'sass', 'connect', 'watch']);
-	grunt.registerTask('dist', ['bower_concat', 'concat', 'sass', 'copy', 'uglify', 'cssmin', 'processhtml']);
+	grunt.registerTask('dist', ['concat', 'sass', 'copy', 'uglify', 'cssmin', 'processhtml']);
 
 
 }; //wrapper function
