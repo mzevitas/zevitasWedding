@@ -730,46 +730,59 @@ p, .map-panel .address-panel ul {
 
 .links-panel {
   background-color: #3e413e;
-  background-image: url(../images/useful-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../images/links-bg2.png);
   color: #fff; }
   .links-panel .useful-link-box {
-    margin: 40px 0; }
+    padding: 40px 0 40px 30px; }
+    @media (max-width: 600px) {
+      .links-panel .useful-link-box {
+        text-align: center;
+        padding-right: 30px; } }
   .links-panel .useful-link-title {
+    width: 20%;
+    float: left;
     padding-top: 5px; }
-    .links-panel .useful-link-title p, .links-panel .useful-link-title .map-panel .address-panel ul, .map-panel .address-panel .links-panel .useful-link-title ul {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: 1px;
-      font-weight: 100;
-      line-height: 1.2; }
+    @media (max-width: 600px) {
+      .links-panel .useful-link-title {
+        width: 100%;
+        margin-bottom: 20px; } }
+    .links-panel .useful-link-title h2 span {
+      display: block; }
+      @media (max-width: 600px) {
+        .links-panel .useful-link-title h2 span {
+          display: inline;
+          margin-right: 6px; } }
     .links-panel .useful-link-title img {
-      width: 20px;
-      height: 20px; }
+      width: 18px;
+      height: 18px;
+      margin-right: 3px; }
     .links-panel .useful-link-title .travel {
       width: 25px; }
-  .links-panel .link-menu ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
-    .links-panel .link-menu ul li {
-      letter-spacing: 1px;
-      font-size: 12px;
-      line-height: 1.5; }
-      .links-panel .link-menu ul li a {
-        color: #239ed1;
-        word-wrap: break-word; }
-
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-  .links-panel .useful-link-box {
-    text-align: center; }
-  .links-panel .useful-link-title {
-    padding-bottom: 20px; }
-    .links-panel .useful-link-title p, .links-panel .useful-link-title .map-panel .address-panel ul, .map-panel .address-panel .links-panel .useful-link-title ul {
-      display: inline-block;
-      padding-left: 4px;
-      padding-right: 4px; } }
+  .links-panel .link-menu {
+    width: 80%;
+    float: left; }
+    @media (max-width: 600px) {
+      .links-panel .link-menu {
+        width: 100%; } }
+    .links-panel .link-menu ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none; }
+      .links-panel .link-menu ul li {
+        width: 50%;
+        float: left;
+        letter-spacing: 1px;
+        font-size: 11px;
+        line-height: 1.5; }
+        @media (max-width: 600px) {
+          .links-panel .link-menu ul li {
+            width: 100%; } }
+        .links-panel .link-menu ul li a {
+          color: #239ed1;
+          word-wrap: break-word; }
+          .links-panel .link-menu ul li a:hover {
+            text-decoration: none;
+            color: #ccc; }
 
 #background01 {
   background-image: url("../images/panels/hero.jpg");

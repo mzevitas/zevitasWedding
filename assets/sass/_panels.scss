@@ -219,59 +219,84 @@
 .links-panel {
   @extend .container;
   background-color: #3e413e;
-  background-image: url(../images/useful-background.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../images/links-bg2.png);
   color: #fff;
   .useful-link-box {
-      margin: 40px 0;
+      padding: 40px 0 40px 30px;
+      @media #{$mobile} {
+        text-align: center;
+        padding-right:30px;
+      }
   }
   .useful-link-title {
+    width:20%;
+    float:left;
+    @media #{$mobile} {
+      width:100%;
+      margin-bottom:20px;
+    }
     padding-top: 5px;
-    p {
-        margin: 0;
-        font-size: 18px;
-        letter-spacing: 1px;
-        font-weight: 100;
-        line-height: 1.2;
+    h2{
+      span{
+        display:block;
+        @media #{$mobile} {
+          display: inline;
+          margin-right:6px;
+        }
+      }
     }
     img {
-        width: 20px;
-        height: 20px;
+      width: 18px;
+      height: 18px;
+      margin-right: 3px;
     }
     .travel {
         width: 25px;
     }
   }
   .link-menu {
+    width:80%;
+    float:left;
+    @media #{$mobile} {
+      width:100%;
+    }
     ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
         li {
-            letter-spacing: 1px;
-            font-size: 12px;
-            line-height: 1.5;
-            a {
-                color: #239ed1;
-                word-wrap: break-word;
+          width:50%;
+          float:left;
+          @media #{$mobile} {
+            width:100%;
+          }
+          letter-spacing: 1px;
+          font-size: 11px;
+          line-height: 1.5;
+          a {
+            color: #239ed1;
+            word-wrap: break-word;
+            &:hover{
+              text-decoration: none;
+              color:#ccc;
             }
+          }
         }
     }
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 767px) {
-    .links-panel {
-        .useful-link-box {
-            text-align: center;
-        }
-        .useful-link-title {
-            padding-bottom: 20px;
-            p {
-                display: inline-block;
-                padding-left: 4px;
-                padding-right: 4px;
-            }
-        }
-    }
-}
+// @media only screen and (min-width: 320px) and (max-width: 767px) {
+//     .links-panel {
+//         .useful-link-box {
+//             text-align: center;
+//         }
+//         .useful-link-title {
+//             padding-bottom: 20px;
+//             p {
+//                 display: inline-block;
+//                 padding-left: 4px;
+//                 padding-right: 4px;
+//             }
+//         }
+//     }
+// }
