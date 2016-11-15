@@ -54,8 +54,9 @@ p {
 
 .container-fluid{
   background: #fff;
-  max-width: 700px;
+  max-width: 900px;
   padding:0;
+  position:relative;
   &.logo-panel{
     padding:20px 0;
   }
@@ -127,7 +128,7 @@ p {
   padding:12px 0;
   p{
     color:#999;
-    font-size:0.25em;
+    font-size:0.5em;
     margin:0px auto 2px auto;
     text-transform: uppercase;
   }

@@ -499,8 +499,9 @@ p, .map-panel .address-panel ul {
 
 .container-fluid {
   background: #fff;
-  max-width: 700px;
-  padding: 0; }
+  max-width: 900px;
+  padding: 0;
+  position: relative; }
   .container-fluid.logo-panel {
     padding: 20px 0; }
 
@@ -557,7 +558,7 @@ p, .map-panel .address-panel ul {
   padding: 12px 0; }
   .footer p, .footer .map-panel .address-panel ul, .map-panel .address-panel .footer ul, footer p, footer .map-panel .address-panel ul, .map-panel .address-panel footer ul {
     color: #999;
-    font-size: 0.25em;
+    font-size: 0.5em;
     margin: 0px auto 2px auto;
     text-transform: uppercase; }
 
@@ -625,7 +626,7 @@ p, .map-panel .address-panel ul {
 .map-panel {
   padding: 0; }
   .map-panel .address-panel {
-    padding: 20px 10px 20px 50px;
+    padding: 20px 50px;
     width: 60%;
     float: left; }
     @media (max-width: 600px) {
@@ -727,17 +728,27 @@ p, .map-panel .address-panel ul {
       font-style: italic; }
       .thoughtleaders-panel li .profile-title a {
         text-decoration: none; }
+    .thoughtleaders-panel li .profile-pic img {
+      image-rendering: auto;
+      border: 0px solid #999;
+      -webkit-transition: all .15s ease-in-out;
+      -moz-transition: all .15s ease-in-out;
+      -ms-transition: all .15s ease-in-out;
+      -o-transition: all .15s ease-in-out;
+      transition: all .15s ease-in-out; }
+      .thoughtleaders-panel li .profile-pic img.hilite {
+        border: 5px solid #999; }
 
 .links-panel {
   background-color: #3e413e;
   background: url(../images/links-bg2.png);
   color: #fff; }
   .links-panel .useful-link-box {
-    padding: 40px 0 40px 30px; }
+    padding: 40px 0 40px 50px; }
     @media (max-width: 600px) {
       .links-panel .useful-link-box {
         text-align: center;
-        padding-right: 30px; } }
+        padding-right: 50px; } }
   .links-panel .useful-link-title {
     width: 20%;
     float: left;
@@ -784,10 +795,20 @@ p, .map-panel .address-panel ul {
             text-decoration: none;
             color: #ccc; }
 
-#background01 {
-  background-image: url("../images/panels/hero.jpg");
+.parallax-bg {
+  background-size: 900px auto;
+  background-position-x: 50% !important;
   min-height: 290px;
   position: relative; }
+  .parallax-bg .content-wrapper {
+    position: relative; }
+
+#background01 {
+  background-image: url("../images/panels/Vegas_Hero.jpg");
+  background-position-y: -75px; }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #background01 {
+      background-image: url("../images/panels/retina/Vegas_Hero.jpg"); } }
   #background01:before {
     display: block;
     content: '';
@@ -799,9 +820,16 @@ p, .map-panel .address-panel ul {
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), transparent); }
 
 #background02 {
-  min-height: 290px;
-  background-image: url("../images/panels/mizumix15.jpg"); }
+  background-image: url("../images/panels/DinnerDrinks.jpg"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #background02 {
+      background-image: url("../images/panels/retina/DinnerDrinks.jpg"); } }
 
 #background03 {
-  min-height: 290px;
-  background-image: url("../images/panels/conciergex15.jpg"); }
+  background-image: url("../images/panels/Concierge.jpg"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #background03 {
+      background-image: url("../images/panels/retina/Concierge.jpg"); } }
+
+#map {
+  background-image: url("../images/panels/Map.jpg"); }

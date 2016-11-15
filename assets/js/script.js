@@ -7047,7 +7047,7 @@ $(document).ready(function() {
 	//init page content
 	//PAGE.init(onMobile);
 	// if(!onMobile){
-	 	$.stellar();
+	 	$.stellar({horizontalScrolling: false, responsive:true});
 	// }
 	//on window resize handling
 	// $(window).resize(function() {
@@ -7060,4 +7060,16 @@ $(document).ready(function() {
 	// 	//trigger resize after images have loaded so vertical centers are calculated correctly
 	// 	PAGE.resize();
 	// });
+
+	$('.thoughtleaders-panel .panel-profile').each(function(){
+		var el = $(this);
+		var im = el.find('.profile-pic img');//parents('.panel-profile').
+		$(this).hover(function(){
+			console.log('over');
+			im.addClass('hilite');
+		},function(){
+			console.log('out');
+			im.removeClass('hilite');
+		})
+	});
 });

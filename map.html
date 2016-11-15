@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Custom Markers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+          center: new google.maps.LatLng(36.1140656,-115.1730043),
+          mapTypeId: 'roadmap',
+          disableDefaultUI:true,
+          styles:[
+            {
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#f5f5f5"
+                }
+              ]
+            },
+            {
+              "elementType": "labels.icon",
+              "stylers": [
+                {
+                  "visibility": "off"
+                }
+              ]
+            },
+            {
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#616161"
+                }
+              ]
+            },
+            {
+              "elementType": "labels.text.stroke",
+              "stylers": [
+                {
+                  "color": "#f5f5f5"
+                }
+              ]
+            },
+            {
+              "featureType": "administrative.land_parcel",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#bdbdbd"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#eeeeee"
+                }
+              ]
+            },
+            {
+              "featureType": "poi",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#757575"
+                }
+              ]
+            },
+            {
+              "featureType": "poi.park",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#e5e5e5"
+                }
+              ]
+            },
+            {
+              "featureType": "poi.park",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#9e9e9e"
+                }
+              ]
+            },
+            {
+              "featureType": "road",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#ffffff"
+                }
+              ]
+            },
+            {
+              "featureType": "road.arterial",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#757575"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#dadada"
+                }
+              ]
+            },
+            {
+              "featureType": "road.highway",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#616161"
+                }
+              ]
+            },
+            {
+              "featureType": "road.local",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#9e9e9e"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.line",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#e5e5e5"
+                }
+              ]
+            },
+            {
+              "featureType": "transit.station",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#eeeeee"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "geometry",
+              "stylers": [
+                {
+                  "color": "#c9c9c9"
+                }
+              ]
+            },
+            {
+              "featureType": "water",
+              "elementType": "labels.text.fill",
+              "stylers": [
+                {
+                  "color": "#9e9e9e"
+                }
+              ]
+            }
+          ]
+        });
+
+        var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+        var icons = {
+          parking: {
+            icon: iconBase + 'parking_lot_maps.png'
+          },
+          library: {
+            icon: iconBase + 'library_maps.png'
+          },
+          info: {
+            icon: iconBase + 'info-i_maps.png'
+          },
+          redpin:{
+            icon: 'assets/images/icons/red-pin.png'
+          },
+          custompin: {
+            icon: new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter_withshadow&chld=%E2%80%A2|df2c28")
+          }
+        };
+
+        function addMarker() {
+
+          var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(36.1140656,-115.1730043),
+            icon: 'assets/images/icons/red-pin-sm.png',
+            map: map,
+            clickable:true,
+            title:'The Bellagio',
+            label:new google.maps.MarkerLabel({text:'The Bellagio', color:'#df2c28'})
+          });
+          // var marker = new google.maps.Marker({
+          //   position: feature.position,
+          //   icon: icons[feature.type].icon,
+          //   map: map
+          // });
+          
+        }
+
+        var features = [
+          {
+            position: new google.maps.LatLng(-33.91721, 151.22630),
+            type: 'custompin'
+          }, {
+            position: new google.maps.LatLng(-33.91539, 151.22820),
+            type: 'redpin'
+          }, {
+            position: new google.maps.LatLng(-33.91747, 151.22912),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91910, 151.22907),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91725, 151.23011),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91872, 151.23089),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91784, 151.23094),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91682, 151.23149),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91790, 151.23463),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91666, 151.23468),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.916988, 151.233640),
+            type: 'info'
+          }, {
+            position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.91665018901448, 151.2282474695587),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.919543720969806, 151.23112279762267),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.91608037421864, 151.23288232673644),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.91851096391805, 151.2344058214569),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.91818154739766, 151.2346203981781),
+            type: 'parking'
+          }, {
+            position: new google.maps.LatLng(-33.91727341958453, 151.23348314155578),
+            type: 'library'
+          }
+        ];
+
+        //for (var i = 0, feature; feature = features[i]; i++) {
+          addMarker();
+        //}
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMwLyq8C13Q63Evs4DnbSn33vo332xu08&callback=initMap">
+    </script>
+
+
+
+  </body>
+</html>
