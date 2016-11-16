@@ -7065,10 +7065,10 @@ $(document).ready(function() {
 		var el = $(this);
 		var im = el.find('.profile-pic img');//parents('.panel-profile').
 		$(this).hover(function(){
-			console.log('over');
+			//console.log('over');
 			im.addClass('hilite');
 		},function(){
-			console.log('out');
+			//console.log('out');
 			im.removeClass('hilite');
 		})
 	});
