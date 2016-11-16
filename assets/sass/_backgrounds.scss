@@ -1,7 +1,9 @@
 .parallax-bg{
 	background-size:900px auto;
 	background-position-x:50% !important;
-	
+	@media #{$mobile} {
+      background-position-x:40% !important;
+    }
 	min-height:290px;
 	position: relative;
 	.content-wrapper{
@@ -49,6 +51,12 @@
 	}
 }
 
-#map{
-	background-image:url('../images/panels/Map.jpg');
+#background04{
+	background-image:url('../images/panels/Pixels.jpg');
+	@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (-o-min-device-pixel-ratio: 3/2),
+		only screen and (min--moz-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) {
+			background-image:url('../images/panels/retina/Pixels.jpg');
+	}
 }

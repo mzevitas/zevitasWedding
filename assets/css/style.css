@@ -451,7 +451,7 @@ table {
   text-align: center; }
 
 .bump-down {
-  margin-bottom: 20px; }
+  margin-bottom: 20px !important; }
 
 * {
   box-sizing: border-box; }
@@ -492,6 +492,10 @@ p, .map-panel .address-panel ul {
   line-height: 1.5em;
   margin-bottom: 6px;
   margin-top: 6px; }
+  p strong, .map-panel .address-panel ul strong {
+    font-weight: bold; }
+  p .italic, .map-panel .address-panel ul .italic {
+    font-style: italic; }
   p.callout, .map-panel .address-panel ul.callout {
     font-weight: bold;
     font-size: .75em;
@@ -510,6 +514,11 @@ p, .map-panel .address-panel ul {
   margin: 0 auto;
   position: relative; }
 
+.parallax-row-wrapper {
+  width: 100%;
+  padding: 0;
+  position: relative; }
+
 /*Base Panel Styles*/
 .photo-panel, .hero-panel {
   background: #000;
@@ -519,12 +528,19 @@ p, .map-panel .address-panel ul {
     background: none;
     color: #000; }
   .photo-panel .content-wrapper, .hero-panel .content-wrapper {
-    width: 60%;
+    width: 50%;
     float: right;
     text-align: left; }
     @media (max-width: 600px) {
       .photo-panel .content-wrapper, .hero-panel .content-wrapper {
         width: 100%; } }
+    .photo-panel .content-wrapper p, .hero-panel .content-wrapper p, .photo-panel .content-wrapper .map-panel .address-panel ul, .map-panel .address-panel .photo-panel .content-wrapper ul, .hero-panel .content-wrapper .map-panel .address-panel ul, .map-panel .address-panel .hero-panel .content-wrapper ul {
+      margin: 15px 0; }
+    .photo-panel .content-wrapper a, .hero-panel .content-wrapper a {
+      color: #fff; }
+      .photo-panel .content-wrapper a:hover, .hero-panel .content-wrapper a:hover {
+        color: #ccc;
+        text-decoration: none; }
 
 .content-panel, .ourpanel-panel, .map-panel .address-panel, .thoughtleaders-panel {
   padding: 20px 50px; }
@@ -800,6 +816,9 @@ p, .map-panel .address-panel ul {
   background-position-x: 50% !important;
   min-height: 290px;
   position: relative; }
+  @media (max-width: 600px) {
+    .parallax-bg {
+      background-position-x: 40% !important; } }
   .parallax-bg .content-wrapper {
     position: relative; }
 
@@ -831,5 +850,8 @@ p, .map-panel .address-panel ul {
     #background03 {
       background-image: url("../images/panels/retina/Concierge.jpg"); } }
 
-#map {
-  background-image: url("../images/panels/Map.jpg"); }
+#background04 {
+  background-image: url("../images/panels/Pixels.jpg"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    #background04 {
+      background-image: url("../images/panels/retina/Pixels.jpg"); } }
