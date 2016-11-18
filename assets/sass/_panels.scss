@@ -328,16 +328,9 @@
         
         li {
           width:100%;
-          // float:left;
-          // @media #{$sm-tablet} {
-          //   width:100%;
+          // strong{
+          //   text-transform: uppercase;
           // }
-          // @media #{$mobile} {
-          //   width:100%;
-          // }
-          strong{
-            text-transform: uppercase;
-          }
           letter-spacing: 1px;
           font-size: 11px;
           line-height: 1.5;

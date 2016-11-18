@@ -896,8 +896,6 @@ p, .map-panel .address-panel ul {
         letter-spacing: 1px;
         font-size: 11px;
         line-height: 1.5; }
-        .links-panel .link-menu ul li strong {
-          text-transform: uppercase; }
         .links-panel .link-menu ul li a {
           color: #ccc;
           word-wrap: break-word; }

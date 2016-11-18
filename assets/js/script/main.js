@@ -11,7 +11,7 @@ var PAGE = (function ($) {
 				im.addClass('hilite');
 			},function(){
 				im.removeClass('hilite');
-			})
+			});
 		});
 		window.pageInit = true;
 	};
@@ -37,7 +37,6 @@ $(document).ready(function() {
 	});
 	//init page content
 	PAGE.init();
-	
 	//on window resize handling
 	$(window).resize(function() {
 	  	PAGE.resize();
