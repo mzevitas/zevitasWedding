@@ -48,6 +48,14 @@ module.exports = function(grunt){
     			src: '**',
 		      	dest: 'dist/assets/images', 
 		      	filter: 'isFile'
+		      },
+		      {
+		      	expand: true, 
+		      	flatten: false, 
+		      	cwd: 'assets/fonts',
+    			src: '**',
+		      	dest: 'dist/assets/fonts', 
+		      	filter: 'isFile'
 		      }]
 		  }
 		},

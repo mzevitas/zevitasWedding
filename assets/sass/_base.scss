@@ -20,7 +20,7 @@ h1 {
 }
 
 h2{
-  font-size:20px;
+  font-size:26px;
   font-weight: bold;
   text-transform: uppercase;
   .sub{
@@ -78,6 +78,9 @@ p {
   padding:0;
   position:relative;
 }
+.sapientlogo{
+  width:120px;
+}
 
 /*Base Panel Styles*/
 
@@ -102,6 +105,12 @@ p {
     }
     a{
       color:#fff;
+      &.add-ul{
+        text-decoration: underline;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
       &:hover{
         color:#ccc;
         text-decoration: none;
@@ -112,13 +121,9 @@ p {
 .content-panel{
     padding:20px 50px;
     h2 {
-        text-align: center;
-        font-size: 22px;
-        letter-spacing: 0px;
-        padding:20px 0;
-        .colored {
-            color: $red;
-        }
+      text-align: center;
+      letter-spacing: 0px;
+      padding:20px 0;
     }
 }
 .panel-profile {

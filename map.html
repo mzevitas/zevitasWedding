@@ -26,6 +26,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 15,
+          scrollwheel:false,
           center: new google.maps.LatLng(36.1124,-115.173),
           mapTypeId: 'roadmap',
           disableDefaultUI:true,
@@ -191,7 +192,7 @@
           ]
         });
         var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(36.1126,-115.17668),
+          position: new google.maps.LatLng(36.1127,-115.17668),
           icon: {
             url:'assets/images/icons/red-pin-md.png',
             labelOrigin:new google.maps.Point(78,62)

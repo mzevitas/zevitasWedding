@@ -6,19 +6,22 @@
   h1{
     .sub{
       display: block;
-      font-size:18px;
+      font-size:22px;
       margin-bottom:6px;
     }
-    font-size:27px;
+    font-size:40px;
     font-weight: bold;
     position: relative;
   }
   p{
+    font-family:'Arial Narrow Italic', $bodyFont;
+    line-height:25px;
+    font-size: 18px;
     position: relative;
     font-style: italic;
     max-width:700px;
     margin:20px auto 15px;
-    padding:0 60px;
+    padding:0 110px;
     @media #{$mobile} {
       padding:0px;
     }
@@ -47,8 +50,14 @@
       padding:10px 15px;
         strong {
           font-family: $headFont;
-          font-size: 14px;
+          font-size: 15px;
           text-transform: uppercase;
+          .sub{
+            font-size:12px;
+            display: block;
+            font-weight: normal;
+            margin-bottom: 12px;
+          }
         }
         p {
             font-size: 12px;
@@ -279,28 +288,65 @@
   .link-menu {
     width:80%;
     float:left;
+    margin-top:10px;
+    @media #{$sm-tablet} {
+      width:75%;
+      padding-right:20px;
+      float:right;
+      margin-top:0px;
+    }
     @media #{$mobile} {
       width:100%;
+      margin-top:0px;
     }
     ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
-        li {
-          width:50%;
-          float:left;
+        display: inline-block;
+        float:left;
+        &:first-child{
+          width:30%;
+          @media #{$sm-tablet} {
+            width:100%;
+            margin-bottom:14px;
+          }
           @media #{$mobile} {
             width:100%;
+            margin-bottom:14px;
+          }
+        }
+        &:last-child{
+          width:70%;
+          @media #{$sm-tablet} {
+            width:100%;
+          }
+          @media #{$mobile} {
+            width:100%;
+          }
+        }
+        
+        li {
+          width:100%;
+          // float:left;
+          // @media #{$sm-tablet} {
+          //   width:100%;
+          // }
+          // @media #{$mobile} {
+          //   width:100%;
+          // }
+          strong{
+            text-transform: uppercase;
           }
           letter-spacing: 1px;
           font-size: 11px;
           line-height: 1.5;
           a {
-            color: #239ed1;
+            color:#ccc;
             word-wrap: break-word;
             &:hover{
               text-decoration: none;
-              color:#ccc;
+              color: #239ed1;
             }
           }
         }
