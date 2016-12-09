@@ -578,6 +578,9 @@ p, .map-panel .address-panel ul {
   background: #000;
   color: #fff;
   padding: 55px; }
+  @media (max-width: 600px) {
+    .photo-panel, .hero-panel {
+      padding: 40px; } }
   .photo-panel.white, .white.hero-panel {
     background: none;
     color: #000; }
@@ -602,6 +605,9 @@ p, .map-panel .address-panel ul {
 
 .content-panel, .ourpanel-panel, .map-panel .address-panel, .thoughtleaders-panel {
   padding: 20px 50px; }
+  @media (max-width: 600px) {
+    .content-panel, .ourpanel-panel, .map-panel .address-panel, .thoughtleaders-panel {
+      padding: 20px 40px; } }
   .content-panel h2, .ourpanel-panel h2, .map-panel .address-panel h2, .thoughtleaders-panel h2 {
     text-align: center;
     letter-spacing: 0px;
@@ -635,6 +641,9 @@ p, .map-panel .address-panel ul {
 
 .hero-panel {
   padding-top: 80px; }
+  @media (max-width: 600px) {
+    .hero-panel {
+      padding-top: 55px; } }
   .hero-panel h1 {
     font-size: 40px;
     font-weight: bold;
@@ -643,6 +652,12 @@ p, .map-panel .address-panel ul {
       display: block;
       font-size: 22px;
       margin-bottom: 6px; }
+      @media (max-width: 600px) {
+        .hero-panel h1 .sub {
+          font-size: 18px; } }
+    @media (max-width: 600px) {
+      .hero-panel h1 {
+        font-size: 24px; } }
   .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
     font-family: "Arial Narrow Italic", Arial, Helvetica, sans-serif;
     line-height: 25px;
@@ -652,6 +667,10 @@ p, .map-panel .address-panel ul {
     max-width: 700px;
     margin: 20px auto 15px;
     padding: 0 110px; }
+    @media (max-width: 600px) {
+      .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
+        font-size: 14px;
+        line-height: 18px; } }
     @media (max-width: 600px) {
       .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
         padding: 0px; } }
@@ -688,6 +707,10 @@ p, .map-panel .address-panel ul {
       color: #de2c27;
       font-weight: bold;
       margin-right: 15px; }
+      @media (max-width: 400px) {
+        .ourpanel-panel .panel-body p strong, .ourpanel-panel .panel-body .map-panel .address-panel ul strong, .map-panel .address-panel .ourpanel-panel .panel-body ul strong {
+          display: block;
+          margin-right: 0; } }
 
 .ourpanel-panel .mobile-show {
   display: none; }

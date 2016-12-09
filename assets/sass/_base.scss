@@ -89,6 +89,9 @@ p {
   background:#000;
   color:#fff;
   padding:55px;
+  @media #{$mobile} {
+    padding:40px;
+  }
   &.white{
     background: none;
     color:#000;
@@ -120,6 +123,9 @@ p {
 }
 .content-panel{
     padding:20px 50px;
+    @media #{$mobile} {
+      padding:20px 40px;
+    }
     h2 {
       text-align: center;
       letter-spacing: 0px;
