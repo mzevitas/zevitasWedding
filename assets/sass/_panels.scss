@@ -6,6 +6,11 @@
   @media #{$mobile} {
     padding-top:55px;
   }
+  hr{
+    width: 40px;
+    border-width: 5px;
+    border-color: #33bcdf;
+  }
   h1{
     .sub{
       display: block;
@@ -21,23 +26,28 @@
     @media #{$mobile} {
       font-size: 24px;
     }
+    @media #{$sm-tablet} {
+        font-size: 30px;
+      }
   }
   p{
     font-family:'Arial Narrow Italic', $bodyFont;
     line-height:25px;
     font-size: 18px;
     @media #{$mobile} {
-      font-size:14px;
-      line-height: 18px;
+      font-size:15px;
+      line-height: 22px;
+      padding:0px;
     }
     position: relative;
     font-style: italic;
     max-width:700px;
     margin:20px auto 15px;
-    padding:0 110px;
-    @media #{$mobile} {
-      padding:0px;
+    padding:0 150px;
+    @media #{$sm-tablet} {
+      padding:0px 80px;
     }
+    
   }
   .btn-default{
     font-size:0.6em;
@@ -205,7 +215,7 @@
   }
   iframe{
     border:0;
-    min-height:290px;
+    min-height:320px;
   }
 }
 

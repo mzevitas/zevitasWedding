@@ -2,9 +2,21 @@
 	background-size:900px auto;
 	background-position-x:50% !important;
 	@media #{$mobile} {
-      background-position-x:40% !important;
+      background-position-x:0% !important;
+      min-height: 0;
+
+      &:before{
+		display: block;
+	    content: '';
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.75));
+		}
     }
-	min-height:290px;
+	min-height:380px;
 	position: relative;
 	.content-wrapper{
 		position:relative;
@@ -19,16 +31,15 @@
 			background-image:url('../images/panels/retina/Vegas_Hero.jpg');
 	}
 	background-position-y:-75px;
-	&:before{
-		display: block;
-	    content: '';
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    bottom: 25%;
-	    right: 0;
-	    background-image: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,0));
-	}
+	@media #{$mobile} {
+      background-position-x:100% !important;
+      min-height: 290px;
+
+      &:before{
+			background-image:none;
+		}
+    }
+	
 }
 
 #background02{

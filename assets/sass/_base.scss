@@ -42,7 +42,7 @@ a{
 
 p {
   font-size: 0.65em;
-  line-height: 1.5em;
+  line-height: 1.7em;
   margin-bottom: 6px;
   margin-top: 6px;
   strong{
@@ -88,7 +88,7 @@ p {
   @extend .container;
   background:#000;
   color:#fff;
-  padding:55px;
+  padding:75px 55px 55px 55px;
   @media #{$mobile} {
     padding:40px;
   }
@@ -100,8 +100,24 @@ p {
     width:50%;
     float:right;
     text-align: left;
+    &.center{
+      width:60%;
+      float:none;
+      text-align: center;
+      margin:0 auto;
+      @media #{$sm-tablet} {
+        width:70%;
+      }
+      @media #{$mobile} {
+        width:100%;
+        text-align: left;
+      }
+    }
     @media #{$mobile} {
       width:100%;
+    }
+    h2{
+      color:$red;
     }
     p{
       margin:15px 0;

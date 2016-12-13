@@ -502,7 +502,7 @@ table {
   margin-bottom: 20px !important; }
 
 .colored {
-  color: #de2c27; }
+  color: #33bcdf; }
 
 * {
   box-sizing: border-box; }
@@ -540,7 +540,7 @@ a {
 
 p, .map-panel .address-panel ul {
   font-size: 0.65em;
-  line-height: 1.5em;
+  line-height: 1.7em;
   margin-bottom: 6px;
   margin-top: 6px; }
   p strong, .map-panel .address-panel ul strong {
@@ -577,7 +577,7 @@ p, .map-panel .address-panel ul {
 .photo-panel, .hero-panel {
   background: #000;
   color: #fff;
-  padding: 55px; }
+  padding: 75px 55px 55px 55px; }
   @media (max-width: 600px) {
     .photo-panel, .hero-panel {
       padding: 40px; } }
@@ -588,9 +588,23 @@ p, .map-panel .address-panel ul {
     width: 50%;
     float: right;
     text-align: left; }
+    .photo-panel .content-wrapper.center, .hero-panel .content-wrapper.center {
+      width: 60%;
+      float: none;
+      text-align: center;
+      margin: 0 auto; }
+      @media (min-width: 600px) and (max-width: 800px) {
+        .photo-panel .content-wrapper.center, .hero-panel .content-wrapper.center {
+          width: 70%; } }
+      @media (max-width: 600px) {
+        .photo-panel .content-wrapper.center, .hero-panel .content-wrapper.center {
+          width: 100%;
+          text-align: left; } }
     @media (max-width: 600px) {
       .photo-panel .content-wrapper, .hero-panel .content-wrapper {
         width: 100%; } }
+    .photo-panel .content-wrapper h2, .hero-panel .content-wrapper h2 {
+      color: #33bcdf; }
     .photo-panel .content-wrapper p, .hero-panel .content-wrapper p, .photo-panel .content-wrapper .map-panel .address-panel ul, .map-panel .address-panel .photo-panel .content-wrapper ul, .hero-panel .content-wrapper .map-panel .address-panel ul, .map-panel .address-panel .hero-panel .content-wrapper ul {
       margin: 15px 0; }
     .photo-panel .content-wrapper a, .hero-panel .content-wrapper a {
@@ -623,7 +637,7 @@ p, .map-panel .address-panel ul {
   .panel-profile .profile-name {
     font-size: 12px;
     font-weight: bold;
-    color: #de2c27;
+    color: #33bcdf;
     margin-bottom: 0;
     font-style: italic; }
   .panel-profile .profile-title {
@@ -644,6 +658,10 @@ p, .map-panel .address-panel ul {
   @media (max-width: 600px) {
     .hero-panel {
       padding-top: 55px; } }
+  .hero-panel hr {
+    width: 40px;
+    border-width: 5px;
+    border-color: #33bcdf; }
   .hero-panel h1 {
     font-size: 40px;
     font-weight: bold;
@@ -658,6 +676,9 @@ p, .map-panel .address-panel ul {
     @media (max-width: 600px) {
       .hero-panel h1 {
         font-size: 24px; } }
+    @media (min-width: 600px) and (max-width: 800px) {
+      .hero-panel h1 {
+        font-size: 30px; } }
   .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
     font-family: "Arial Narrow Italic", Arial, Helvetica, sans-serif;
     line-height: 25px;
@@ -666,14 +687,15 @@ p, .map-panel .address-panel ul {
     font-style: italic;
     max-width: 700px;
     margin: 20px auto 15px;
-    padding: 0 110px; }
+    padding: 0 150px; }
     @media (max-width: 600px) {
       .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
-        font-size: 14px;
-        line-height: 18px; } }
-    @media (max-width: 600px) {
-      .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
+        font-size: 15px;
+        line-height: 22px;
         padding: 0px; } }
+    @media (min-width: 600px) and (max-width: 800px) {
+      .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
+        padding: 0px 80px; } }
   .hero-panel .btn-default {
     font-size: 0.6em;
     background: transparent;
@@ -704,7 +726,7 @@ p, .map-panel .address-panel ul {
     .ourpanel-panel .panel-body p strong, .ourpanel-panel .panel-body .map-panel .address-panel ul strong, .map-panel .address-panel .ourpanel-panel .panel-body ul strong {
       font-size: 12px;
       font-family: Arial, Helvetica, sans-serif;
-      color: #de2c27;
+      color: #33bcdf;
       font-weight: bold;
       margin-right: 15px; }
       @media (max-width: 400px) {
@@ -794,7 +816,7 @@ p, .map-panel .address-panel ul {
       -o-transition: all .25s linear;
       transition: all .25s linear; }
       .map-panel .address-panel a:hover {
-        color: #de2c27; }
+        color: #33bcdf; }
   .map-panel .map-iframe {
     padding: 0;
     width: 40%;
@@ -804,7 +826,7 @@ p, .map-panel .address-panel ul {
         width: 100%; } }
   .map-panel iframe {
     border: 0;
-    min-height: 290px; }
+    min-height: 320px; }
 
 .thoughtleaders-panel {
   padding-bottom: 40px; }
@@ -929,11 +951,21 @@ p, .map-panel .address-panel ul {
 .parallax-bg {
   background-size: 900px auto;
   background-position-x: 50% !important;
-  min-height: 290px;
+  min-height: 380px;
   position: relative; }
   @media (max-width: 600px) {
     .parallax-bg {
-      background-position-x: 40% !important; } }
+      background-position-x: 0% !important;
+      min-height: 0; }
+      .parallax-bg:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.75)); } }
   .parallax-bg .content-wrapper {
     position: relative; }
 
@@ -943,15 +975,12 @@ p, .map-panel .address-panel ul {
   @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3 / 2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
     #background01 {
       background-image: url("../images/panels/retina/Vegas_Hero.jpg"); } }
-  #background01:before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 25%;
-    right: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), transparent); }
+  @media (max-width: 600px) {
+    #background01 {
+      background-position-x: 100% !important;
+      min-height: 290px; }
+      #background01:before {
+        background-image: none; } }
 
 #background02 {
   background-image: url("../images/panels/DinnerDrinks.jpg"); }
