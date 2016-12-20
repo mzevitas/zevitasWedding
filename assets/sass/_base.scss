@@ -88,7 +88,7 @@ p {
   @extend .container;
   background:#000;
   color:#fff;
-  padding:75px 55px 55px 55px;
+  padding:65px 55px 45px 55px;
   @media #{$mobile} {
     padding:40px;
   }
@@ -124,6 +124,9 @@ p {
     }
     a{
       color:#fff;
+      &.colored{
+        color:$red;
+      }
       &.add-ul{
         text-decoration: underline;
         &:hover{
@@ -132,6 +135,11 @@ p {
       }
       &:hover{
         color:#ccc;
+        text-decoration: none;
+      }
+      &.hover-colored:hover{
+
+        color:$red;
         text-decoration: none;
       }
     }

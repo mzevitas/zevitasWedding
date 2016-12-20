@@ -4,15 +4,15 @@ var PAGE = (function ($) {
 
 	page.init = function(){
 		$.stellar({horizontalScrolling: false, responsive:false});
-		$('.thoughtleaders-panel .panel-profile').each(function(){
-			var el = $(this);
-			var im = el.find('.profile-pic img');
-			$(this).hover(function(){
-				im.addClass('hilite');
-			},function(){
-				im.removeClass('hilite');
-			});
-		});
+		// $('.thoughtleaders-panel .panel-profile').each(function(){
+		// 	var el = $(this);
+		// 	var im = el.find('.profile-pic img');
+		// 	$(this).hover(function(){
+		// 		im.addClass('hilite');
+		// 	},function(){
+		// 		im.removeClass('hilite');
+		// 	});
+		// });
 		window.pageInit = true;
 	};
 

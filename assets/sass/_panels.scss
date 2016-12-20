@@ -2,9 +2,9 @@
   @extend .container;
   @extend .text-center;
   @extend .photo-panel;
-  padding-top:80px;
+  padding-top:50px;
   @media #{$mobile} {
-    padding-top:55px;
+    padding-top:45px;
   }
   hr{
     width: 40px;
@@ -20,20 +20,20 @@
         font-size: 18px;
       }
     }
-    font-size:40px;
+    font-size:48px;
     font-weight: bold;
     position: relative;
     @media #{$mobile} {
-      font-size: 24px;
+      font-size: 32px;
     }
     @media #{$sm-tablet} {
-        font-size: 30px;
+        font-size: 40px;
       }
   }
   p{
     font-family:'Arial Narrow Italic', $bodyFont;
-    line-height:25px;
-    font-size: 18px;
+    line-height:22px;
+    font-size: 15px;
     @media #{$mobile} {
       font-size:15px;
       line-height: 22px;
@@ -42,10 +42,10 @@
     position: relative;
     font-style: italic;
     max-width:700px;
-    margin:20px auto 15px;
-    padding:0 150px;
+    margin:20px auto 0px;
+    padding:0 80px;
     @media #{$sm-tablet} {
-      padding:0px 80px;
+      padding:0px 40px;
     }
     
   }
@@ -69,7 +69,21 @@
 .ourpanel-panel{
   @extend .container;
   @extend .content-panel;
+  .panel-profile{
+    width:30%;
+    float:right;
+    @media #{$mobile} {
+      width:100%;
+      float:none;
+    }
+  }
   .panel-body {
+    width:70%;
+    float:left;
+    @media #{$mobile} {
+      width:100%;
+      float:none;
+    }
       padding:10px 15px;
         strong {
           font-family: $headFont;
@@ -97,23 +111,9 @@
             }
         }
     }
-    .mobile-show {
-        display: none;
+    .row{
+      margin-bottom:40px;
     }
-    @media only screen and #{$mobile} {
-        .mobile-hide {
-            display: none;
-        }
-        .mobile-show {
-            display: block;
-        }
-        .mobile-width {
-            width: 100%;
-        }
-        .panel-body {
-            margin: 0;
-        }
-    } 
 }
 
 .map-panel{
@@ -226,6 +226,15 @@
   h2{
     padding-bottom: 6px;
   }
+  p.special-margin{
+    padding:0 60px;
+    @media #{$sm-tablet} {
+      padding:0;
+    }
+    @media #{$mobile} {
+      padding:0;
+    }
+  }
   ul{
     display: block;
     width:100%;
@@ -249,7 +258,9 @@
       width:100%;
     }
     .profile-title{
-      font-style: italic;
+      span.colored{
+        font-style: italic;
+      }
       a{
         text-decoration: none;
       }

@@ -498,8 +498,14 @@ table {
 .text-center, .footer, footer, .hero-panel {
   text-align: center; }
 
+.add-right-margin {
+  margin-right: 6px !important; }
+
 .bump-down {
   margin-bottom: 20px !important; }
+
+.bump-down-more {
+  margin-bottom: 30px !important; }
 
 .colored {
   color: #33bcdf; }
@@ -577,7 +583,7 @@ p, .map-panel .address-panel ul {
 .photo-panel, .hero-panel {
   background: #000;
   color: #fff;
-  padding: 75px 55px 55px 55px; }
+  padding: 65px 55px 45px 55px; }
   @media (max-width: 600px) {
     .photo-panel, .hero-panel {
       padding: 40px; } }
@@ -609,12 +615,17 @@ p, .map-panel .address-panel ul {
       margin: 15px 0; }
     .photo-panel .content-wrapper a, .hero-panel .content-wrapper a {
       color: #fff; }
+      .photo-panel .content-wrapper a.colored, .hero-panel .content-wrapper a.colored {
+        color: #33bcdf; }
       .photo-panel .content-wrapper a.add-ul, .hero-panel .content-wrapper a.add-ul {
         text-decoration: underline; }
         .photo-panel .content-wrapper a.add-ul:hover, .hero-panel .content-wrapper a.add-ul:hover {
           text-decoration: underline; }
       .photo-panel .content-wrapper a:hover, .hero-panel .content-wrapper a:hover {
         color: #ccc;
+        text-decoration: none; }
+      .photo-panel .content-wrapper a.hover-colored:hover, .hero-panel .content-wrapper a.hover-colored:hover {
+        color: #33bcdf;
         text-decoration: none; }
 
 .content-panel, .ourpanel-panel, .map-panel .address-panel, .thoughtleaders-panel {
@@ -654,16 +665,16 @@ p, .map-panel .address-panel ul {
     text-transform: uppercase; }
 
 .hero-panel {
-  padding-top: 80px; }
+  padding-top: 50px; }
   @media (max-width: 600px) {
     .hero-panel {
-      padding-top: 55px; } }
+      padding-top: 45px; } }
   .hero-panel hr {
     width: 40px;
     border-width: 5px;
     border-color: #33bcdf; }
   .hero-panel h1 {
-    font-size: 40px;
+    font-size: 48px;
     font-weight: bold;
     position: relative; }
     .hero-panel h1 .sub {
@@ -675,19 +686,19 @@ p, .map-panel .address-panel ul {
           font-size: 18px; } }
     @media (max-width: 600px) {
       .hero-panel h1 {
-        font-size: 24px; } }
+        font-size: 32px; } }
     @media (min-width: 600px) and (max-width: 800px) {
       .hero-panel h1 {
-        font-size: 30px; } }
+        font-size: 40px; } }
   .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
     font-family: "Arial Narrow Italic", Arial, Helvetica, sans-serif;
-    line-height: 25px;
-    font-size: 18px;
+    line-height: 22px;
+    font-size: 15px;
     position: relative;
     font-style: italic;
     max-width: 700px;
-    margin: 20px auto 15px;
-    padding: 0 150px; }
+    margin: 20px auto 0px;
+    padding: 0 80px; }
     @media (max-width: 600px) {
       .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
         font-size: 15px;
@@ -695,7 +706,7 @@ p, .map-panel .address-panel ul {
         padding: 0px; } }
     @media (min-width: 600px) and (max-width: 800px) {
       .hero-panel p, .hero-panel .map-panel .address-panel ul, .map-panel .address-panel .hero-panel ul {
-        padding: 0px 80px; } }
+        padding: 0px 40px; } }
   .hero-panel .btn-default {
     font-size: 0.6em;
     background: transparent;
@@ -710,8 +721,22 @@ p, .map-panel .address-panel ul {
     .hero-panel .btn-default:hover {
       background: rgba(255, 255, 255, 0.25); }
 
+.ourpanel-panel .panel-profile {
+  width: 30%;
+  float: right; }
+  @media (max-width: 600px) {
+    .ourpanel-panel .panel-profile {
+      width: 100%;
+      float: none; } }
+
 .ourpanel-panel .panel-body {
+  width: 70%;
+  float: left;
   padding: 10px 15px; }
+  @media (max-width: 600px) {
+    .ourpanel-panel .panel-body {
+      width: 100%;
+      float: none; } }
   .ourpanel-panel .panel-body strong {
     font-family: "Trebuchet MS", "fira_sansmedium", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
     font-size: 15px;
@@ -734,18 +759,8 @@ p, .map-panel .address-panel ul {
           display: block;
           margin-right: 0; } }
 
-.ourpanel-panel .mobile-show {
-  display: none; }
-
-@media only screen and (max-width: 600px) {
-  .ourpanel-panel .mobile-hide {
-    display: none; }
-  .ourpanel-panel .mobile-show {
-    display: block; }
-  .ourpanel-panel .mobile-width {
-    width: 100%; }
-  .ourpanel-panel .panel-body {
-    margin: 0; } }
+.ourpanel-panel .row {
+  margin-bottom: 40px; }
 
 .map-panel {
   padding: 0; }
@@ -832,6 +847,14 @@ p, .map-panel .address-panel ul {
   padding-bottom: 40px; }
   .thoughtleaders-panel h2 {
     padding-bottom: 6px; }
+  .thoughtleaders-panel p.special-margin, .thoughtleaders-panel .map-panel .address-panel ul.special-margin, .map-panel .address-panel .thoughtleaders-panel ul.special-margin {
+    padding: 0 60px; }
+    @media (min-width: 600px) and (max-width: 800px) {
+      .thoughtleaders-panel p.special-margin, .thoughtleaders-panel .map-panel .address-panel ul.special-margin, .map-panel .address-panel .thoughtleaders-panel ul.special-margin {
+        padding: 0; } }
+    @media (max-width: 600px) {
+      .thoughtleaders-panel p.special-margin, .thoughtleaders-panel .map-panel .address-panel ul.special-margin, .map-panel .address-panel .thoughtleaders-panel ul.special-margin {
+        padding: 0; } }
   .thoughtleaders-panel ul {
     display: block;
     width: 100%;
@@ -853,10 +876,10 @@ p, .map-panel .address-panel ul {
     @media (max-width: 400px) {
       .thoughtleaders-panel li {
         width: 100%; } }
-    .thoughtleaders-panel li .profile-title {
+    .thoughtleaders-panel li .profile-title span.colored {
       font-style: italic; }
-      .thoughtleaders-panel li .profile-title a {
-        text-decoration: none; }
+    .thoughtleaders-panel li .profile-title a {
+      text-decoration: none; }
     .thoughtleaders-panel li .profile-pic img {
       image-rendering: auto;
       border: 0px solid #999;

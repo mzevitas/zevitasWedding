@@ -1,9 +1,14 @@
 .text-center{
 	text-align: center;
 }
-
+.add-right-margin{
+	margin-right:6px !important;
+}
 .bump-down{
 	margin-bottom:20px !important;
+}
+.bump-down-more{
+	margin-bottom: 30px !important;
 }
 .colored {
     color: $red;
