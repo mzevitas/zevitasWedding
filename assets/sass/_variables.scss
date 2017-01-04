@@ -1,12 +1,19 @@
 // _variables.scss
 // =================
+$copy			: #18181e;
+$accent         : #002fff;
  
-$red         : #33bcdf;
- 
-$headFont : "Trebuchet MS", "fira_sansmedium", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
-$bodyFont : Arial, Helvetica, sans-serif;
+$headFont : 'gotham_book', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$bodyFont : 'gotham_book', Arial, Helvetica, sans-serif;
+$bodyFontBold : 'gotham_med', Arial, Helvetica, sans-serif;
 
-$xs-mobile: "(max-width: 400px)";
-$mobile: "(max-width: 600px)";
+$xs-mobile-either: "(max-width: 375px)";
+$xs-mobile-portrait: "(max-width: 375px) and (orientation: portrait)";
+$xs-mobile-landscape: "(max-width:375px) and (orientation: landscape)";
+
+$mobile-either: "(max-width: 767px)";
+$mobile-portrait: "(max-width: 767px) and (orientation: portrait)";
+$mobile-landscape: "(max-width:767px) and (orientation: landscape)";
+
 $sm-tablet: "(min-width: 600px) and (max-width:800px)";
-$desktop: "(min-width: 600px)";
+$desktop: "(min-width: 768px)";

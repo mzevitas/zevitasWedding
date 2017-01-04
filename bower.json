@@ -17,6 +17,10 @@
   "dependencies": {
     "bootstrap": "3.3.2",
     "jquery.stellar": "^0.6.2",
-    "jquery.nicescroll": "^3.6.8"
+    "jquery.nicescroll": "^3.6.8",
+    "gsap": "^1.19.0"
+  },
+  "devDependencies": {
+    "video.js": "^5.15.1"
   }
 }

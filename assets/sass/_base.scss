@@ -4,9 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  background: #282828;
+  background: #fff;
   font-family: $bodyFont;
   font-size: 1.2em;
+  color:$copy;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -60,12 +61,8 @@ p {
 
 .container-fluid{
   background: #fff;
-  max-width: 900px;
   padding:0;
   position:relative;
-  &.logo-panel{
-    padding:20px 0;
-  }
 }
 
 .container {
@@ -73,119 +70,117 @@ p {
   margin: 0 auto;
   position: relative;
 }
-.parallax-row-wrapper{
+.cursor-content{
+  max-width: 690px;
   width:100%;
-  padding:0;
-  position:relative;
-}
-.sapientlogo{
-  width:120px;
+  height:100%;
+  margin: 0 auto;
+  background: #fff;
+  display: inline-block;
 }
 
-/*Base Panel Styles*/
+/*Base Styles*/
 
-.photo-panel{
-  @extend .container;
-  background:#000;
-  color:#fff;
-  padding:65px 55px 45px 55px;
-  @media #{$mobile} {
-    padding:40px;
-  }
-  &.white{
-    background: none;
-    color:#000;
-  }
-  .content-wrapper{
-    width:50%;
-    float:right;
-    text-align: left;
-    &.center{
-      width:60%;
-      float:none;
-      text-align: center;
-      margin:0 auto;
-      @media #{$sm-tablet} {
-        width:70%;
-      }
-      @media #{$mobile} {
-        width:100%;
-        text-align: left;
-      }
+#body-wrapper{
+  height:100%;
+  width:100%;
+  position: absolute;
+  top:0;
+  bottom:0;
+  overflow:hidden;
+  &.intro-opened{
+    #bg{
+      opacity:1;
     }
-    @media #{$mobile} {
-      width:100%;
-    }
-    h2{
-      color:$red;
-    }
-    p{
-      margin:15px 0;
-    }
-    a{
+    #nav ul li.logo{
       color:#fff;
-      &.colored{
-        color:$red;
+    }
+  }
+}
+#bg{
+    -webkit-transition: all .65s linear;
+     -moz-transition: all .65s linear;
+      -ms-transition: all .65s linear;
+       -o-transition: all .65s linear;
+          transition: all .65s linear;
+  position: absolute;
+  width:100%;
+  top:0;
+  bottom:0;
+  height: 100%;
+  background: url('../images/bg.jpg');
+  background-size:cover;
+  opacity:0;
+}
+#content-wrapper{
+  position: relative;
+  width:100%;
+  text-align: center;
+}
+#slideshow, #intro, #video{
+  margin:0 auto;
+  position: absolute;
+  width:100%;
+  padding:0 50px;
+  @media #{$mobile-either} {
+    padding:0 20px;
+  }
+}
+
+#nav, nav{
+    -webkit-transition: all .35s linear;
+     -moz-transition: all .35s linear;
+      -ms-transition: all .35s linear;
+       -o-transition: all .35s linear;
+          transition: all .35s linear;
+
+  padding:50px 50px 0 50px;
+  @media #{$mobile-either} {
+    padding:20px 20px 0 20px;
+  }
+  ul{
+    padding:0;
+    margin:0;
+    li{
+      padding:0;
+      margin:0;
+      display:inline-block;
+      position: relative;
+      &.logo{
+        float:left;
+        font-family:'gotham_med';
+        line-height: 1.2em;
+        letter-spacing: .12em;
       }
-      &.add-ul{
-        text-decoration: underline;
-        &:hover{
-          text-decoration: underline;
+      &.menu{
+        float:right;
+        padding-top:4px;
+        position: relative;
+      }
+      a{
+        color:$copy;
+        &.hamburger{
+          &:hover{
+            text-decoration: none;
+            .strike.notactive{
+              background: $accent;
+            }
+          }
         }
       }
-      &:hover{
-        color:#ccc;
-        text-decoration: none;
-      }
-      &.hover-colored:hover{
+    }
+  }
+}
 
-        color:$red;
-        text-decoration: none;
-      }
-    }
-  }
-}
-.content-panel{
-    padding:20px 50px;
-    @media #{$mobile} {
-      padding:20px 40px;
-    }
-    h2 {
-      text-align: center;
-      letter-spacing: 0px;
-      padding:20px 0;
-    }
-}
-.panel-profile {
-  text-align: center;
-  padding-top: 20px;
-  .profile-pic {
-      img {
-        width: 106px;
-        height: 106px;
-        border-radius: 50%;  
-      }
-  }
-  .profile-name {
-      font-size: 12px;
-      font-weight: bold;
-      color: $red;
-      margin-bottom: 0;
-      font-style: italic;
-  }
-  .profile-title {
-    font-size: 11px;
-    margin: 0;
-  }
-}
 .footer, footer{
   @extend .text-center;
-  background:#000;
+  position: absolute;
+  width:100%;
+  bottom:0;
   padding:12px 0;
   p{
     color:#999;
     font-size:0.5em;
     margin:0px auto 2px auto;
-    text-transform: uppercase;
   }
 }

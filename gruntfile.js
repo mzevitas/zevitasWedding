@@ -6,7 +6,13 @@ module.exports = function(grunt){
 				separator: '\n\n//---------------------------\n\n'
 			},
 			dist : { //name of job for that task
-				src: ['assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js','assets/js/libs/jquery.stellar/jquery.stellar.min.js','assets/js/libs/jquery.nicescroll/dist/jquery.nicescroll.min.js','assets/js/script/*.js'],
+				src: [
+				'assets/js/libs/modernizr/modernizr.min.js',
+				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
+				'assets/js/libs/gsap/src/minified/TweenMax.min.js',
+				'assets/js/libs/gsap/src/minified/easing/EasePack.min.js',
+				'assets/js/libs/video.js/dist/video.min.js',
+				'assets/js/script/*.js'],
 				dest: 'assets/js/script.js'
 			}
 		},//concat
