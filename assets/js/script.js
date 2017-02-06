@@ -7343,6 +7343,44 @@ c.alt(a,f,["auto"]),2===e.length&&c.alt("lineAlign",e[1],["start","middle","end"
 
 //---------------------------
 
+
+//SRPanel "class"
+
+(function (window, $) {
+	//public variables
+	//SRPanel.prototype.var_name = "";
+
+	//static variables
+	SRPanel.STATIC_VAR = "";
+
+	//constructor function
+	function SRPanel($root){
+		//private variables
+		var _panel = $root;
+
+		//public functions
+		this.init = function(){
+			setHeight();
+		};
+        this.resize = function(){
+            setHeight();
+        };
+		//private functions
+		function setHeight(){
+			_panel.css({
+                'min-height':$(window).height()+'px'
+            });
+		};
+        this.init();
+	}
+
+	window.SRPanel = SRPanel;
+	
+}(window, jQuery));
+
+
+//---------------------------
+
 var Starfield = (function($) {
   var container, bg;
   var windowWidth, windowHeight, windowHalfWidth, windowHalfHeight;
@@ -7380,8 +7418,6 @@ var Starfield = (function($) {
     if ( !scene ) {
       starfield = new THREE.Object3D();
       addCelestialObjectsTo(starfield, 570, createStar);
-		//addCelestialObjectsTo(starfield, 30, createRedDwarf);
-
       scene = new THREE.Scene();
       scene.addObject( starfield );
     }
@@ -7475,10 +7511,9 @@ var Starfield = (function($) {
   }
 })(jQuery);
 
-// $(document).ready(function() {
-//   Starfield.initialize('main');
-//   Starfield.startAnimation();
-// });
+
+//---------------------------
+
 
 var PAGE = (function ($) {
 	var page = {}, 
@@ -7495,11 +7530,11 @@ var PAGE = (function ($) {
 		htop = $('.hamburger .strike.top'),
 		hmid = $('.hamburger .strike.mid'),
 		hbot = $('.hamburger .strike.bot'),
-		introContent = $('#intro-content'),
-		videoplayer,
+		arPanels = [],
 		resizeTimeout;
 
 	page.init = function(){
+		initFullPagePanels();
 		floatingLayout();
 		$('.hamburger').click(function(){
 			toggleHamburgerContent();
@@ -7523,6 +7558,7 @@ var PAGE = (function ($) {
   //       	console.log("timeout");
   //   	}, 500);
   		floatingLayout();
+		panelLayout();
 	};
 	
 	addPrototypeSwipeFunctionality = function(){
@@ -7585,6 +7621,18 @@ var PAGE = (function ($) {
 			hamburgerClose();
 		}else{
 			hamburgerOpen();
+		}
+	};
+
+	initFullPagePanels = function(){
+		$('.sr-panel').each(function(){
+			arPanels.push(new SRPanel($(this)));
+		});
+	};
+	
+	panelLayout = function(){
+		for(var i in arPanels){
+			arPanels[i].resize();
 		}
 	};
 

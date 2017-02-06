@@ -20,3 +20,17 @@
 .right{
 	float:right !important;
 }
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+.full-page-panel{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}

@@ -1,0 +1,112 @@
+.open{
+    #bg{
+        @extend .full-page-panel;
+        height: 100%;
+        width:100%;
+        background: url('../images/bg.jpg');
+        background-size:cover;
+    }
+}
+
+.sr-panel{
+    section{
+        &:last-child{
+            padding-bottom:250px;
+        }
+        margin-top:225px;
+        text-align:left;
+        @extend .clearfix;
+        p{
+            font-family:$serif, $bodyFont;
+            font-size: 30px;
+        }        
+    }
+    
+    footer{
+        position: relative;
+    }
+
+    &.info{
+        color:#000;
+        section.logo{
+            p{
+                margin-top:124px;
+            }
+        }
+        dl{
+            font-family: $serif;
+            margin-top:0;
+            &:last-child{
+                margin-top:100px;
+            }
+            @media #{$desktop} {
+                width:40%;
+                margin-right:10%;
+                float:left;
+                &:last-child{
+                    margin-top:0;
+                }
+            }
+            dt{
+                @extend h2.serif;
+            }
+            dd{
+                margin:0 0 30px 0;
+                font-size:25px;
+            }
+        }
+    }
+    &.working-together{
+        color:#fff;
+        background:#0030ff;
+        .logo{
+            .colored{
+                color:#fff;
+            }
+        }
+
+        dl{
+            margin-bottom:50px;
+            @media #{$desktop-xl} {
+                margin-right:10%;
+                &:last-child{
+                    margin-right:0;
+                }
+                float:left;
+                margin-top:0;
+            }
+            dt{
+                font-family: $bodyFontBold;
+                color:#000;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                font-size: 15px;
+                margin-bottom:20px;
+            }
+            dd{
+                font-family:$serif;
+                font-size: 30px;
+                margin:0 0 18px 0;
+            }
+        }
+    }
+    &.contact{
+        color:#fff;
+        background:#231f20;
+        h2{
+            margin-top:90px;
+            margin-bottom:30px;
+            font-family: $bodyFontBold;
+            font-size:15px;
+            color:#918f90;
+            letter-spacing: 4px;
+        }
+        a{
+            color:#fff;
+            &:hover{
+                text-decoration: none;
+                color:#0030ff;
+            }
+        }
+    }
+}
