@@ -11,6 +11,9 @@ module.exports = function(grunt){
 				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
 				'assets/js/libs/gsap/src/minified/TweenMax.min.js',
 				'assets/js/libs/gsap/src/minified/easing/EasePack.min.js',
+				'assets/js/libs/RequestAnimationFrame.js',
+				'assets/js/libs/Three.js',
+				'assets/js/libs/jquery-mousewheel/jquery.mousewheel.js',
 				'assets/js/libs/video.js/dist/video.min.js',
 				'assets/js/script/*.js'],
 				dest: 'assets/js/script.js'

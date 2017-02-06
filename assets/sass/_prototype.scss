@@ -1,0 +1,94 @@
+$transitiontime: 1000ms;
+
+.full-page-panel{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.reveal-transition{
+    -webkit-transition: all $transitiontime cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+   -moz-transition: all $transitiontime cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+     -o-transition: all $transitiontime cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+        transition: all $transitiontime cubic-bezier(0.455, 0.030, 0.075, 0.930); /* custom */
+
+-webkit-transition-timing-function: cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+   -moz-transition-timing-function: cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+     -o-transition-timing-function: cubic-bezier(0.455, 0.030, 0.075, 0.930); 
+        transition-timing-function: cubic-bezier(0.455, 0.030, 0.075, 0.930); /* custom */
+}
+
+.prototype{
+    #bg{
+        @extend .reveal-transition;
+        @extend .full-page-panel;
+        background: url('../images/bg.jpg');
+        background-size:cover;
+        opacity:1;
+        *{
+            //-webkit-backface-visibility: hidden;
+            //-webkit-transform:translate3d(0,0,0);
+            -webkit-transform-style: preserve-3d;
+        }
+        #layer1{
+            //background-blend-mode: overlay;
+            @extend .reveal-transition;
+            @extend .full-page-panel;
+            //background: url('../images/bg-layer1.png');
+            background-size:cover;
+        }
+        #layer2{
+            @extend .reveal-transition;
+            @extend .full-page-panel;
+            //background: url('../images/bg-layer2.png');
+            background-size:cover;
+        }
+        &.revealed{
+            top:-60px;
+            width:120%;
+            left:-10%;
+            #layer1{
+                top:-80px;
+                //width:120%;
+                left:5%;
+            }
+            #layer2{
+                top:-200px;
+                //width:120%;
+                //left:10%;
+            }
+        }
+    }
+
+    #logo-panel{
+        @extend .full-page-panel;
+        color:#fff;
+        &.revealed{
+            color:#000;        
+        }
+        .logo{
+            position: absolute;
+            font-size: 100px;
+            line-height: 110px;
+            letter-spacing: 10px;
+            font-family: $bodyFontBold;
+            -webkit-transition-delay: #{$transitiontime/2}; /* Safari */
+            transition-delay: #{$transitiontime/2};
+
+            -webkit-transition: all #{$transitiontime/2} linear;
+        -moz-transition: all #{$transitiontime/2} linear;
+        -ms-transition: all #{$transitiontime/2} linear;
+        -o-transition: all #{$transitiontime/2} linear;
+            transition: all #{$transitiontime/2} linear;
+        }
+    }
+
+    #white-reveal{
+        @extend .full-page-panel;
+        top:100%;
+        background:#fff;
+        @extend .reveal-transition;
+    }
+}

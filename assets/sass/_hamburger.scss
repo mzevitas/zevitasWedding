@@ -31,7 +31,7 @@
            -o-transform: rotate(0deg);
               transform: rotate(0deg);
     &.cross{
-      background: #fff;
+     // background: #fff;
         -webkit-transform: rotate(45deg);
            -moz-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
@@ -50,7 +50,7 @@
               transform: rotate(0deg);
       top:14px;
     &.cross{
-        background: #fff;
+        //background: #fff;
         -webkit-transform: rotate(-45deg);
            -moz-transform: rotate(-45deg);
             -ms-transform: rotate(-45deg);
