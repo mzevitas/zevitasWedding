@@ -9,6 +9,9 @@ module.exports = function(grunt){
 				src: [
 				'assets/js/libs/modernizr/modernizr.min.js',
 				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
+				'assets/js/libs/jquery.easing.1.3.js',
+				'assets/js/libs/jquery.stellar/jquery.stellar.min.js',
+				'assets/js/libs/jquery.nicescroll/dist/jquery.nicescroll.min.js',
 				'assets/js/libs/gsap/src/minified/TweenMax.min.js',
 				'assets/js/libs/gsap/src/minified/easing/EasePack.min.js',
 				'assets/js/libs/RequestAnimationFrame.js',

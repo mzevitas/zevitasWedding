@@ -1,17 +1,21 @@
-.open{
-    #bg{
-        @extend .full-page-panel;
-        height: 100%;
-        width:100%;
-        background: url('../images/bg.jpg');
-        background-size:cover;
-    }
-}
 
 .sr-panel{
+    .parallax-wrapper{
+        position:absolute;
+        width:100%;
+    }
+    .inner-parallax-wrapper{
+        position:absolute;
+        z-index: 101;
+        left:-10%;
+        padding-top:600px;
+        img{
+            max-width:110%;
+        }
+    }
     section{
         &:last-child{
-            padding-bottom:250px;
+            padding-bottom:200px;
         }
         margin-top:225px;
         text-align:left;
@@ -25,9 +29,27 @@
     footer{
         position: relative;
     }
+    &.open{
+        .parallax-wrapper{
+            height:100%;
+            z-index: 3;
+        }
+        #bg{
+            @extend .full-page-panel;
+            height: 100%;
+            width:100%;
+            background: url('../images/bg.jpg');
+            background-size:cover;
+            background-position-x:50%;
+        }
+    }
 
     &.info{
         color:#000;
+        .parallax-wrapper{
+            background:#fff;
+            z-index: 2;
+        }
         section.logo{
             p{
                 margin-top:124px;
@@ -58,13 +80,25 @@
     }
     &.working-together{
         color:#fff;
-        background:#0030ff;
+        
         .logo{
             .colored{
                 color:#fff;
             }
         }
-
+        a.navlink{
+            &:hover{
+                color:#fff;
+            }
+            &.active{
+                color:#fff;
+                border-bottom:1px solid #fff;
+            }
+        }
+        .parallax-wrapper{
+            background:#0030ff;
+            z-index: 1;
+        }
         dl{
             margin-bottom:50px;
             @media #{$desktop-xl} {
@@ -92,7 +126,11 @@
     }
     &.contact{
         color:#fff;
-        background:#231f20;
+       // background:#231f20;
+        .parallax-wrapper{
+            background:#231f20;
+            z-index: 0;
+        }
         h2{
             margin-top:90px;
             margin-bottom:30px;

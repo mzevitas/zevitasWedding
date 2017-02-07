@@ -27,11 +27,14 @@ var PAGE = (function ($) {
 		$('.hamburger .strike').addClass('notactive');
 
 		if($('body').hasClass('prototype')){
-			//addPrototypeSwipeFunctionality();
 			Starfield.initialize('layer1', 'bg');
   			Starfield.startAnimation();
 			addPrototypeScrollFunctionality();
 		}
+		$('.navlink').click(function(){
+			gotoPlace($(this).data('section'));
+		});
+		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
 		window.pageInit = true;
 	};
 
@@ -44,20 +47,16 @@ var PAGE = (function ($) {
   		floatingLayout();
 		panelLayout();
 	};
-	
-	addPrototypeSwipeFunctionality = function(){
-		$('body').mousewheel(function(event) {
-			//console.log(event.deltaX, event.deltaY, event.deltaFactor);
-			if(event.deltaY < 0){
-				reveal.css({'top':'0'});
-				reveallogo.addClass('revealed');
-				initbg.addClass('revealed');
-			}else{
-				reveal.css({'top':'100%'});
-				reveallogo.removeClass('revealed');
-				initbg.removeClass('revealed');
-			}
-		});
+	page.scroll = function(){
+		panelScroll($(window).scrollTop());
+	};
+	gotoPlace = function($elem){
+		if($.browser.webkit){ //webkit browsers do not support animate-html
+			$("body").stop().animate({scrollTop: $('#'+$elem).offset().top}, 2500, "easeOutExpo");
+		} else {
+			$("html").stop().animate({scrollTop: $('#'+$elem).offset().top}, 2500, "easeOutExpo");
+		}
+		console.log($elem);
 	};
 	addPrototypeScrollFunctionality = function(){
 		$('body').mousewheel(function(event) {
@@ -119,6 +118,11 @@ var PAGE = (function ($) {
 			arPanels[i].resize();
 		}
 	};
+	panelScroll = function($scrollpos){
+		for(var i in arPanels){
+			arPanels[i].scroll($scrollpos);
+		}
+	};
 
 	floatingLayout = function(){
 		vcents.each(function(){
@@ -150,11 +154,23 @@ var PAGE = (function ($) {
 
 
 $(document).ready(function() {
+	$("html").niceScroll({
+		cursorwidth:6,
+		cursorcolor:"#181818",
+		cursoropacitymin:.5,
+		background:"#cccccc",
+		cursorborder: "0px solid #fff",
+    	cursorborderradius: "3px"
+	});
 	//init page content
 	PAGE.init();
 	//on window resize handling
 	$(window).resize(function() {
 	  	PAGE.resize();
+	});
+	$(window).scroll(function() {
+		//console.log($(window).scrollTop());
+		PAGE.scroll();
 	});
 	window.addEventListener("orientationchange", function() {
 		PAGE.resize();

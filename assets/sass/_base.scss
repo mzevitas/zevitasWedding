@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #fff;
+  background:#231f20;
   font-family: $bodyFont;
   font-size: 1.2em;
   color:$copy;
@@ -78,8 +78,11 @@ p {
   }
 }
 
+#ascrail2000{
+  z-index: 100 !important;
+}
 .container-fluid{
-  background: #fff;
+  //background: #fff;
   padding:0;
   position:relative;
 }
@@ -95,9 +98,9 @@ p {
 #body-wrapper{
   height:100%;
   width:100%;
-  position: absolute;
-  top:0;
-  bottom:0;
+  //position: absolute;
+  // top:0;
+  // bottom:0;
   //overflow:hidden;
 }
 
