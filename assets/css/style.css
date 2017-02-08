@@ -465,7 +465,10 @@ table {
   font-style: normal; }
 
 .text-center, .footer, footer {
-  text-align: center; }
+  text-align: center !important; }
+
+.text-left {
+  text-align: left !important; }
 
 .add-right-margin {
   margin-right: 6px !important; }
@@ -490,7 +493,7 @@ table {
   display: table;
   clear: both; }
 
-.full-page-panel, .sr-panel.open #bg, .prototype #bg, .prototype #bg #layer1, .prototype #bg #layer2, .prototype #logo-panel, .prototype #white-reveal {
+.full-page-panel, .sr-panel-open-logo, .prototype #bg, .prototype #bg #layer1, .prototype #bg #layer2, .prototype #logo-panel, .prototype #white-reveal {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -589,7 +592,9 @@ p {
   font-size: 44px;
   line-height: 50px;
   letter-spacing: 5px;
-  font-family: "gotham_med", Arial, Helvetica, sans-serif; }
+  font-family: "gotham_med", Arial, Helvetica, sans-serif;
+  display: inline-block;
+  text-align: left; }
   @media (min-width: 880px) {
     .big-text-logo {
       font-size: 100px;
@@ -617,6 +622,8 @@ p {
     margin: 0px auto 2px auto; }
 
 .nav, nav {
+  position: absolute;
+  width: 100%;
   -webkit-transition: all .35s linear;
   -moz-transition: all .35s linear;
   -ms-transition: all .35s linear;
@@ -731,6 +738,25 @@ p {
         -o-transform: rotate(-45deg);
         transform: rotate(-45deg); }
 
+#revealLogo {
+  opacity: 1; }
+  #revealLogo.revealed {
+    opacity: 0; }
+
+#revealedLogo {
+  color: #fff; }
+  #revealedLogo .colored {
+    color: #fff; }
+  #revealedLogo.revealed {
+    color: #000; }
+
+.sr-panel-open-logo {
+  padding-top: 325px;
+  z-index: 100;
+  position: fixed; }
+  .sr-panel-open-logo .big-text-logo {
+    color: #fff; }
+
 .sr-panel .parallax-wrapper {
   position: absolute;
   width: 100%; }
@@ -744,7 +770,7 @@ p {
     max-width: 110%; }
 
 .sr-panel section {
-  margin-top: 225px;
+  margin-top: 325px;
   text-align: left; }
   .sr-panel section:last-child {
     padding-bottom: 200px; }
@@ -755,6 +781,14 @@ p {
 .sr-panel footer {
   position: relative; }
 
+.sr-panel.open img {
+  display: none; }
+
+.sr-panel.open canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important; }
+
 .sr-panel.open .parallax-wrapper {
   height: 100%;
   z-index: 3; }
@@ -762,7 +796,6 @@ p {
 .sr-panel.open #bg {
   height: 100%;
   width: 100%;
-  background: url("../images/bg.jpg");
   background-size: cover;
   background-position-x: 50%; }
 

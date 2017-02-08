@@ -82,7 +82,6 @@ p {
   z-index: 100 !important;
 }
 .container-fluid{
-  //background: #fff;
   padding:0;
   position:relative;
 }
@@ -98,22 +97,18 @@ p {
 #body-wrapper{
   height:100%;
   width:100%;
-  //position: absolute;
-  // top:0;
-  // bottom:0;
-  //overflow:hidden;
 }
 
 .sr-panel{
   position: relative;
-  //@extend .full-page-panel;
 }
 .big-text-logo{
   font-size: 44px;
   line-height: 50px;
   letter-spacing: 5px;
   font-family: $bodyFontBold;
-
+  display: inline-block;
+  text-align: left;
   
   @media (min-width: 880px) {
     font-size: 100px;

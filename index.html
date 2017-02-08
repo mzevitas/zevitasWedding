@@ -8,13 +8,38 @@
   <link rel="stylesheet" href="assets/css/_bower.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- /build -->
-  
+  <script type="x-shader/x-vertex" id="vertexshader">
+			attribute float size;
+			attribute vec3 customColor;
+			varying vec3 vColor;
+			void main() {
+				vColor = customColor;
+				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+				gl_PointSize = size * ( 300.0 / -mvPosition.z );
+				gl_Position = projectionMatrix * mvPosition;
+			}
+	</script>
+
+	<script type="x-shader/x-fragment" id="fragmentshader">
+			uniform vec3 color;
+			uniform sampler2D texture;
+			varying vec3 vColor;
+			void main() {
+				gl_FragColor = vec4( color * vColor, 1.0 );
+				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
+			}
+	</script>
 </head>
 <body>
   <div id="body-wrapper" class="container-fluid">
-    <div class="sr-panel open">
+    <div id="revealLogo" class="sr-panel-open-logo text-center">
+        <h1 class="big-text-logo pos-middle">SAPIENT<br>RAZORFISH<span class="colored">_</span></h1>
+    </div>
+    <div class="sr-panel open" id="openPanel">
       <div class="parallax-wrapper">
-        <div id="bg"></div>
+        <div id="bg">
+          <img id="starBg" src="assets/images/bg.jpg" />
+        </div>
       </div>
     </div>
     <div class="sr-panel info" id="infoPanel">
@@ -36,9 +61,9 @@
           <div class="inner-parallax-wrapper" data-stellar-ratio="1.5">
             <img src="assets/images/figures-fpo.png" alt="">
           </div>
-          <section class="logo">
-            <h1 class="big-text-logo">SAPIENT<br>RAZORFISH<span class="colored">_</span></h1>
-            <p>We’re a new kind of agency, purpose-built for a world of relentless change. Formed from the union of two leaders of the digital revolution, our combined talent enables us to deliver business transformation at unprecedented scale. Nothing less will satisfy the demands of the technology-driven customer.
+          <section class="logo text-center">
+            <h1 id="revealedLogo" class="big-text-logo">SAPIENT<br>RAZORFISH<span class="colored">_</span></h1>
+            <p class="text-left">We’re a new kind of agency, purpose-built for a world of relentless change. Formed from the union of two leaders of the digital revolution, our combined talent enables us to deliver business transformation at unprecedented scale. Nothing less will satisfy the demands of the technology-driven customer.
             </p>
           </section>
           <section>

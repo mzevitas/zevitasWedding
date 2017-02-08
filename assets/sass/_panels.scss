@@ -1,4 +1,29 @@
+//openLogos
+#revealLogo{
+    opacity:1;
+    &.revealed{
+        opacity:0;
+    }
+}
+#revealedLogo{
+    color:#fff;
+    .colored{
+        color:#fff;
+    }
+    &.revealed{
+        color:#000;
+    }
+}
 
+.sr-panel-open-logo{
+    @extend .full-page-panel;
+    padding-top:325px;
+    z-index: 100;
+    position: fixed;
+    .big-text-logo{
+        color:#fff;
+    }
+}
 .sr-panel{
     .parallax-wrapper{
         position:absolute;
@@ -17,7 +42,7 @@
         &:last-child{
             padding-bottom:200px;
         }
-        margin-top:225px;
+        margin-top:325px;
         text-align:left;
         @extend .clearfix;
         p{
@@ -30,15 +55,21 @@
         position: relative;
     }
     &.open{
+        img{
+            display: none;
+        }
+        canvas{
+            display:block;
+            width:100% !important;
+            height:100% !important;
+        }
         .parallax-wrapper{
             height:100%;
             z-index: 3;
         }
         #bg{
-            @extend .full-page-panel;
             height: 100%;
             width:100%;
-            background: url('../images/bg.jpg');
             background-size:cover;
             background-position-x:50%;
         }
