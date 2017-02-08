@@ -9492,9 +9492,10 @@ c.alt(a,f,["auto"]),2===e.length&&c.alt("lineAlign",e[1],["start","middle","end"
 
         function onMouseMove(e) {
             mouseX = (e.clientX - _root.width()/2) * 0.05;
-            mouseY = (e.clientY - _root.height()/2) * 0.05;
+            mouseY = -(e.clientY - _root.height()/2) * 0.05;
             cameraTween = new TWEEN.Tween(camera.position)
-	    		.to({x: mouseX, y:mouseY}, 100)
+                .stop()
+	    		.to({x: mouseX, y:mouseY}, 300)
 	    		.easing(TWEEN.Easing.Sinusoidal.Out)
 	    		.start();
         }
