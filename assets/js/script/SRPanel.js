@@ -43,21 +43,6 @@
 					setOpacity(1);
 				}
 			}
-			// else{
-			// 	var pct = (1-((wheretoend-$scrollpos)/differential));
-			// 	var m = 0-(differential/2 * pct);
-			// 	if(pct > 0 && pct <= 1){
-			// 		setTop(m);
-			// 	}
-			// }
-			if(_id == 'openPanel'){
-				//this is open/intro screen, we do special things with it.
-				var bot = $(window).height();
-				if($scrollpos <= bot){
-					var pctOpen = $scrollpos/bot;
-					_panel.trigger("onOpenReveal",pctOpen);	
-				}
-			}
 		};
         this.resize = function($h){
             setHeight($h);

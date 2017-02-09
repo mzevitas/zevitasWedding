@@ -1,28 +1,28 @@
 //openLogos
-#revealLogo{
-    opacity:1;
-    &.revealed{
-        opacity:0;
+#revealedLogo, #revealLogo{
+    position: absolute;
+    
+    padding-right:$desktopGlobalMargin;
+    @media #{$mobile-either} {
+        padding-right:$mobileGlobalMargin;
     }
 }
-#revealedLogo{
-    color:#fff;
-    .colored{
-        color:#fff;
-    }
+#openLogo{
     &.revealed{
-        color:#000;
+        z-index: -100;
     }
 }
-
+#infoLogo{
+    opacity:0;
+    &.revealed{
+        opacity:1;
+    }
+}
 .sr-panel-open-logo{
     @extend .full-page-panel;
-    padding-top:325px;
+    //padding-top:325px;
     z-index: 100;
     position: fixed;
-    .big-text-logo{
-        color:#fff;
-    }
 }
 .sr-panel{
     .parallax-wrapper{
@@ -31,6 +31,7 @@
     }
     .inner-parallax-wrapper{
         position:absolute;
+        pointer-events:none;
         z-index: 101;
         left:-10%;
         padding-top:600px;
@@ -41,13 +42,29 @@
     section{
         &:last-child{
             padding-bottom:200px;
+            @media #{$mobile-either} {
+                padding-bottom:100px;
+            }
         }
         margin-top:325px;
+        @media #{$mobile-either} {
+                margin-top:70px;
+            } 
+        &:first-child{
+            @media #{$mobile-either} {
+                margin-top:200px;
+            } 
+        }
+             
         text-align:left;
         @extend .clearfix;
         p{
             font-family:$serif, $bodyFont;
             font-size: 30px;
+            @media #{$mobile-either} {
+                font-size: 16px;
+                line-height: 32px;
+            }
         }        
     }
     
@@ -55,6 +72,7 @@
         position: relative;
     }
     &.open{
+        overflow: hidden;
         img{
             display: none;
         }
@@ -81,16 +99,41 @@
             background:#fff;
             z-index: 2;
         }
-        section.logo{
-            p{
-                margin-top:124px;
+        @media #{$mobile-either} {
+            .inner-parallax-wrapper{
+                display: none !important;
+            }
+        }
+        section{              
+            &.logo{
+                p{
+                    margin-top:124px;
+                    @media #{$mobile-either} {
+                    margin-top:70px;
+                    }
+                }
+            }
+            &.mobile-figures{
+                display:none;
+                text-align: center;
+                img{
+                    width:100%;
+                    max-width:90%;
+                }
+                @media #{$mobile-either} {
+                    display: block;
+                }
             }
         }
         dl{
             font-family: $serif;
             margin-top:0;
+            position:relative;
             &:last-child{
                 margin-top:100px;
+                @media #{$mobile-either} {
+                   margin-top:50px;
+                }
             }
             @media #{$desktop} {
                 width:40%;
@@ -106,6 +149,23 @@
             dd{
                 margin:0 0 30px 0;
                 font-size:25px;
+                padding-left:18px;
+                position:relative;
+                &:before{
+                    position:absolute;
+                    left: 4px;
+                    top: 6px;
+                    content:'•';
+                    font-size:15px;
+                    @media #{$mobile-either} {
+                        top:0px;
+                        left:5px;
+                    }
+                }
+                @media #{$mobile-either} {
+                   font-size:16px;
+                   margin-bottom:15px;
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ module.exports = function(grunt){
 			},
 			dist : { //name of job for that task
 				src: [
-				'assets/js/libs/modernizr/modernizr.min.js',
+				'assets/js/libs/modernizr-touch.js',
 				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
 				'assets/js/libs/jquery.easing.1.3.js',
 				'assets/js/libs/jquery.stellar/jquery.stellar.min.js',

@@ -38,19 +38,22 @@ h2{
 }
 h2.serif{
   font-weight: normal;
-  font-size:50px;
-  line-height: 55px;
+  font-size:35px;
+  line-height: 45px;
   font-family: $serif;
   text-transform: none;
-  margin-bottom:55px;
+  margin-bottom:30px;
   @media #{$tablet}{
     font-size:70px;
     line-height: 80px;
+  margin-bottom:55px;
   }
   @media #{$desktop} {
     font-size:100px;
     line-height: 110px;
+  margin-bottom:55px;
   }
+  
 }
 a{
   -webkit-transition: all .25s linear;
@@ -97,10 +100,15 @@ p {
 #body-wrapper{
   height:100%;
   width:100%;
+  overflow-x:hidden;
 }
 
 .sr-panel{
   position: relative;
+}
+.logo-image{
+  max-width:100%;
+  width:100%;
 }
 .big-text-logo{
   font-size: 44px;
@@ -111,9 +119,9 @@ p {
   text-align: left;
   
   @media (min-width: 880px) {
-    font-size: 100px;
-    line-height: 110px;
-    letter-spacing: 10px;
+    font-size: 120px;
+    line-height: 130px;
+    letter-spacing: 20px;
   }
 }
 .content-wrapper{

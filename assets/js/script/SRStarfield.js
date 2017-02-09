@@ -15,17 +15,18 @@
         var _imgsrc = $('#starBg');
         var UTILS = new utils();
         var mouseX = 0, mouseY = 0;
+		var stopMouseMove = false;
         //config vars
 		var debug = false,
 			wrapper = document.getElementById(_root.attr('id')),
-			width = $(window).width(),
-			height = $(window).height(),
+			width = 1900;//$(window).width(),
+			height = 1020;//$(window).height(),
 			aspectRatio = width/height,
 			viewportWidth = width,
 			viewportHeight = width / aspectRatio,
 			cameraX = 0,
 			cameraY = 0,
-			cameraZ = 1000;
+			cameraZ = 1100;
             
         //3d scene vars
 		var scene, 
@@ -34,7 +35,7 @@
             starfieldGeom,
             starSystem,
             starfieldAmount = 5000,
-            starfieldRadius = 800,
+            starfieldRadius = width * .4,
 			mousetracker = new THREE.Vector2(),
 			raycaster = new THREE.Raycaster(),
 			cameraTween;
@@ -54,15 +55,30 @@
             onFrame();
 		};
         this.resize = function(w,h){
-            width = w;//_root.width(),
-			height = h;//_root.height(),
-            renderer.setSize(width, height);
-            render();
+            // width = w;
+			// height = h;
+            // renderer.setSize(width, height);
+            // render();
         };
+		this.animateOut = function($pct){
+			if($pct > 0){
+				stopMouseMove = true;
+			}else{
+				stopMouseMove = false;
+			}
+			var npos = 300 * $pct;
+			var nZ = cameraZ - (300 * $pct);
+			//console.log('npos = '+npos);
+			cameraTween = new TWEEN.Tween(camera.position)
+	    		.to({y:npos, z:nZ}, 0)
+	    		.start();
+		};
 		//private functions
 		function setupSceneBase(){
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera(45, aspectRatio, 100, 2000);
+			//var vFOV = 45 * (Math.PI / 180), // convert VERTICAL fov to radians
+			//cameraZ = window.innerHeight / (2 * Math.tan(vFOV / 2) );
 			camera.position.z = cameraZ;
 			camera.position.x = cameraX;
 			camera.position.y = cameraY;
@@ -71,15 +87,15 @@
 			renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
 			renderer.shadowMap.enabled = true;
 			renderer.shadowMapSoft = true;
-			renderer.setSize(width, height);
+			renderer.setSize(viewportWidth, viewportHeight);
 			wrapper.appendChild(renderer.domElement);
 		}
         function addListeners(){
             $(document).mousemove(onMouseMove);
 		}
         function createBackground(){
-            var w = width;//viewportWidth;
-            var h = height;//viewportHeight;
+            var w = viewportWidth;
+            var h = viewportHeight;
             var cnvs = document.createElement('canvas');
 			cnvs.width = w;
 			cnvs.height = h;
@@ -90,8 +106,6 @@
 			starBgTexture.needsUpdate = true;
             var starBgMaterial = new THREE.MeshPhongMaterial({map:starBgTexture});
             var starBgPlane = new THREE.Mesh(new THREE.PlaneGeometry(w, h), starBgMaterial);
-            //starBgPlane.position.set(0,0,0);
-            //starBgPlane.position.z = -500;
             scene.add(starBgPlane);
         }
 
@@ -166,6 +180,7 @@
 		}
 
         function onMouseMove(e) {
+			if(stopMouseMove) return;
             mouseX = (e.clientX - _root.width()/2) * 0.05;
             mouseY = -(e.clientY - _root.height()/2) * 0.05;
             cameraTween = new TWEEN.Tween(camera.position)
