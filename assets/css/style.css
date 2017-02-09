@@ -551,6 +551,7 @@ h2.serif, .sr-panel.info dl dt {
       margin-bottom: 55px; } }
 
 a {
+  text-decoration: none;
   -webkit-transition: all .25s linear;
   -moz-transition: all .25s linear;
   -ms-transition: all .25s linear;

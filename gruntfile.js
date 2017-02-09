@@ -11,7 +11,6 @@ module.exports = function(grunt){
 				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
 				'assets/js/libs/jquery.easing.1.3.js',
 				'assets/js/libs/jquery.stellar/jquery.stellar.min.js',
-				//'assets/js/libs/jquery/jquery-3.1.1.min.js',
 				'assets/js/libs/jquery.nicescroll-master/dist/jquery.nicescroll.min.js',
 				'assets/js/libs/tween.js',
 				'assets/js/libs/threejs/three.min.js',
@@ -35,7 +34,7 @@ module.exports = function(grunt){
   		  	},
   		  	target:{
   		  		files: {
-	  		    	'dist/assets/js/script.min.js': ['assets/js/_bower.js','assets/js/script.js']
+	  		    	'dist/assets/js/script.min.js': ['assets/js/script.js']
 	  			}
   		  	}
 		},
@@ -46,7 +45,7 @@ module.exports = function(grunt){
 		  },
 		  target: {
 		    files: {
-		      'dist/assets/css/style.min.css': ['assets/css/_bower.css', 'assets/css/style.css']
+		      'dist/assets/css/style.min.css': ['assets/css/style.css']
 		    }
 		  }
 		},
