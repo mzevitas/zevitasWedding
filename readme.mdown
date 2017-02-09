@@ -3,7 +3,6 @@
 ---
 
 - run 'npm install'
-- run 'bower install'
 - run 'grunt' to preview
 - run 'grunt dist' to bundle/minify into 'dist' folder
 - copy 'dist' folder contents to server when ready to go live

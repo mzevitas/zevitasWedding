@@ -14,7 +14,6 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-processhtml": "^0.4.1",
-    "grunt-sass": "^1.0.0",
-    "gsap": "^1.19.0"
+    "grunt-sass": "^1.0.0"
   }
 }
