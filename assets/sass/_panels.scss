@@ -9,7 +9,7 @@
 }
 #openLogo{
     &.revealed{
-        z-index: -100;
+       display: none;
     }
 }
 #infoLogo{
@@ -21,7 +21,7 @@
 .sr-panel-open-logo{
     @extend .full-page-panel;
     //padding-top:325px;
-    z-index: 100;
+    z-index: 10;
     position: fixed;
 }
 .sr-panel{
@@ -90,6 +90,7 @@
             width:100%;
             background-size:cover;
             background-position-x:50%;
+            background-image:url('../images/bg.jpg');
         }
     }
 
@@ -109,8 +110,17 @@
                 p{
                     margin-top:124px;
                     @media #{$mobile-either} {
-                    margin-top:70px;
+                        margin-top:70px;
                     }
+                }
+                #hello{
+                    position: absolute;
+                    top: -60px;
+                    @media #{$mobile-either} {
+                        top:-40px;
+                    }
+                    width:50%;
+                    max-width:425px;
                 }
             }
             &.mobile-figures{
@@ -171,7 +181,16 @@
     }
     &.working-together{
         color:#fff;
-        
+        .hamburger{
+          .strike{
+              background:#fff;
+          }
+          &:hover{
+            .strike.notactive{
+              background: #000;
+            }
+          }
+        }
         .logo{
             .colored{
                 color:#fff;
@@ -236,6 +255,9 @@
                 text-decoration: none;
                 color:#0030ff;
             }
+        }
+        .strike{
+            background:#fff;
         }
     }
 }

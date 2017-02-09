@@ -1,4 +1,27 @@
+.mobile-nav{
+  position:fixed;
+  display: none;
+  &.open{
+      opacity:0;
+      display: block;
+  }
+  z-index: 11;
+  top:80px;
+  background: rgba(0,0,0,.9);
+  a{
+    font-family: $bodyFontBold;
+    display: block;
+    padding:20px 0;
+    text-transform: uppercase;
+    color:#fff;
+    &:hover{
+      color:$accent;
+    }
+  }
+}
+
 .nav, nav{
+  z-index: 100;
   position: absolute;
   width:100%;
     -webkit-transition: all .35s linear;
@@ -59,6 +82,13 @@
           }
         }
         &.hamburger{
+          .strike{
+             -webkit-transition: all .35s linear;
+             -moz-transition: all .35s linear;
+              -ms-transition: all .35s linear;
+               -o-transition: all .35s linear;
+                  transition: all .35s linear;
+          }
           display: none;
           @media #{$mobile-either} {
             display: block;
