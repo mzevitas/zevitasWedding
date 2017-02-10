@@ -49,6 +49,10 @@
         };
 		//private functions
 		function setTop($pos){
+			// _content.css({
+			// 	 '-webkit-transform': 'translateY('+$pos+'px)',
+   			// 	 '-moz-transform': 'translateY('+$pos+'px)'
+			// })
 			_content.css({
 				'top':$pos+'px'
 			});
@@ -62,6 +66,9 @@
 			_panel.css({
                 'min-height':$h+'px'
             });
+			_content.css({
+				'min-height':$h+'px'
+			});
 			if(_id != 'openPanel'){
 				_panel.css({
 					'height':_content.height()+'px'

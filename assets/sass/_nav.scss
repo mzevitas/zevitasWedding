@@ -30,9 +30,9 @@
        -o-transition: all .35s linear;
           transition: all .35s linear;
 
-  padding:$desktopGlobalMargin $desktopGlobalMargin 0 $desktopGlobalMargin;
+  padding:$desktopNavMargin $desktopNavMargin 0 $desktopNavMargin;
   @media #{$mobile-either} {
-    padding:$mobileGlobalMargin $mobileGlobalMargin 0 $mobileGlobalMargin;
+    padding:$mobileNavMargin $mobileNavMargin 0 $mobileNavMargin;
   }
   ul{
     padding:0;

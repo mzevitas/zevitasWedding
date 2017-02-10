@@ -3,8 +3,10 @@
 $copy			: #18181e;
 $accent         : #002fff;
  
-$desktopGlobalMargin: 50px;
-$mobileGlobalMargin: 30px;
+$desktopGlobalMargin: 100px;
+$mobileGlobalMargin: 40px;
+$desktopNavMargin:50px;
+$mobileNavMargin:40px;
 
 $headFont : 'gotham_book', "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 $bodyFont : 'gotham_book', Arial, Helvetica, sans-serif;
@@ -26,4 +28,4 @@ $sm-tablet: "(min-width: 600px) and (max-width:800px)";
 $mobile-either: "(max-width: 767px)";
 $tablet: "(min-width:768px) and (max-width:1024px)";
 $desktop: "(min-width: 1025px)";
-$desktop-xl: "(min-width:1080px)";
+$desktop-xl: "(min-width:1900px)";

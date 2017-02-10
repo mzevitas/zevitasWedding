@@ -38,22 +38,24 @@ h2{
 }
 h2.serif{
   font-weight: normal;
-  font-size:35px;
-  line-height: 45px;
+  
   font-family: $serif;
   text-transform: none;
-  margin-bottom:30px;
-  @media #{$tablet}{
-    font-size:70px;
-    line-height: 80px;
-  margin-bottom:55px;
+
+  font-size: 64px;
+  line-height: 70px;
+  margin-bottom: 35px;
+
+  @media #{$mobile-either}{
+    font-size:35px;
+    margin-bottom:30px;
+    line-height: 35px;
   }
-  @media #{$desktop} {
-    font-size:100px;
+  @media #{$desktop-xl}{
+      font-size:100px;
     line-height: 110px;
-  margin-bottom:55px;
+    margin-bottom:55px;
   }
-  
 }
 a{
   text-decoration: none;
@@ -102,6 +104,8 @@ p {
   height:100%;
   width:100%;
   overflow-x:hidden;
+-webkit-backface-visibility:hidden;
+-moz-backface-visibility:hidden;
 }
 
 .sr-panel{
@@ -110,6 +114,9 @@ p {
 .logo-image{
   max-width:100%;
   width:100%;
+  @media #{$mobile-either} {
+      width:94%;
+  }
 }
 .big-text-logo{
   font-size: 44px;
@@ -128,11 +135,14 @@ p {
 .content-wrapper{
   position: relative;
   width:100%;
-  max-width: 1130px;
+  max-width: 1024px;
   padding:0 $desktopGlobalMargin;
   margin:0 auto;
   @media #{$mobile-either} {
     padding:0 $mobileGlobalMargin;
+  }
+  @media #{$desktop-xl}{
+    max-width:1280px;
   }
 }
 

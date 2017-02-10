@@ -36,12 +36,17 @@
             starSystem,
             starfieldAmount = 5000,
             starfieldRadius = width * .4,
+			//get random grouping for twinkling
+			twinkleAmt = Math.round(Math.random()*100),
+			twinkleGroupStart = Math.round(Math.random()*starfieldAmount-100),
+			twinkleGroupEnd = twinkleGroupStart + twinkleAmt,
 			mousetracker = new THREE.Vector2(),
 			raycaster = new THREE.Raycaster(),
 			cameraTween;
 
 		//public functions
 		this.init = function(){
+			console.log('twinkleAmt = '+twinkleAmt+', twinkleGroupStart = '+twinkleGroupStart+', twinkleGroupEnd = '+twinkleGroupEnd);
             setupSceneBase();
             addListeners();
             addSceneElements();
@@ -127,15 +132,19 @@
 			var colors = new Float32Array( starfieldAmount * 3 );
 			var sizes = new Float32Array( starfieldAmount );
 			var color = new THREE.Color();
+			var hex,g,m;
 			for ( var i = 0, i3 = 0; i < starfieldAmount; i ++, i3 += 3 ) {
 				positions[ i3 + 0 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
 				positions[ i3 + 1 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
 				positions[ i3 + 2 ] = ( Math.random() * 1 ) * starfieldRadius;
-				color.setHSL( i / starfieldAmount, 1.0, 0.5 );
-				colors[ i3 + 0 ] = 173;//color.r;
-				colors[ i3 + 1 ] = 206;//color.g;
-				colors[ i3 + 2 ] = 253;//color.b;
-				sizes[ i ] = 10;
+				color.setHSL( i / starfieldAmount, 0.5, 0.5 );
+				var m = i%2;
+				hex = m == 0 ? 255 : 0;
+				g = m == 0 ? 255 : color.g;
+				colors[ i3 + 0 ] = hex;//color.r;
+				colors[ i3 + 1 ] = g;
+				colors[ i3 + 2 ] = 255;//color.b;
+				sizes[ i ] = 15;
 			}
 			starfieldGeom.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
 			starfieldGeom.addAttribute( 'customColor', new THREE.BufferAttribute( colors, 3 ) );
@@ -158,9 +167,10 @@
             var time = Date.now() * 0.005;
 			starSystem.rotation.z = 0.002 * time;
 			var sizes = starfieldGeom.attributes.size.array;
-			for ( var i = 0; i < starfieldAmount; i++ ) {
-				sizes[ i ] = 10 * ( 1 + Math.sin( 0.1 * i + time ) );
-			}
+			// for ( var i = twinkleGroupStart; i < twinkleGroupEnd; i++ ) {
+			// 	//sizes[ i ] = 15 * ( 1 + Math.sin( 0.1 * i + time ) );
+			// 	sizes[ i ] = 20 * Math.random() ;//( 1 + Math.sin( 0.1 * i + time ) );
+			// }
 			starfieldGeom.attributes.size.needsUpdate = true;
         }
 		function onFrame() {

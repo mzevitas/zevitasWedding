@@ -23,32 +23,27 @@ var PAGE = (function ($) {
 		resizeTimeout;
 
 	page.init = function($hasTouch){
+		hasTouch = $hasTouch;
 		nscrollbar = $("html").niceScroll({
 			cursorwidth:6,
 			cursorcolor:"#181818",
 			cursoropacitymin:.5,
 			background:"#cccccc",
 			cursorborder: "0px solid #fff",
-			cursorborderradius: "3px"
+			cursorborderradius: "3px",
+			smoothscroll: true
 		});
-		hasTouch = $hasTouch;
-		floatingLayout();
 		initFullPagePanels();
-		$('.hamburger').click(function(){
-			//toggleHamburgerContent();
-			mobileNavToggle();
-		});
+		initNav();
 		
-		$('.hamburger .strike').addClass('notactive');
+		var self=this;
 		$(window).load(function(){
 			starfield = new SRStarfield($('#bg'));
+			self.resize();
 		});
-		$('.navlink').click(function(){
-			gotoPlace($(this).data('section'), 2500);
-		});
+		
 		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
-
-		animateLogo($(window).scrollTop()/$(window).height());
+		this.resize();
 		window.pageInit = true;
 	};
 
@@ -61,7 +56,9 @@ var PAGE = (function ($) {
   		
   		floatingLayout();
 		panelLayout();
+		animateLogo($(window).scrollTop()/$(window).height());
 		if(starfield) starfield.resize($(window).width(), $(window).height());
+		nscrollbar.resize();
 	};
 	page.scroll = function(){
 		var scrollpos = $(window).scrollTop();
@@ -80,6 +77,17 @@ var PAGE = (function ($) {
 		}
 		//console.log('SCROLL scrollDirection = '+scrollDirection);
 		panelScroll(curScroll);
+	};
+	initNav = function(){
+		$('.hamburger').click(function(){
+			//toggleHamburgerContent();
+			mobileNavToggle();
+		});
+		
+		$('.hamburger .strike').addClass('notactive');
+		$('.navlink').click(function(){
+			gotoPlace($(this).data('section'), 2500);
+		});
 	};
 	gotoPlace = function($elem, $time){
 		closeMobileNav();
@@ -239,9 +247,12 @@ $(document).ready(function() {
 	$(window).resize(function() {
 	  	PAGE.resize();
 	});
-	$(window).scroll(function() {
+	$(window).bind('scroll mousewheel', function(){
 		PAGE.scroll();
 	});
+	// $(window).scroll(function() {
+	// 	PAGE.scroll();
+	// });
 	window.addEventListener("orientationchange", function() {
 		PAGE.resize();
 	}, false);

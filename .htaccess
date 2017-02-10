@@ -1,0 +1,4 @@
+AuthName "SRF Splash"
+AuthUserFile /app/apache/html/content/preprod_sapientrazorfish/.htpasswd
+AuthType Basic
+require valid-user
