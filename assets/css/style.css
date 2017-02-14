@@ -844,8 +844,6 @@ p {
         .sr-panel section p {
           font-size: 30px;
           line-height: 60px; } }
-  .sr-panel footer {
-    position: relative; }
   .sr-panel.open {
     overflow: hidden;
     z-index: 5; }
@@ -853,8 +851,14 @@ p {
       display: none; }
     .sr-panel.open canvas {
       display: block;
-      width: 100% !important;
-      height: 100% !important; }
+      position: absolute; }
+      @media (min-width: 1900px) {
+        .sr-panel.open canvas {
+          width: 100% !important;
+          height: 100% !important;
+          position: relative;
+          left: 0 !important;
+          top: 0 !important; } }
     .sr-panel.open .parallax-wrapper {
       height: 100%;
       z-index: 3; }

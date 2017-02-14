@@ -83,10 +83,6 @@
             }
         }        
     }
-    
-    footer{
-        position: relative;
-    }
     &.open{
         overflow: hidden;
         z-index: 5;
@@ -95,8 +91,15 @@
         }
         canvas{
             display:block;
-            width:100% !important;
-            height:100% !important;
+            position: absolute;
+            @media #{$desktop-xl}{
+                width:100% !important;
+                height:100% !important;
+                position:relative;
+                left:0 !important;
+                top:0 !important;
+            }
+            
         }
         .parallax-wrapper{
             height:100%;

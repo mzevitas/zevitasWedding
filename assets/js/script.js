@@ -9093,9 +9093,11 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 		var stopMouseMove = false;
         //config vars
 		var debug = false,
+			winWidth = $(window).width(),
+			winHeight = $(window).height(),
 			wrapper = document.getElementById(_root.attr('id')),
-			width = 1900;//$(window).width(),
-			height = 1020;//$(window).height(),
+			width = 1900,//$(window).width(),//1900,
+			height = 1020,//$(window).height(),//1020,
 			aspectRatio = width/height,
 			viewportWidth = width,
 			viewportHeight = width / aspectRatio,
@@ -9109,19 +9111,13 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			renderer,
             starfieldGeom,
             starSystem,
-            starfieldAmount = 5000,
-            starfieldRadius = width * .4,
-			//get random grouping for twinkling
-			twinkleAmt = Math.round(Math.random()*100),
-			twinkleGroupStart = Math.round(Math.random()*starfieldAmount-100),
-			twinkleGroupEnd = twinkleGroupStart + twinkleAmt,
-			mousetracker = new THREE.Vector2(),
-			raycaster = new THREE.Raycaster(),
+            starfieldAmount = winWidth > winHeight ? winWidth * 2 : winHeight * 2,// $(window).width()*2,
+            starfieldRadius = winWidth > winHeight ? winWidth * .4 : winHeight * .4,//$(window).width()*.4,
+			twinklingStars = [],
 			cameraTween;
-
+			console.log('starfieldAmount = '+starfieldAmount+', starfieldRadius = '+starfieldRadius);
 		//public functions
 		this.init = function(){
-			console.log('twinkleAmt = '+twinkleAmt+', twinkleGroupStart = '+twinkleGroupStart+', twinkleGroupEnd = '+twinkleGroupEnd);
             setupSceneBase();
             addListeners();
             addSceneElements();
@@ -9135,6 +9131,10 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
             onFrame();
 		};
         this.resize = function(w,h){
+			_root.find('canvas').css({
+				'left':1-((width-w)/2)+'px',
+				'top':1-((height-h)/2)+'px'
+			});
             // width = w;
 			// height = h;
             // renderer.setSize(width, height);
@@ -9148,7 +9148,6 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			}
 			var npos = 300 * $pct;
 			var nZ = cameraZ - (300 * $pct);
-			//console.log('npos = '+npos);
 			cameraTween = new TWEEN.Tween(camera.position)
 	    		.to({y:npos, z:nZ}, 0)
 	    		.start();
@@ -9156,9 +9155,11 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 		//private functions
 		function setupSceneBase(){
 			scene = new THREE.Scene();
-			camera = new THREE.PerspectiveCamera(45, aspectRatio, 100, 2000);
-			//var vFOV = 45 * (Math.PI / 180), // convert VERTICAL fov to radians
-			//cameraZ = window.innerHeight / (2 * Math.tan(vFOV / 2) );
+			fov = 2 * Math.atan( ( width / aspectRatio ) / ( 2 * cameraZ ) ) * ( 180 / Math.PI ); // in degrees
+			console.log('fov = '+fov);
+			camera = new THREE.PerspectiveCamera(fov, aspectRatio, 100, 2000);
+			
+			
 			camera.position.z = cameraZ;
 			camera.position.x = cameraX;
 			camera.position.y = cameraY;
@@ -9181,6 +9182,7 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			cnvs.height = h;
 			var cntxt = cnvs.getContext('2d');
 		    cntxt.drawImage(_imgsrc[0], 0,0, _imgsrc.width(), _imgsrc.height(), 0, 0, w, h);
+			//cntxt.drawImage(_imgsrc[0], 0,0, w,h, 0, 0, w, h);
             var starBgTexture = new THREE.Texture(cnvs);
             starBgTexture.minFilter = THREE.LinearFilter
 			starBgTexture.needsUpdate = true;
@@ -9192,7 +9194,7 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
         function createStarField(){
             var uniforms = {
 				color:     { value: new THREE.Color( 0xffffff ) },
-				texture:   { value: new THREE.TextureLoader().load( "assets/images/sprites/star2.png" ) }
+				texture:   { value: new THREE.TextureLoader().load( "assets/images/sprites/star3-16x16.png" ) }
 			};
             var shaderMaterial = new THREE.ShaderMaterial( {
 				uniforms:       uniforms,
@@ -9211,7 +9213,7 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			for ( var i = 0, i3 = 0; i < starfieldAmount; i ++, i3 += 3 ) {
 				positions[ i3 + 0 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
 				positions[ i3 + 1 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
-				positions[ i3 + 2 ] = ( Math.random() * 1 ) * starfieldRadius;
+				positions[ i3 + 2 ] = ( Math.random() * 1 ) * (cameraZ * .75);
 				color.setHSL( i / starfieldAmount, 0.5, 0.5 );
 				var m = i%2;
 				hex = m == 0 ? 255 : 0;
@@ -9227,10 +9229,25 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			starSystem = new THREE.Points( starfieldGeom, shaderMaterial );
 			scene.add( starSystem );
         }
+		function createTwinklingStars(){
+			console.log('createTwinklingStars');
+			var amt = starfieldAmount * .05;
+			var planeGeo = new THREE.PlaneGeometry(8,8);
 
+			for (var i = 0; i<amt; i++){
+				twinklingStars[i] = new TwinklingStar(planeGeo,i);
+				var x = (Math.random() * 2 - 1) * starfieldRadius;
+				var y = (Math.random() * 2 - 1) * starfieldRadius;
+				var z = (Math.random() * 1) * (cameraZ * .5);
+				twinklingStars[i].init(x,y,z);
+				scene.add(twinklingStars[i]);
+			}
+		}
+		
 		function addSceneElements(){
             createBackground();
             createStarField();
+			createTwinklingStars();
 			scene.add(new THREE.AmbientLight(0xffffff));
 			var dlight = new THREE.DirectionalLight(0xffffff, 0.35);
 			dlight.position.set(0, 200, 800);
@@ -9239,14 +9256,10 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 		}
 
         function animateStarfield(){
-            var time = Date.now() * 0.005;
+            var time = Date.now() * 0.004;
 			starSystem.rotation.z = 0.002 * time;
-			var sizes = starfieldGeom.attributes.size.array;
-			// for ( var i = twinkleGroupStart; i < twinkleGroupEnd; i++ ) {
-			// 	//sizes[ i ] = 15 * ( 1 + Math.sin( 0.1 * i + time ) );
-			// 	sizes[ i ] = 20 * Math.random() ;//( 1 + Math.sin( 0.1 * i + time ) );
-			// }
-			starfieldGeom.attributes.size.needsUpdate = true;
+			//var sizes = starfieldGeom.attributes.size.array;
+			//starfieldGeom.attributes.size.needsUpdate = true;
         }
 		function onFrame() {
 			updateScene();
@@ -9263,11 +9276,11 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
             animateStarfield();
 			renderer.render(scene, camera);
 		}
-
+		
         function onMouseMove(e) {
 			if(stopMouseMove) return;
-            mouseX = (e.clientX - _root.width()/2) * 0.05;
-            mouseY = -(e.clientY - _root.height()/2) * 0.05;
+            mouseX = (e.clientX - _root.width()/2) * 0.035;
+            mouseY = -(e.clientY - _root.height()/2) * 0.035;
             cameraTween = new TWEEN.Tween(camera.position)
                 .stop()
 	    		.to({x: mouseX, y:mouseY}, 300)
@@ -9279,6 +9292,64 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 	}
 
 	window.SRStarfield = SRStarfield;
+	
+}(window, jQuery));
+
+
+//---------------------------
+
+
+//TwinklingStar "class"
+
+(function (window, $) {
+	//public variables
+	// Make TwinklingStar have the same methods as Mesh
+	TwinklingStar.prototype = Object.create(THREE.Mesh.prototype);
+	TwinklingStar.prototype.type = 'TwinklingStar';
+	// Make sure the right constructor gets called
+	TwinklingStar.prototype.constructor = TwinklingStar;
+
+	//constructor function
+	function TwinklingStar(geom, index){
+        var starTexture = new THREE.TextureLoader().load( "assets/images/sprites/star3-16x16.png" );
+		var starMaterial = new THREE.MeshBasicMaterial({map:starTexture, transparent:true});
+        THREE.Mesh.call(this, geom, starMaterial);
+		//private variables
+		var _index = index;
+        var twinkleOutTween,twinkleInTween;
+
+		//public functions
+		this.init = function($x,$y,$z){
+			this.position.x = $x;//Math.random() * 1000 - 500;
+            this.position.y = $y;//Math.random() * 1000 - 500;
+            this.position.z = $z;//Math.random() * 1000 - 500;
+            twinkle(this);
+		};
+
+		//private functions
+		function twinkle(scope){
+            //console.log('twinkle');
+            var rtime = Math.round((Math.random() * 1000));
+            var rdelay = Math.round((Math.random() * 5000))
+			twinkleInTween = new TWEEN.Tween(scope.material)
+                .stop()
+                //.delay(rdelay)
+	    		.to({opacity:Math.random()}, rtime)
+	    		.easing(TWEEN.Easing.Sinusoidal.Out)
+				.onComplete(function() {
+                    twinkle(scope);
+			    });
+			twinkleOutTween = new TWEEN.Tween(scope.material)
+                .stop()
+                .delay(Math.round(Math.random() * 10000))
+	    		.to({opacity:0}, rtime)
+	    		.easing(TWEEN.Easing.Sinusoidal.Out)
+	    		.start()
+				.chain(twinkleInTween);					
+		}
+	}
+
+	window.TwinklingStar = TwinklingStar;
 	
 }(window, jQuery));
 
