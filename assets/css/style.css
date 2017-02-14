@@ -680,12 +680,22 @@ p {
       .nav ul li.logo, nav ul li.logo {
         float: left;
         font-family: 'gotham_med';
-        line-height: 1.2em;
+        line-height: 1.25em;
         letter-spacing: .12em;
         font-size: 12px; }
+        .nav ul li.logo .navlink, nav ul li.logo .navlink {
+          font-family: 'gotham_med';
+          line-height: 1.25em;
+          letter-spacing: .12em;
+          font-size: 12px;
+          padding-bottom: 0;
+          margin-right: 0; }
+          @media (max-width: 767px) {
+            .nav ul li.logo .navlink, nav ul li.logo .navlink {
+              display: block; } }
       .nav ul li.menu, nav ul li.menu {
         float: right;
-        padding-top: 4px;
+        margin-top: -6px;
         position: relative; }
       .nav ul li a, nav ul li a {
         color: #18181e; }
@@ -700,7 +710,7 @@ p {
           text-transform: uppercase;
           letter-spacing: 1px;
           margin-right: 30px;
-          padding-bottom: 18px;
+          padding-bottom: 15px;
           font-family: "gotham_med", Arial, Helvetica, sans-serif; }
           .nav ul li a.navlink:hover, nav ul li a.navlink:hover {
             text-decoration: none;
@@ -712,6 +722,7 @@ p {
             .nav ul li a.navlink, nav ul li a.navlink {
               display: none; } }
         .nav ul li a.hamburger, nav ul li a.hamburger {
+          margin-top: 6px;
           display: none; }
           .nav ul li a.hamburger .strike, nav ul li a.hamburger .strike {
             -webkit-transition: all .35s linear;
@@ -947,8 +958,12 @@ p {
       background: #fff; }
     .sr-panel.working-together .hamburger:hover .strike.notactive {
       background: #000; }
-    .sr-panel.working-together .logo .colored {
+    .sr-panel.working-together .logo {
       color: #fff; }
+      .sr-panel.working-together .logo .navlink {
+        color: #fff; }
+      .sr-panel.working-together .logo .colored {
+        color: #fff; }
     .sr-panel.working-together a.navlink:hover {
       color: #fff; }
     .sr-panel.working-together a.navlink.active {
@@ -1037,6 +1052,8 @@ p {
           font-size: 20px; } }
     .sr-panel.contact .strike {
       background: #fff; }
+    .sr-panel.contact .logo .colored {
+      color: #fff; }
 
 .reveal-transition, .prototype #bg, .prototype #bg #layer1, .prototype #bg #layer2, .prototype #white-reveal {
   -webkit-transition: all 1000ms cubic-bezier(0.455, 0.03, 0.075, 0.93);

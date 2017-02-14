@@ -30,7 +30,8 @@ module.exports = function(grunt){
 		uglify: {
 			options: {
   		  		mangle: false,
-  		  		sourceMap: true
+  		  		sourceMap: true,
+				preserveComments:false
   		  	},
   		  	target:{
   		  		files: {

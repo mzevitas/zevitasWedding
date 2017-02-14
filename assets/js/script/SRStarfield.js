@@ -204,8 +204,8 @@
 		
         function onMouseMove(e) {
 			if(stopMouseMove) return;
-            mouseX = (e.clientX - _root.width()/2) * 0.035;
-            mouseY = -(e.clientY - _root.height()/2) * 0.035;
+            mouseX = (e.clientX - _root.width()/2) * 0.025;
+            mouseY = -(e.clientY - _root.height()/2) * 0.025;
             cameraTween = new TWEEN.Tween(camera.position)
                 .stop()
 	    		.to({x: mouseX, y:mouseY}, 300)

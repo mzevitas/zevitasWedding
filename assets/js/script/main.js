@@ -100,7 +100,7 @@ var PAGE = (function ($) {
 			}else{
 				scrollDirection = 'up';
 			}
-			console.log('MOUSE WHEEL scrollDirection = '+scrollDirection);
+			//console.log('MOUSE WHEEL scrollDirection = '+scrollDirection);
 		});
 	};
 
@@ -186,13 +186,13 @@ var PAGE = (function ($) {
 	initFullPagePanels = function(){
 		$('.sr-panel').each(function(){
 			var panel = $(this);
-			if(!hasTouch){
+			//if(!hasTouch){
 				panel.bind("atPanelThreshold",function(e, panelId){
 					if(scrollDirection == 'down'){
 						gotoPlace(panelId, 500);
 					}
 				});
-			}
+			//}
 			var p = new SRPanel(panel);
 			arPanels.push(p);
 			p.init($(window).height());

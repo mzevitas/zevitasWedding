@@ -45,13 +45,24 @@
       &.logo{
         float:left;
         font-family:'gotham_med';
-        line-height: 1.2em;
+        line-height: 1.25em;
         letter-spacing: .12em;
         font-size:12px;
+        .navlink{
+          font-family:'gotham_med';
+        line-height: 1.25em;
+        letter-spacing: .12em;
+        font-size:12px;
+        padding-bottom:0;
+        margin-right:0;
+        @media #{$mobile-either} {
+            display: block;
+          }
+        }
       }
       &.menu{
         float:right;
-        padding-top:4px;
+        margin-top:-6px;
         position: relative;
       }
       a{
@@ -67,7 +78,7 @@
           text-transform: uppercase;
           letter-spacing: 1px;
           margin-right:30px;
-          padding-bottom:18px;
+          padding-bottom:15px;
           font-family: $bodyFontBold;
           &:hover{
             text-decoration: none;
@@ -89,6 +100,7 @@
                -o-transition: all .35s linear;
                   transition: all .35s linear;
           }
+          margin-top:6px;
           display: none;
           @media #{$mobile-either} {
             display: block;
