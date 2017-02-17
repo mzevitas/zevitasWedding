@@ -39,7 +39,9 @@ var PAGE = (function ($) {
 		var self=this;
 		$(window).load(function(){
 			starfield = new SRStarfield($('#bg'), $hasTouch);
-			self.resize();
+			panelLayout();
+			animateLogo($(window).scrollTop()/$(window).height());
+			starfield.resize($(window).width(), $(window).height());
 		});
 		
 		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
@@ -213,8 +215,7 @@ var PAGE = (function ($) {
 	floatingLayout = function(){
 		vcents.each(function(){
 			$(this).css({
-				top:getCenterPos($(this))+'px',
-				'max-height':getMaxHeight($(this).attr('id'))+'px'
+				top:getCenterPos($(this))+'px'
 			});
 		});
 		hcents.each(function(){

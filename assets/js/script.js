@@ -9020,7 +9020,9 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 				if(pct > 0 && pct <= 1){
 					setTop(-(differential) * pct);
 					setOpacity(1-pct);
-					if(pct < .2){
+					if(pct < .75 && _id == 'infoPanel'){
+						_panel.trigger("atPanelThreshold",_id);	
+					}else if(pct < .5){
 						_panel.trigger("atPanelThreshold",_id);	
 					}
 				}else{
@@ -9210,14 +9212,18 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 			var colors = new Float32Array( starfieldAmount * 3 );
 			var sizes = new Float32Array( starfieldAmount );
 			var color = new THREE.Color();
-			var hex,g,m;
+			var hex,g,m,x,y,ylim;
 			var zpos = _hasTouch ? (cameraZ * .4) : (cameraZ * .75);
 			for ( var i = 0, i3 = 0; i < starfieldAmount; i ++, i3 += 3 ) {
-				positions[ i3 + 0 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
-				positions[ i3 + 1 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
+				var radius = i < 100 ? (Math.random() * 300) : i;
+				x = Math.random() * 2 * radius - radius;
+				ylim = Math.sqrt(radius * radius - x * x);
+				y = Math.random() * 2 * ylim - ylim;
+				positions[ i3 + 0 ] = x;//( Math.random() * 2 - 1 ) * starfieldRadius;
+				positions[ i3 + 1 ] = y;//( Math.random() * 2 - 1 ) * starfieldRadius;
 				positions[ i3 + 2 ] = ( Math.random() * 1 ) * zpos;
 				color.setHSL( i / starfieldAmount, 0.5, 0.5 );
-				var m = i%2;
+				m = i%2;
 				hex = m == 0 ? 255 : 0;
 				g = m == 0 ? 255 : color.g;
 				colors[ i3 + 0 ] = hex;//color.r;
@@ -9239,9 +9245,13 @@ this.domElement=document.createElementNS("http://www.w3.org/1999/xhtml","canvas"
 
 			for (var i = 0; i<amt; i++){
 				twinklingStars[i] = new TwinklingStar(planeGeo,i);
-				var x = (Math.random() * 2 - 1) * starfieldRadius;
-				var y = (Math.random() * 2 - 1) * starfieldRadius;
+				var radius = (i/amt) * starfieldAmount;
+				//var x = (Math.random() * 2 - 1) * starfieldRadius;
+				//var y = (Math.random() * 2 - 1) * starfieldRadius;
 				var z = (Math.random() * 1) * (cameraZ * .5);
+				var x = Math.random() * 2 * radius - radius;
+				var ylim = Math.sqrt(radius * radius - x * x);
+				var y = Math.random() * 2 * ylim - ylim;
 				twinklingStars[i].init(x,y,z);
 				scene.add(twinklingStars[i]);
 			}
@@ -9468,7 +9478,9 @@ var PAGE = (function ($) {
 		var self=this;
 		$(window).load(function(){
 			starfield = new SRStarfield($('#bg'), $hasTouch);
-			self.resize();
+			panelLayout();
+			animateLogo($(window).scrollTop()/$(window).height());
+			starfield.resize($(window).width(), $(window).height());
 		});
 		
 		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
@@ -9642,8 +9654,7 @@ var PAGE = (function ($) {
 	floatingLayout = function(){
 		vcents.each(function(){
 			$(this).css({
-				top:getCenterPos($(this))+'px',
-				'max-height':getMaxHeight($(this).attr('id'))+'px'
+				top:getCenterPos($(this))+'px'
 			});
 		});
 		hcents.each(function(){

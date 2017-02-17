@@ -35,7 +35,9 @@
 				if(pct > 0 && pct <= 1){
 					setTop(-(differential) * pct);
 					setOpacity(1-pct);
-					if(pct < .2){
+					if(pct < .75 && _id == 'infoPanel'){
+						_panel.trigger("atPanelThreshold",_id);	
+					}else if(pct < .5){
 						_panel.trigger("atPanelThreshold",_id);	
 					}
 				}else{

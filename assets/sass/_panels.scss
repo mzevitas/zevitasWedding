@@ -40,11 +40,18 @@
         position:absolute;
         pointer-events:none;
         z-index: 101;
-        left:-10%;
-        padding-top:600px;
+        left:-12%;
+        padding-top:500px;
         img{
             max-width:110%;
         }
+        &.right-side{
+            text-align:right;
+            width:112%;
+            left:0;
+            padding-top:1000px;
+        }
+
     }
     section{
         &:last-child{
@@ -60,12 +67,12 @@
         @media #{$desktop-xl}{
             margin-top:325px;
         }
-        &:first-child{
-            margin-top:250px;
-            @media #{$mobile-either} {
-                margin-top:200px;
-            } 
-        }
+        // &:first-child{
+        //     margin-top:250px;
+        //     @media #{$mobile-either} {
+        //         margin-top:200px;
+        //     } 
+        // }
              
         text-align:left;
         @extend .clearfix;
@@ -141,6 +148,10 @@
                     position: absolute;
                     top: -60px;
                     @media #{$mobile-either} {
+                        top:-50px;
+                        width:50%;
+                    }
+                    @media #{$xs-mobile-either} {
                         top:-30px;
                         width:50%;
                     }
