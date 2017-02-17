@@ -38,7 +38,7 @@ var PAGE = (function ($) {
 		
 		var self=this;
 		$(window).load(function(){
-			starfield = new SRStarfield($('#bg'));
+			starfield = new SRStarfield($('#bg'), $hasTouch);
 			self.resize();
 		});
 		

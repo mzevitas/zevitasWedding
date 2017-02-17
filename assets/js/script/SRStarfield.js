@@ -9,9 +9,10 @@
 	SRStarfield.STATIC_VAR = "";
 
 	//constructor function
-	function SRStarfield($root){
+	function SRStarfield($root, $hastouch){
 		//private variables
 		var _root = $root;
+		var _hasTouch = $hastouch;
         var _imgsrc = $('#starBg');
         var UTILS = new utils();
         var mouseX = 0, mouseY = 0;
@@ -135,10 +136,11 @@
 			var sizes = new Float32Array( starfieldAmount );
 			var color = new THREE.Color();
 			var hex,g,m;
+			var zpos = _hasTouch ? (cameraZ * .4) : (cameraZ * .75);
 			for ( var i = 0, i3 = 0; i < starfieldAmount; i ++, i3 += 3 ) {
 				positions[ i3 + 0 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
 				positions[ i3 + 1 ] = ( Math.random() * 2 - 1 ) * starfieldRadius;
-				positions[ i3 + 2 ] = ( Math.random() * 1 ) * (cameraZ * .75);
+				positions[ i3 + 2 ] = ( Math.random() * 1 ) * zpos;
 				color.setHSL( i / starfieldAmount, 0.5, 0.5 );
 				var m = i%2;
 				hex = m == 0 ? 255 : 0;
@@ -157,7 +159,8 @@
 		function createTwinklingStars(){
 			console.log('createTwinklingStars');
 			var amt = starfieldAmount * .05;
-			var planeGeo = new THREE.PlaneGeometry(8,8);
+			var dim = _hasTouch ? 6 : 8;
+			var planeGeo = new THREE.PlaneGeometry(dim,dim);
 
 			for (var i = 0; i<amt; i++){
 				twinklingStars[i] = new TwinklingStar(planeGeo,i);
@@ -170,7 +173,7 @@
 		}
 		
 		function addSceneElements(){
-            createBackground();
+            if(!_hasTouch) createBackground();
             createStarField();
 			createTwinklingStars();
 			scene.add(new THREE.AmbientLight(0xffffff));
