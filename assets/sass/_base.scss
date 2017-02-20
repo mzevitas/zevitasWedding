@@ -64,6 +64,29 @@ a{
       -ms-transition: all .25s linear;
        -o-transition: all .25s linear;
           transition: all .25s linear;
+
+  &.animate{
+    color:inherit;
+    position: relative;
+    @extend .ease-in-out-circ;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 0px;
+      border-bottom: 1px solid #fff;
+      bottom: 0;
+      left:0px;
+      @extend .ease-in-out-circ;
+    }
+
+    &:hover{
+      padding-left:20px;
+      &:before{
+        width:20px;
+        left:0px;
+      }
+    }
+  }
 }
 
 p {

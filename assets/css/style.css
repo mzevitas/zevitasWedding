@@ -501,6 +501,18 @@ table {
   left: 0;
   right: 0; }
 
+.ease-in-out-circ, a.animate, a.animate:before {
+  -webkit-transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  /* easeInOutCirc */
+  -webkit-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -moz-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  -o-transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  /* easeInOutCirc */ }
+
 * {
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
@@ -557,6 +569,21 @@ a {
   -ms-transition: all .25s linear;
   -o-transition: all .25s linear;
   transition: all .25s linear; }
+  a.animate {
+    color: inherit;
+    position: relative; }
+    a.animate:before {
+      content: '';
+      position: absolute;
+      width: 0px;
+      border-bottom: 1px solid #fff;
+      bottom: 0;
+      left: 0px; }
+    a.animate:hover {
+      padding-left: 20px; }
+      a.animate:hover:before {
+        width: 20px;
+        left: 0px; }
 
 p {
   font-size: 0.65em;
@@ -811,6 +838,7 @@ p {
   position: fixed; }
 
 .sr-panel {
+  overflow: hidden;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0); }
   .sr-panel .parallax-wrapper {
@@ -840,9 +868,6 @@ p {
     @media (max-width: 767px) {
       .sr-panel section {
         margin-top: 50px; } }
-    @media (min-width: 1900px) {
-      .sr-panel section {
-        margin-top: 325px; } }
     .sr-panel section p {
       font-family: "miller", "Times New Roman", serif, "gotham_book", Arial, Helvetica, sans-serif;
       font-size: 24px;
@@ -1047,8 +1072,7 @@ p {
     .sr-panel.contact a {
       color: #fff; }
       .sr-panel.contact a:hover {
-        text-decoration: none;
-        color: #0030ff; }
+        text-decoration: none; }
       @media (max-width: 767px) {
         .sr-panel.contact a {
           display: block;

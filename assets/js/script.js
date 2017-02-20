@@ -9476,14 +9476,15 @@ var PAGE = (function ($) {
 		initNav();
 		
 		var self=this;
+		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
 		$(window).load(function(){
 			starfield = new SRStarfield($('#bg'), $hasTouch);
 			panelLayout();
 			animateLogo($(window).scrollTop()/$(window).height());
 			starfield.resize($(window).width(), $(window).height());
+			nscrollbar.resize();
 		});
 		
-		$.stellar({horizontalScrolling: false, responsive:false, hideDistantElements: false});
 		this.resize();
 		window.pageInit = true;
 	};
@@ -9667,6 +9668,13 @@ var PAGE = (function ($) {
 		});
 	};
 	getCenterPos = function(el){
+		// var winh = $(window).height();
+		// var winw = $(window).width();
+		// if(el.hasClass('portrait-only')){
+		// 	if(winw/winh <= 1.25){
+		// 		console.log('aspect ratio is in zone?');
+		// 	}
+		// }
 		return $(window).height()/2 - (el.innerHeight()/2);
 	};
 	getMiddlePos = function(el){

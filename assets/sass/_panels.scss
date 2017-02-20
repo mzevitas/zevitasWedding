@@ -25,6 +25,7 @@
     position: fixed;
 }
 .sr-panel{
+    overflow: hidden;
     //   -webkit-transition: transform .25s linear;
     //  -moz-transition: transform .25s linear;
     //   -ms-transition: transform .25s linear;
@@ -64,9 +65,9 @@
         @media #{$mobile-either} {
             margin-top:50px;
         } 
-        @media #{$desktop-xl}{
-            margin-top:325px;
-        }
+        // @media #{$desktop-xl}{
+        //     margin-top:325px;
+        // }
         // &:first-child{
         //     margin-top:250px;
         //     @media #{$mobile-either} {
@@ -336,7 +337,7 @@
             color:#fff;
             &:hover{
                 text-decoration: none;
-                color:#0030ff;
+                //color:#0030ff;
             }
             @media #{$mobile-either}{
                 display: block;
