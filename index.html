@@ -31,6 +31,7 @@
 </head>
 <body>
   <div id="body-wrapper" class="container-fluid">
+    
     <div id="mobileNav" class="full-page-panel mobile-nav">
       <nav class="nav">
         <a class="navlink active" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
@@ -48,29 +49,28 @@
         </div>
       </div>
     </div>
-    
+    <nav id="deskNav" class="nav clearfix">
+      <ul>
+        <li class="logo"><a class="navlink" href="javascript:void(0);" data-section="openPanel" title="Sapient Razorfish">SAPIENT<br>RAZORFISH<span class="colored">_</span></a></li>
+        <li class="menu">
+          <a class="hamburger" href="javascript:void(0);" title="Open Menu">
+            <span class="strike top"></span><span class="strike mid"></span><span class="strike bot"></span>
+          </a>
+          <a class="navlink" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
+          <a class="navlink" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
+          <a class="navlink" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
     <div class="sr-panel open" id="openPanel">
       <div class="parallax-wrapper">
         <div id="bg">
-          <img id="starBg" src="assets/images/NewBG.jpg" />
+          <img id="starBg" src="assets/images/NewBG02.jpg" />
         </div>
       </div>
     </div>
     <div class="sr-panel info" id="infoPanel">
       <div class="parallax-wrapper">
-        <nav class="nav clearfix">
-          <ul>
-            <li class="logo"><a class="navlink" href="javascript:void(0);" data-section="openPanel" title="Sapient Razorfish">SAPIENT<br>RAZORFISH<span class="colored">_</span></a></li>
-            <li class="menu">
-              <a class="hamburger" href="javascript:void(0);" title="Open Information Panel">
-                <span class="strike top"></span><span class="strike mid"></span><span class="strike bot"></span>
-              </a>
-              <a class="navlink active" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
-              <a class="navlink" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
-              <a class="navlink" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
         <div class="content-wrapper">
           <div class="inner-parallax-wrapper" data-stellar-ratio="2">
             <img src="assets/images/parallax_layers/figures-layer01.png" alt="">
@@ -119,19 +119,6 @@
     </div>
     <div class="sr-panel working-together" id="workingPanel">
       <div class="parallax-wrapper">
-        <nav class="nav clearfix">
-          <ul>
-            <li class="logo"><a class="navlink" href="javascript:void(0);" data-section="openPanel" title="Sapient Razorfish">SAPIENT<br>RAZORFISH<span class="colored">_</span></a></li>
-            <li class="menu">
-              <a class="hamburger" href="javascript:void(0);" title="Open Information Panel">
-                <span class="strike top"></span><span class="strike mid"></span><span class="strike bot"></span>
-              </a>
-              <a class="navlink" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
-              <a class="navlink active" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
-              <a class="navlink" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
         <div class="content-wrapper pos-middle portrait-only">
           <section>
             <h2 class="serif">Interested in working together?</h2>
@@ -155,19 +142,6 @@
     </div>
     <div class="sr-panel contact" id="contactPanel">
       <div class="parallax-wrapper">
-        <nav class="nav clearfix">
-          <ul>
-            <li class="logo"><a class="navlink" href="javascript:void(0);" data-section="openPanel" title="Sapient Razorfish">SAPIENT<br>RAZORFISH<span class="colored">_</span></a></li>
-            <li class="menu">
-              <a class="hamburger" href="javascript:void(0);" title="Open Information Panel">
-                <span class="strike top"></span><span class="strike mid"></span><span class="strike bot"></span>
-              </a>
-              <a class="navlink" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
-              <a class="navlink" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
-              <a class="navlink active" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
         <div class="content-wrapper pos-middle portrait-only">
           <section>
             <img class="logo-image" src="assets/images/big-logo.png" alt="SapientRazorfish" />
@@ -176,7 +150,7 @@
           </section>
         </div>
         <footer class="footer">
-          <p>&copy; 2017 SapientRazorfish. All rights reserved</p>
+          <p>&copy; 2017 SapientRazorfish. All rights reserved<br><a href="privacy.html" target="_blank">Privacy Policy</a> | <a href="terms.html" target="_blank">Terms of Service</a></p>
         </footer>
       </div>
     </div>
@@ -185,5 +159,17 @@
   <!-- build:js assets/js/script.min.js -->
   <script src="assets/js/script.js" type="text/javascript" charset="utf-8"></script>
   <!-- /build -->
+</body>
+</html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SapientRazorfish_</title>
+  <!-- build:css assets/css/style.min.css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- /build -->
+  <script type="x-shader/x-vertex" id="vertexshader">…  <!-- /build -->
 </body>
 </html>

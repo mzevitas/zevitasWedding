@@ -3,8 +3,11 @@
     position: absolute;
     
     padding-right:$desktopGlobalMargin;
-    @media #{$mobile-either} {
+    @media #{$mobile-portrait} {
         padding-right:$mobileGlobalMargin;
+    }
+    @media #{$mobile-landscape} {
+        padding-right:120px;
     }
 }
 #openLogo{
@@ -20,17 +23,16 @@
 }
 .sr-panel-open-logo{
     @extend .full-page-panel;
-    //padding-top:325px;
     z-index: 10;
     position: fixed;
 }
 .sr-panel{
-    overflow: hidden;
-    //   -webkit-transition: transform .25s linear;
-    //  -moz-transition: transform .25s linear;
-    //   -ms-transition: transform .25s linear;
-    //    -o-transition: transform .25s linear;
-    //       transition: transform .25s linear;
+    &.legal{
+        margin-top:120px;
+    }
+    @media #{$desktop-xl}{
+       overflow: hidden;
+    }
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     .parallax-wrapper{
@@ -54,6 +56,20 @@
         }
 
     }
+    .pos-middle{
+        section{
+            margin-top:0;
+            &:last-child{
+                
+                @media #{$mobile-landscape} {
+                    padding-bottom:160px;
+                    margin-top:20px;
+                }
+                padding-bottom:0px;
+            }
+            
+        }
+    }
     section{
         &:last-child{
             padding-bottom:200px;
@@ -65,15 +81,6 @@
         @media #{$mobile-either} {
             margin-top:50px;
         } 
-        // @media #{$desktop-xl}{
-        //     margin-top:325px;
-        // }
-        // &:first-child{
-        //     margin-top:250px;
-        //     @media #{$mobile-either} {
-        //         margin-top:200px;
-        //     } 
-        // }
              
         text-align:left;
         @extend .clearfix;
@@ -107,7 +114,6 @@
                 left:0 !important;
                 top:0 !important;
             }
-            
         }
         .parallax-wrapper{
             height:100%;
@@ -118,7 +124,7 @@
             width:100%;
             background-size:cover;
             background-position-x:50%;
-            background-image:url('../images/bg2.jpg');
+            background-image:url('../images/NewBg02.jpg');
         }
     }
 
@@ -148,9 +154,13 @@
                 #hello{
                     position: absolute;
                     top: -60px;
-                    @media #{$mobile-either} {
+                    @media #{$mobile-portrait} {
                         top:-50px;
                         width:50%;
+                    }
+                    @media #{$mobile-landscape} {
+                        top:-30px;
+                        width:30%;
                     }
                     @media #{$xs-mobile-either} {
                         top:-30px;
@@ -269,6 +279,9 @@
                 width:100%;
                 float:none;
                 margin-bottom:35px;
+                &:last-child{
+                    margin-bottom:0;
+                }
             }
             @media #{$desktop-xl} {
                 &:nth-child(odd){

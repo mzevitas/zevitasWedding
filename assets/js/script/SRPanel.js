@@ -27,6 +27,24 @@
 			var differential = $(window).height()/2;
 			var atbottomofscreen = _top-$(window).height();
 			var wheretoend = _bottom + differential;
+			var bottomscrollpos = _top + _panel.outerHeight() - 100;
+			// if(_id == 'workingPanel'){
+			// 	console.log('$scrollpos = '+$scrollpos+', bottom = '+bottomscrollpos+', _top = '+_top);
+			// }
+
+			if($scrollpos < bottomscrollpos && $scrollpos > (_top-100)){
+				//console.log('panel = '+_id);
+				_panel.trigger("withinPanelBounds",_id);
+			}
+
+			if(($scrollpos - _top) < differential){
+				var uppct =	1-(($scrollpos-_top) / differential);
+				if(uppct < 1){
+					_panel.trigger("atPanelThresholdTop",_id);	
+					//if(_id == 'workingPanel') console.log('uppct = '+uppct);
+				}
+			}
+
 			if($scrollpos >= atbottomofscreen && $scrollpos < _bottom){
 				var h = $(window).height();
 				var amt = $scrollpos - atbottomofscreen;
@@ -35,6 +53,7 @@
 				if(pct > 0 && pct <= 1){
 					setTop(-(differential) * pct);
 					setOpacity(1-pct);
+					//if(_id == 'workingPanel') console.log('pct = '+pct);
 					if(pct < .75 && _id == 'infoPanel'){
 						_panel.trigger("atPanelThreshold",_id);	
 					}else if(pct < .5){

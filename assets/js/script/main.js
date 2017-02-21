@@ -9,11 +9,13 @@ var PAGE = (function ($) {
 		openLogoWrapper = $('#openLogo'),
 		infoLogo = $('#infoLogo'),
 		curScroll = 0,
+		curPanel = 'open',
 		menuOpen = false,
 		htop = $('.hamburger .strike.top'),
 		hmid = $('.hamburger .strike.mid'),
 		hbot = $('.hamburger .strike.bot'),
 		mobileNav = $('#mobileNav'),
+		deskNav = $('#deskNav'),
 		arPanels = [],
 		scrollDirection = 'down',
 		scrollAnimating = false,
@@ -33,6 +35,9 @@ var PAGE = (function ($) {
 			cursorborderradius: "3px",
 			smoothscroll: true
 		});
+		// nscrollbar.onscrollend = function(){
+		// 	console.log('onscrollend');
+		// };
 		initFullPagePanels();
 		initNav();
 		
@@ -93,8 +98,21 @@ var PAGE = (function ($) {
 		});
 	};
 	gotoPlace = function($elem, $time){
+		var place = $('#'+$elem);
+		//console.log('gotoPlace = '+place.attr('id'));
+		//if(place.attr('id') == curPanel) return;
 		closeMobileNav();
-		nscrollbar.doScrollTop($('#'+$elem).offset().top, $time);
+		nscrollbar.doScrollTop(place.offset().top, $time);
+		updateNav(place.attr('id'));
+	};
+	updateNav = function(panelId){
+		//console.log('updateNav = '+panelId);
+		if(panelId == curPanel) return;
+		deskNav.removeClass(curPanel);
+		deskNav.find('a').removeClass('active');
+		curPanel = panelId;
+		deskNav.addClass(curPanel);
+		deskNav.find('a[data-section='+curPanel+']').addClass('active');
 	};
 	addScrollLockFunctionality = function(){
 		$('body').mousewheel(function(event) {
@@ -191,9 +209,19 @@ var PAGE = (function ($) {
 			var panel = $(this);
 			//if(!hasTouch){
 				panel.bind("atPanelThreshold",function(e, panelId){
-					if(scrollDirection == 'down'){
-						gotoPlace(panelId, 500);
+					if(scrollDirection == 'down' && !nscrollbar.scrollrunning){
+						gotoPlace(panelId, 300);
 					}
+				});
+				panel.bind("atPanelThresholdTop",function(e, panelId){
+					if(scrollDirection == 'up' && !nscrollbar.scrollrunning){
+						gotoPlace(panelId, 400);
+					}
+				});
+				panel.bind("withinPanelBounds",function(e, panelId){
+					//if(curPanel == panelId) return;
+					//curPanel = panelId;
+					updateNav(panelId);
 				});
 			//}
 			var p = new SRPanel(panel);
@@ -236,7 +264,8 @@ var PAGE = (function ($) {
 		// 		console.log('aspect ratio is in zone?');
 		// 	}
 		// }
-		return $(window).height()/2 - (el.innerHeight()/2);
+		var pos = $(window).height()/2 - (el.innerHeight()/2);
+		return pos > 100 ? pos : 100;
 	};
 	getMiddlePos = function(el){
 		return $(document).width()/2 - (el.innerWidth()/2);

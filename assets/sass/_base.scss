@@ -36,7 +36,7 @@ h2{
     font-weight: normal;
   }
 }
-h2.serif{
+h2.serif, h1.serif{
   font-weight: normal;
   
   font-family: $serif;
@@ -161,8 +161,11 @@ p {
   max-width: 1024px;
   padding:0 $desktopGlobalMargin;
   margin:0 auto;
-  @media #{$mobile-either} {
+  @media #{$mobile-portrait} {
     padding:0 $mobileGlobalMargin;
+  }
+  @media #{$mobile-landscape} {
+    padding:0 120px;
   }
   @media #{$desktop-xl}{
     max-width:1280px;
