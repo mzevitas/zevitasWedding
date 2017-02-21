@@ -20,9 +20,9 @@
 
 		//public functions
 		this.init = function($x,$y,$z){
-			this.position.x = $x;//Math.random() * 1000 - 500;
-            this.position.y = $y;//Math.random() * 1000 - 500;
-            this.position.z = $z;//Math.random() * 1000 - 500;
+			this.position.x = $x;
+            this.position.y = $y;
+            this.position.z = $z;
             twinkle(this);
 		};
 

@@ -82,7 +82,7 @@
 		function setupSceneBase(){
 			scene = new THREE.Scene();
 			fov = 2 * Math.atan( ( width / aspectRatio ) / ( 2 * cameraZ ) ) * ( 180 / Math.PI ); // in degrees
-			console.log('fov = '+fov);
+			//console.log('fov = '+fov);
 			camera = new THREE.PerspectiveCamera(fov, aspectRatio, 100, 2000);
 			
 			
@@ -161,7 +161,6 @@
 			scene.add( starSystem );
         }
 		function createTwinklingStars(){
-			console.log('createTwinklingStars');
 			var amt = starfieldAmount * .05;
 			var dim = _hasTouch ? 6 : 8;
 			var planeGeo = new THREE.PlaneGeometry(dim,dim);
@@ -169,12 +168,12 @@
 			for (var i = 0; i<amt; i++){
 				twinklingStars[i] = new TwinklingStar(planeGeo,i);
 				var radius = (i/amt) * starfieldAmount;
-				//var x = (Math.random() * 2 - 1) * starfieldRadius;
-				//var y = (Math.random() * 2 - 1) * starfieldRadius;
+				var x = (Math.random() * 2 - 1) * starfieldRadius;
+				var y = (Math.random() * 2 - 1) * starfieldRadius;
 				var z = (Math.random() * 1) * (cameraZ * .5);
-				var x = Math.random() * 2 * radius - radius;
-				var ylim = Math.sqrt(radius * radius - x * x);
-				var y = Math.random() * 2 * ylim - ylim;
+				//var x = Math.random() * 2 * radius - radius;
+				//var ylim = Math.sqrt(radius * radius - x * x);
+				//var y = Math.random() * 2 * ylim - ylim;
 				twinklingStars[i].init(x,y,z);
 				scene.add(twinklingStars[i]);
 			}
@@ -223,7 +222,6 @@
 	    		.easing(TWEEN.Easing.Sinusoidal.Out)
 	    		.start();
         }
-        console.log('SRStarfield');
         this.init();
 	}
 
