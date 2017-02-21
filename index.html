@@ -7,169 +7,68 @@
   <!-- build:css assets/css/style.min.css -->
   <link rel="stylesheet" href="assets/css/style.css">
   <!-- /build -->
-  <script type="x-shader/x-vertex" id="vertexshader">
-			attribute float size;
-			attribute vec3 customColor;
-			varying vec3 vColor;
-			void main() {
-				vColor = customColor;
-				vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-				gl_PointSize = size * ( 300.0 / -mvPosition.z );
-				gl_Position = projectionMatrix * mvPosition;
-			}
-	</script>
-
-	<script type="x-shader/x-fragment" id="fragmentshader">
-			uniform vec3 color;
-			uniform sampler2D texture;
-			varying vec3 vColor;
-			void main() {
-				gl_FragColor = vec4( color * vColor, 1.0 );
-				gl_FragColor = gl_FragColor * texture2D( texture, gl_PointCoord );
-			}
-	</script>
+  
 </head>
 <body>
   <div id="body-wrapper" class="container-fluid">
     
-    <div id="mobileNav" class="full-page-panel mobile-nav">
-      <nav class="nav">
-        <a class="navlink active" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
-        <a class="navlink" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
-        <a class="navlink" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
-      </nav>
-    </div>
-    <div id="openLogo" class="sr-panel-open-logo">
-      <div class="content-wrapper">
-        <div id="revealedLogo" class="pos-middle">
-          <img class="logo-image" src="assets/images/big-logo-black.png" alt="SapientRazorfish" />
-        </div>
-        <div id="revealLogo" class="pos-middle">
-          <img class="logo-image" src="assets/images/big-logo.png" alt="SapientRazorfish" />
-        </div>
-      </div>
-    </div>
-    <nav id="deskNav" class="nav clearfix">
-      <ul>
-        <li class="logo"><a class="navlink" href="javascript:void(0);" data-section="openPanel" title="Sapient Razorfish">SAPIENT<br>RAZORFISH<span class="colored">_</span></a></li>
-        <li class="menu">
-          <a class="hamburger" href="javascript:void(0);" title="Open Menu">
-            <span class="strike top"></span><span class="strike mid"></span><span class="strike bot"></span>
-          </a>
-          <a class="navlink" data-section="infoPanel" href="javascript:void(0);" title="Welcome">Welcome</a>
-          <a class="navlink" data-section="workingPanel" href="javascript:void(0);" title="Services">Services</a>
-          <a class="navlink" data-section="contactPanel" href="javascript:void(0);" title="Contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-    <div class="sr-panel open" id="openPanel">
-      <div class="parallax-wrapper">
-        <div id="bg">
-          <img id="starBg" src="assets/images/NewBG02.jpg" />
-        </div>
+    
+
+    
+    <div class="sr-panel">
+      <div class="container-wrapper">
+
+          <img id="starBg" src="assets/images/Option3.png" />
+
       </div>
     </div>
     <div class="sr-panel info" id="infoPanel">
-      <div class="parallax-wrapper">
+      <div class="container-wrapper">
         <div class="content-wrapper">
-          <div class="inner-parallax-wrapper" data-stellar-ratio="2">
-            <img src="assets/images/parallax_layers/figures-layer01.png" alt="">
-          </div>
-          <div class="inner-parallax-wrapper right-side" data-stellar-ratio="1.5">
-            <img src="assets/images/parallax_layers/figures-layer02.png" alt="">
-          </div>
-          <section id="introSection" class="logo">
-            <img id="hello" src="assets/images/hello-text.png" alt="Hello, Welcome to" />
-            <img class="logo-image" id="infoLogo" src="assets/images/big-logo-black.png" alt="SapientRazorfish" />
-            <p class="text-left">We’re a new kind of agency, purpose-built for a world of relentless change. Formed from the union of two leaders of the digital revolution, our combined talent enables us to deliver business transformation at unprecedented scale. Nothing less will satisfy the demands of the technology-driven customer.
-            </p>
-          </section>
-          <section class="mobile-figures">
-            <img src="assets/images/mobile-figures.png" alt="40 Fortune 500 Clients, 73 global offices" />
-          </section>
-          <section>
-            <dl>
-              <dt>Key Services</dt>
-              <dd>Strategy</dd>
-              <dd>Marketing Programs</dd>
-              <dd>Commerce</dd>
-              <dd>Experience Design</dd>
-              <dd>Data Insight</dd>
-              <dd>Technology</dd>
-              <dd>Customer Loyalty</dd>
-            </dl>
 
-            <dl>
-              <dt>Industry Experience</dt>
-              <dd>Retail</dd>
-              <dd>Financial Services</dd>
-              <dd>Healthcare</dd>
-              <dd>Customer Packaged Goods</dd>
-              <dd>Automotive</dd>
-              <dd>Telecommunication</dd>
-            </dl>
+          <section id="introSection" class="logo">
+          <h2 class="serif">Leading Digital Business Transformation</h2>
+            <p class="text-left">We’re a new kind of agency, purpose-built 
+            for a world of relentless change. 
+            <br><br>
+            Formed from the union of two leaders of the digital revolution, our combined talent enables us to deliver business transformation at unprecedented scale. Nothing less will satisfy the demands of the technology-driven customer.
+            </p>
+            <h3>An intregal part of our two leaders of the digital </h3>
           </section>
-          <section>
-            <h2 class="serif">Our Mission</h2>
-            <p>Customer behavior drives all innovation. To transform our clients’ businesses, we center everything we do on understanding those customers: who they are, where they are, what they want to do and what motivates them to do it. We fuel that knowledge through increasingly rich sources of data. Then, we use the very latest technology to create deeply rewarding experiences.</p>
+
+        </div>
+      </div>
+      
+    </div>
+    <div class="sr-panel panelBlue">
+      <div class="container-wrapper">
+        <div class="content-wrapper">
+          <section class="quote">
+
+            <p><i>"Customer behavior drives all innovation. To transform our clients’ businesses, we center everything we do on understanding those customers: who they are, where they are, what they want to do and what motivates them to do it. We fuel that knowledge through increasingly rich sources of data. Then, we use the very latest technology to create deeply rewarding experiences."</i></p>
+            <h4>WHO SAID IT?</h4>
           </section>
         </div>
       </div>
       
     </div>
-    <div class="sr-panel working-together" id="workingPanel">
-      <div class="parallax-wrapper">
-        <div class="content-wrapper pos-middle portrait-only">
-          <section>
-            <h2 class="serif">Interested in working together?</h2>
-            <dl>
-              <dt>Press Inquiries</dt>
-              <dd><a href="javascript:void(0);" class="animate">Get in Touch</a></dd>
-            </dl>
-            <dl>
-              <dt>Employment Opportunities</dt>
-              <dd><a href="javascript:void(0);" class="animate">View SapientNitro Jobs</a></dd>
-              <dd><a href="javascript:void(0);" class="animate">View Razorfish Jobs</a></dd>
-            </dl>
-            <dl>
-              <dt>Business Inquiries</dt>
-              <dd><a href="javascript:void(0);" class="animate">Get in Touch</a></dd>
-            </dl>
+
+    <div class="sr-panel">
+      <div class="container-wrapper">
+        <div class="content-wrapper">
+          <section class="quote">
+
+            <p><i>"Customer behavior drives all innovation. To transform our clients’ businesses, we center everything we do on understanding those customers: who they are, where they are, what they want to do and what motivates them to do it. We fuel that knowledge through increasingly rich sources of data. Then, we use the very latest technology to create deeply rewarding experiences."</i></p>
+            <h4>WHO SAID IT?</h4>
           </section>
         </div>
       </div>
       
     </div>
-    <div class="sr-panel contact" id="contactPanel">
-      <div class="parallax-wrapper">
-        <div class="content-wrapper pos-middle portrait-only">
-          <section>
-            <img class="logo-image" src="assets/images/big-logo.png" alt="SapientRazorfish" />
-            <h2>To learn more about us</h2>
-            <p><a href="http://www.sapientnitro.com" target="_blank" class="animate">SapientNitro.com</a><span class="link-divider">/</span><a href="http://www.razorfish.com" target="_blank" class="animate">Razorfish.com</a></p>
-          </section>
-        </div>
-        <footer class="footer">
-          <p>&copy; 2017 SapientRazorfish. All rights reserved<br><a href="privacy.html" target="_blank">Privacy Policy</a> | <a href="terms.html" target="_blank">Terms of Service</a></p>
-        </footer>
-      </div>
-    </div>
-  </div>
+    
 
   <!-- build:js assets/js/script.min.js -->
   <script src="assets/js/script.js" type="text/javascript" charset="utf-8"></script>
   <!-- /build -->
 </body>
-</html>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SapientRazorfish_</title>
-  <!-- build:css assets/css/style.min.css -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <!-- /build -->
-  <script type="x-shader/x-vertex" id="vertexshader">…  <!-- /build -->
-</body>
-</html>
+</html> 

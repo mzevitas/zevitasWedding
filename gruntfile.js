@@ -7,15 +7,8 @@ module.exports = function(grunt){
 			},
 			dist : { //name of job for that task
 				src: [
-				'assets/js/libs/modernizr-touch.js',
-				'assets/js/libs/jquery.stellar/libs/jquery/jquery-1.4.3.js',
-				'assets/js/libs/jquery.easing.1.3.js',
-				'assets/js/libs/jquery.stellar/jquery.stellar.min.js',
+				'assets/js/libs/jquery/dist/jquery.min.js',
 				'assets/js/libs/jquery.nicescroll-master/dist/jquery.nicescroll.min.js',
-				'assets/js/libs/tween.js',
-				'assets/js/libs/threejs/three.min.js',
-				'assets/js/libs/jquery-mousewheel/jquery.mousewheel.js',
-				'assets/js/libs/video.js/dist/video.min.js',
 				'assets/js/script/*.js'],
 				dest: 'assets/js/script.js'
 			}

@@ -1,4 +1,4 @@
-# SapientRazorfish Splash page
+# IDC Landing Page 
 
 ---
 
