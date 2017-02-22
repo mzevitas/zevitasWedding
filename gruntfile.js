@@ -8,7 +8,7 @@ module.exports = function(grunt){
 			dist : { //name of job for that task
 				src: [
 				'assets/js/libs/jquery/dist/jquery.min.js',
-				'assets/js/libs/jquery.nicescroll-master/dist/jquery.nicescroll.min.js',
+				'assets/js/libs/jquery.nicescroll-master/jquery.nicescroll.min.js',
 				'assets/js/script/*.js'],
 				dest: 'assets/js/script.js'
 			}
