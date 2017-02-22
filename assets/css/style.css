@@ -552,46 +552,24 @@ h3 {
   text-transform: none;
   line-height: 60px;
   margin-top: 55px;
+  line-height: 50px;
   font-family: "miller", "Times New Roman", serif; }
 
 h4 {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: normal;
-  text-transform: none;
-  line-height: 60px;
-  margin-top: 35px;
-  font-weight: bold; }
+  text-transform: uppercase;
+  line-height: 40px;
+  margin-top: 84px;
+  font-family: "gotham_med", Arial, Helvetica, sans-serif; }
 
 h2.serif, h1.serif {
   font-weight: normal;
   font-family: "miller", "Times New Roman", serif;
   text-transform: none;
   font-size: 64px;
-  line-height: 70px;
+  line-height: 80px;
   margin-bottom: 35px; }
-  @media (max-width: 767px) {
-    h2.serif, h1.serif {
-      font-size: 35px;
-      margin-bottom: 30px;
-      line-height: 35px; } }
-  @media (min-width: 1900px) {
-    h2.serif, h1.serif {
-      font-size: 100px;
-      line-height: 110px;
-      margin-bottom: 55px; } }
-
-a {
-  text-decoration: none;
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  -o-transition: all .25s linear;
-  transition: all .25s linear; }
-  a:hover {
-    padding-left: 20px; }
-    a:hover:before {
-      width: 20px;
-      left: 0px; }
 
 p {
   font-size: 0.65em;
@@ -684,8 +662,12 @@ p {
   padding: 100px 0px; }
   .sr-panel:first-child {
     padding: 0px; }
-  .sr-panel #starBg {
-    width: 100%; }
+
+.diagramPadding {
+  padding-bottom: 0; }
+
+.headerPanel #starBg {
+  width: 100%; }
 
 .panelBlue {
   background-color: #0330fe; }
@@ -693,19 +675,70 @@ p {
     color: #ffffff;
     text-align: center; }
     .panelBlue .quote p {
-      font-style: italic; }
+      font-style: italic;
+      font-size: 35px;
+      font-family: "miller", "Times New Roman", serif;
+      line-height: 45px; }
     .panelBlue .quote h3 {
       padding-top: 20px; }
 
+.legal {
+  font-family: "miller", "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-align: left;
+  color: #7d7d7d; }
+
+.diagrams {
+  width: 100%;
+  margin: 100px auto;
+  text-align: center; }
+  .diagrams img {
+    width: 350px;
+    height: 350px; }
+  .diagrams p {
+    font-size: 16px;
+    line-height: 30px; }
+  .diagrams .postDiagram {
+    font-size: 16px;
+    line-height: 30px;
+    color: #898989;
+    width: 361px;
+    margin: 0 auto; }
+  .diagrams .leftDiagram {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top; }
+  .diagrams .rightDiagram {
+    width: 48%;
+    display: inline-block; }
+  .diagrams a {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px; }
+  .diagrams .button {
+    padding: 15px;
+    width: 180px;
+    margin: 50px auto;
+    height: 50px;
+    background-color: #0030ff;
+    color: #ffffff;
+    text-decoration: none; }
+
 section p {
   font-family: "miller", "Times New Roman", serif, "gotham_book", Arial, Helvetica, sans-serif;
-  font-size: 27px;
-  line-height: 48px; }
+  font-size: 23px;
+  line-height: 40px; }
   @media (max-width: 767px) {
     section p {
       font-size: 16px;
       line-height: 32px; } }
   @media (min-width: 1900px) {
     section p {
-      font-size: 30px;
-      line-height: 60px; } }
+      font-size: 24px;
+      line-height: 40px; } }

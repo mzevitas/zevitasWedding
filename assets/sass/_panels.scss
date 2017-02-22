@@ -4,10 +4,23 @@
     &:first-child {
         padding: 0px;
     }
-    #starBg {
-        width: 100%;
-    }
+   
+    
 }
+.diagramPadding {
+    padding-bottom: 0;
+}
+
+.headerPanel {
+
+     #starBg {
+        width: 100%;
+
+
+    }
+    
+    }
+
 
 .panelBlue {
     background-color: $panelBlue;
@@ -16,6 +29,9 @@
         text-align: center;
         p {
             font-style: italic;
+            font-size: 35px;
+            font-family: $serif;
+            line-height: 45px;
         }
         h3 {
             padding-top: 20px;
@@ -23,19 +39,76 @@
     }
 }
 
+.legal {
+    font-family: $serif;
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 20px;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7d7d7d;
+}
 
+.diagrams {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+    img {
+        width:350px;
+        height: 350px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .postDiagram{
+        font-size: 16px;
+        line-height: 30px;
+        color: #898989;
+        width: 361px;
+    margin: 0 auto;
+
+    }
+    .leftDiagram{
+        width: 48%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .rightDiagram{
+        width: 48%;
+        display: inline-block;
+    }
+a {
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+    .button {
+        padding: 15px;
+        width: 180px;
+        margin: 50px auto;
+    height: 50px;
+    background-color: #0030ff;
+    color: #ffffff;
+    text-decoration: none;
+    }
+}
 section {
     p {
         font-family: $serif, $bodyFont;
-        font-size: 27px;
-        line-height: 48px;
+        font-size: 23px;
+        line-height: 40px;
         @media #{$mobile-either} {
             font-size: 16px;
             line-height: 32px;
         }
         @media #{$desktop-xl} {
-            font-size: 30px;
-            line-height: 60px;
+            font-size: 24px;
+            line-height: 40px;
         }
     }
 }
