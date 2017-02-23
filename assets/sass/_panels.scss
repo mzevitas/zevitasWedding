@@ -119,6 +119,22 @@
     }
 }
 
+.wesProfile {
+    .wesLeft {
+        width: 45%;
+        display:inline-block;
+         img {
+            width: 300px;
+
+         }
+
+    }
+    .wesRight {
+        width: 45%;
+        display:inline-block;
+    }
+}
+
 section {
     p {
         font-family: $serif, $bodyFont;
