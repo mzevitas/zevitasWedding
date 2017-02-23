@@ -9,6 +9,7 @@ module.exports = function(grunt){
 				src: [
 				'assets/js/libs/jquery/dist/jquery.min.js',
 				'assets/js/libs/jquery.nicescroll-master/jquery.nicescroll.min.js',
+				'assets/js/libs/jquery-modal/jquery.modal.min.js',
 				'assets/js/script/*.js'],
 				dest: 'assets/js/script.js'
 			}

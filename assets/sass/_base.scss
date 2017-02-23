@@ -40,21 +40,21 @@ h2{
   }
 }
 h3 {
-  font-size: 45px;
+  font-size: 60px;
   font-weight: normal;
   text-transform: none;
-  line-height: 60px;
+  line-height: 78px;
   margin-top: 55px;
-  line-height: 50px;
+
 
   font-family: $serif;
 
 }
 h4 {
-  font-size: 19px;
+  font-size: 25px;
   font-weight: normal;
   text-transform: uppercase;
-  line-height: 40px;
+  line-height: 50px;
   margin-top: 84px;
   // font-weight: bold;
   font-family:$bodyFontBold;
@@ -66,20 +66,20 @@ h2.serif, h1.serif, {
   font-family: $serif;
   text-transform: none;
 
-  font-size: 64px;
-  line-height: 80px;
+  font-size: 100px;
+  line-height: 117px;
   margin-bottom: 35px;
 
-  // @media #{$mobile-either}{
-  //   font-size:35px;
-  //   margin-bottom:30px;
-  //   line-height: 35px;
-  // }
-  // @media #{$desktop-xl}{
-  //     font-size:100px;
-  //   line-height: 110px;
-  //   margin-bottom:55px;
-  // }
+  @media #{$mobile-either}{
+    font-size:35px;
+    margin-bottom:30px;
+    line-height: 35px;
+  }
+  @media #{$desktop-xl}{
+      font-size:100px;
+    line-height: 110px;
+    margin-bottom:55px;
+  }
 }
 
 

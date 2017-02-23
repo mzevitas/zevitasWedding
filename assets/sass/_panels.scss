@@ -4,23 +4,38 @@
     &:first-child {
         padding: 0px;
     }
-   
-    
 }
+
 .diagramPadding {
     padding-bottom: 0;
 }
 
 .headerPanel {
-
-     #starBg {
+    #starBg {
         width: 100%;
-
-
-    }
-    
     }
 
+    .mobileLogo {
+
+    font-family: $bodyFontBold;
+    line-height: 1.2em;
+    letter-spacing: .12em;
+    font-size: 12px;
+    padding: 40px 40px 0 40px;
+    }
+.desktop {
+    display: block;
+    @media #{$mobile-either} {
+        display: none;
+    }
+}
+    .mobile {
+        display: none;
+        @media #{$mobile-either} {
+            display: block;
+        }
+    }
+}
 
 .panelBlue {
     background-color: $panelBlue;
@@ -29,9 +44,9 @@
         text-align: center;
         p {
             font-style: italic;
-            font-size: 35px;
+            font-size: 48px;
             font-family: $serif;
-            line-height: 45px;
+            line-height: 64px;
         }
         h3 {
             padding-top: 20px;
@@ -56,52 +71,59 @@
     margin: 100px auto;
     text-align: center;
     img {
-        width:350px;
+        width: 350px;
         height: 350px;
     }
     p {
-        font-size: 16px;
-        line-height: 30px;
+        font-size: 25px;
+        line-height: 40px;
     }
-    .postDiagram{
-        font-size: 16px;
-        line-height: 30px;
+    .postDiagram {
+        font-size: 25px;
+        line-height: 40px;
         color: #898989;
         width: 361px;
-    margin: 0 auto;
-
+        margin: 0 auto;
     }
-    .leftDiagram{
+    .leftDiagram {
         width: 48%;
         display: inline-block;
         vertical-align: top;
     }
-    .rightDiagram{
+    .rightDiagram {
         width: 48%;
         display: inline-block;
     }
-a {
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-
-}
+    a {
+        text-decoration: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
     .button {
         padding: 15px;
         width: 180px;
         margin: 50px auto;
-    height: 50px;
-    background-color: #0030ff;
-    color: #ffffff;
-    text-decoration: none;
+        height: 50px;
+        background-color: #0030ff;
+        color: #ffffff;
+        text-decoration: none;
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -ms-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+        &:hover {
+            background-color: #011980;
+        }
     }
 }
+
 section {
     p {
         font-family: $serif, $bodyFont;
-        font-size: 23px;
-        line-height: 40px;
+        font-size: 30px;
+        line-height: 50px;
         @media #{$mobile-either} {
             font-size: 16px;
             line-height: 32px;

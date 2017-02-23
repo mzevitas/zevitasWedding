@@ -8,3 +8,15 @@ $(document).ready(function() {
     	    cursorborderradius: "15px",
     });
 });
+
+
+
+$('.email').each(
+    function(i,el) {
+        if (!el.value || el.value == '') {
+            el.placeholder = 'name@sapientrazorfish.com';
+        }
+    });
+
+
+
