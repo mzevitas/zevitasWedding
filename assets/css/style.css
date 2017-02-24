@@ -547,27 +547,35 @@ h2 {
     font-weight: normal; }
 
 h3 {
-  font-size: 60px;
+  font-size: 47px;
   font-weight: normal;
   text-transform: none;
-  line-height: 78px;
+  line-height: 65px;
   margin-top: 55px;
   font-family: "miller", "Times New Roman", serif; }
+  @media (max-width: 767px) {
+    h3 {
+      font-size: 27px;
+      line-height: 40px; } }
 
 h4 {
-  font-size: 25px;
+  font-size: 18px;
   font-weight: normal;
   text-transform: uppercase;
-  line-height: 50px;
+  line-height: 40px;
   margin-top: 84px;
   font-family: "gotham_med", Arial, Helvetica, sans-serif; }
+  @media (max-width: 767px) {
+    h4 {
+      font-size: 14px;
+      line-height: 27px; } }
 
 h2.serif, h1.serif {
   font-weight: normal;
   font-family: "miller", "Times New Roman", serif;
   text-transform: none;
-  font-size: 100px;
-  line-height: 117px;
+  font-size: 64px;
+  line-height: 80px;
   margin-bottom: 35px; }
   @media (max-width: 767px) {
     h2.serif, h1.serif {
@@ -704,9 +712,12 @@ p {
     text-align: center; }
     .panelBlue .quote p {
       font-style: italic;
-      font-size: 48px;
+      font-size: 28px;
       font-family: "miller", "Times New Roman", serif;
-      line-height: 64px; }
+      line-height: 54px; }
+      @media (max-width: 767px) {
+        .panelBlue .quote p {
+          font-size: 22px; } }
     .panelBlue .quote h3 {
       padding-top: 20px; }
 
@@ -728,22 +739,51 @@ p {
   .diagrams img {
     width: 350px;
     height: 350px; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .diagrams img {
+        width: 100%;
+        height: auto; } }
+    @media (max-width: 767px) {
+      .diagrams img {
+        width: 100%;
+        height: auto; } }
   .diagrams p {
-    font-size: 25px;
-    line-height: 40px; }
+    font-size: 17px;
+    line-height: 33px; }
   .diagrams .postDiagram {
-    font-size: 25px;
-    line-height: 40px;
+    font-size: 15px;
+    line-height: 27px;
     color: #898989;
     width: 361px;
     margin: 0 auto; }
+    @media (max-width: 767px) {
+      .diagrams .postDiagram {
+        width: 100%; } }
   .diagrams .leftDiagram {
     width: 48%;
     display: inline-block;
     vertical-align: top; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .diagrams .leftDiagram {
+        width: 100%;
+        margin: 0 auto; } }
+    @media (max-width: 767px) {
+      .diagrams .leftDiagram {
+        width: 100%;
+        margin: 0 auto; } }
   .diagrams .rightDiagram {
     width: 48%;
     display: inline-block; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .diagrams .rightDiagram {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px; } }
+    @media (max-width: 767px) {
+      .diagrams .rightDiagram {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px; } }
   .diagrams a {
     text-decoration: none;
     text-align: center;
@@ -777,8 +817,8 @@ p {
 
 section p {
   font-family: "miller", "Times New Roman", serif, "gotham_book", Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  line-height: 50px; }
+  font-size: 22px;
+  line-height: 40px; }
   @media (max-width: 767px) {
     section p {
       font-size: 16px;
@@ -803,6 +843,9 @@ section p {
     margin-bottom: 1px;
     margin-top: 16px;
     width: 47%; }
+    @media (max-width: 767px) {
+      .modal .form-field {
+        width: 100%; } }
     .modal .form-field label {
       display: block;
       text-align: left;
@@ -814,11 +857,12 @@ section p {
         color: #f80507; }
     .modal .form-field input[type="text"],
     .modal .form-field input[type="email"] {
-      width: 425px;
+      width: 100%;
       height: 30px;
       margin-top: 7px;
       padding-left: 4px;
-      font-size: 18px; }
+      font-size: 18px;
+      border: 1px solid #bfbfbf; }
       .modal .form-field input[type="text"]:focus,
       .modal .form-field input[type="email"]:focus {
         outline: 0; }
@@ -826,9 +870,7 @@ section p {
       border: 1px solid #bfbfbf !important;
       background-color: #ffffff !important;
       padding: 3px 9px;
-      -webkit-appearance: none;
-      appearance: none;
-      -moz-appearance: none; }
+      width: 100%; }
       .modal .form-field select:focus {
         outline: 0; }
     .modal .form-field input[type="checkbox"] {
@@ -845,6 +887,16 @@ section p {
       content: "\2713";
       padding-left: 5px;
       position: absolute; }
+  .modal .opt-in {
+    width: 90%;
+    display: inline-block; }
+    .modal .opt-in p {
+      display: inline;
+      font-size: 15px; }
+    @media (max-width: 767px) {
+      .modal .opt-in p {
+        font-size: 12px;
+        display: inline; } }
   .modal .buttonSubmit {
     text-align: center;
     margin: 0 auto; }
@@ -872,94 +924,117 @@ section p {
     width: 100%;
     margin-top: 35px !important; }
     .modal .comments textarea {
-      width: 882px;
-      border: 1px solid #bfbfbf; }
+      width: 94%;
+      border: 1px solid #bfbfbf;
+      resize: none; }
+      @media (max-width: 767px) {
+        .modal .comments textarea {
+          width: 100%; } }
 
 #downloadForm {
-  max-width: 1024px;
-  height: auto;
-  width: 90%;
-  margin: 0 auto; }
+  background-color: #0235ff;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 150px; }
   #downloadForm h1 {
-    text-align: center;
+    margin: 0 auto;
+    text-align: left;
     font-size: 60px;
-    color: #ffffff; }
-  #downloadForm .form-field {
-    display: inline-block;
-    padding-right: 8px;
-    padding-left: 8px;
-    vertical-align: top;
-    margin-bottom: 1px;
-    margin-top: 16px;
-    width: 47%; }
-    #downloadForm .form-field label {
-      display: block;
-      text-align: left;
-      font-size: 16px;
-      padding-bottom: 3px;
-      letter-spacing: 1px; }
-      #downloadForm .form-field label:after {
-        content: "*";
-        color: #f80507; }
-    #downloadForm .form-field input[type="text"],
-    #downloadForm .form-field input[type="email"] {
-      width: 425px;
-      height: 30px;
-      margin-top: 7px;
-      padding-left: 4px;
-      font-size: 18px; }
-      #downloadForm .form-field input[type="text"]:focus,
-      #downloadForm .form-field input[type="email"]:focus {
-        outline: 0; }
-    #downloadForm .form-field select {
-      border: 1px solid #bfbfbf !important;
-      background-color: #ffffff !important;
-      padding: 3px 9px;
-      -webkit-appearance: none;
-      appearance: none;
-      -moz-appearance: none; }
-      #downloadForm .form-field select:focus {
-        outline: 0; }
-    #downloadForm .form-field input[type="checkbox"] {
-      vertical-align: inherit;
-      border: 1px solid #bfbfbf;
-      -webkit-appearance: initial;
-      appearance: initial;
-      width: 24px !important;
-      height: 24px !important;
-      position: relative; }
-      #downloadForm .form-field input[type="checkbox"]:focus {
-        outline: 0; }
-    #downloadForm .form-field input[type="checkbox"]:checked:after {
-      content: "\2713";
-      padding-left: 5px;
-      position: absolute; }
-  #downloadForm .buttonSubmit {
-    text-align: center;
-    margin: 0 auto; }
-    #downloadForm .buttonSubmit input[type="submit"] {
-      -webkit-appearance: none;
-      appearance: none;
-      -moz-appearance: none;
-      -o-apearance: none;
-      border: none;
-      text-transform: uppercase;
-      width: 180px;
-      margin: 50px auto;
-      height: 50px;
-      background-color: #0030ff;
-      color: #ffffff;
-      text-decoration: none;
-      -webkit-transition: background-color 0.5s ease-out;
-      -moz-transition: background-color 0.5s ease-out;
-      -ms-transition: background-color 0.5s ease-out;
-      -o-transition: background-color 0.5s ease-out;
-      transition: background-color 0.5s ease-out; }
-      #downloadForm .buttonSubmit input[type="submit"]:hover {
-        background-color: #011980; }
-  #downloadForm .comments {
-    width: 100%;
-    margin-top: 35px !important; }
-    #downloadForm .comments textarea {
-      width: 882px;
-      border: 1px solid #bfbfbf; }
+    color: #ffffff;
+    max-width: 640px;
+    width: 90%; }
+  #downloadForm .mobileLogo {
+    display: block;
+    color: #ffffff;
+    margin: 0px auto;
+    text-align: right;
+    padding-top: 30px;
+    color: #ffffff;
+    max-width: 640px;
+    width: 90%; }
+  #downloadForm form {
+    background-color: #ffffff;
+    max-width: 640px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px; }
+    #downloadForm form .form-field {
+      display: inline-block;
+      padding-right: 8px;
+      padding-left: 8px;
+      vertical-align: top;
+      margin-bottom: 1px;
+      margin-top: 16px;
+      width: 47%; }
+      #downloadForm form .form-field label {
+        display: block;
+        text-align: left;
+        font-size: 16px;
+        padding-bottom: 3px;
+        letter-spacing: 1px; }
+        #downloadForm form .form-field label:after {
+          content: "*";
+          color: #f80507; }
+      #downloadForm form .form-field input[type="text"],
+      #downloadForm form .form-field input[type="email"] {
+        width: 240px;
+        height: 30px;
+        margin-top: 7px;
+        padding-left: 4px;
+        font-size: 18px; }
+        #downloadForm form .form-field input[type="text"]:focus,
+        #downloadForm form .form-field input[type="email"]:focus {
+          outline: 0; }
+      #downloadForm form .form-field select {
+        border: 1px solid #bfbfbf !important;
+        background-color: #ffffff !important;
+        padding: 3px 9px;
+        -webkit-appearance: none;
+        appearance: none;
+        -moz-appearance: none; }
+        #downloadForm form .form-field select:focus {
+          outline: 0; }
+      #downloadForm form .form-field input[type="checkbox"] {
+        vertical-align: inherit;
+        border: 1px solid #bfbfbf;
+        -webkit-appearance: initial;
+        appearance: initial;
+        width: 24px !important;
+        height: 24px !important;
+        position: relative; }
+        #downloadForm form .form-field input[type="checkbox"]:focus {
+          outline: 0; }
+      #downloadForm form .form-field input[type="checkbox"]:checked:after {
+        content: "\2713";
+        padding-left: 5px;
+        position: absolute; }
+    #downloadForm form .buttonSubmit {
+      padding-left: 8px;
+      margin: 0 auto; }
+      #downloadForm form .buttonSubmit input[type="submit"] {
+        -webkit-appearance: none;
+        appearance: none;
+        -moz-appearance: none;
+        -o-apearance: none;
+        border: 1px solid #bfbfbf;
+        text-transform: uppercase;
+        width: 180px;
+        margin-top: 40px;
+        height: 50px;
+        background-color: #ffffff;
+        color: #bfbfbf;
+        text-decoration: none;
+        -webkit-transition: background-color 0.5s ease-out;
+        -moz-transition: background-color 0.5s ease-out;
+        -ms-transition: background-color 0.5s ease-out;
+        -o-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out; }
+        #downloadForm form .buttonSubmit input[type="submit"]:hover {
+          background-color: #011980; }
+    #downloadForm form .comments {
+      width: 100%;
+      margin-top: 35px !important; }
+      #downloadForm form .comments textarea {
+        width: 882px;
+        border: 1px solid #bfbfbf; }
