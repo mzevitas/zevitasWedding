@@ -875,14 +875,16 @@ section p {
       width: 882px;
       border: 1px solid #bfbfbf; }
 
-.downloadForm form {
+#downloadForm {
   max-width: 1024px;
+  height: auto;
   width: 90%;
   margin: 0 auto; }
-  .downloadForm form h1 {
+  #downloadForm h1 {
     text-align: center;
-    font-size: 60px; }
-  .downloadForm form .form-field {
+    font-size: 60px;
+    color: #ffffff; }
+  #downloadForm .form-field {
     display: inline-block;
     padding-right: 8px;
     padding-left: 8px;
@@ -890,35 +892,35 @@ section p {
     margin-bottom: 1px;
     margin-top: 16px;
     width: 47%; }
-    .downloadForm form .form-field label {
+    #downloadForm .form-field label {
       display: block;
       text-align: left;
       font-size: 16px;
       padding-bottom: 3px;
       letter-spacing: 1px; }
-      .downloadForm form .form-field label:after {
+      #downloadForm .form-field label:after {
         content: "*";
         color: #f80507; }
-    .downloadForm form .form-field input[type="text"],
-    .downloadForm form .form-field input[type="email"] {
+    #downloadForm .form-field input[type="text"],
+    #downloadForm .form-field input[type="email"] {
       width: 425px;
       height: 30px;
       margin-top: 7px;
       padding-left: 4px;
       font-size: 18px; }
-      .downloadForm form .form-field input[type="text"]:focus,
-      .downloadForm form .form-field input[type="email"]:focus {
+      #downloadForm .form-field input[type="text"]:focus,
+      #downloadForm .form-field input[type="email"]:focus {
         outline: 0; }
-    .downloadForm form .form-field select {
+    #downloadForm .form-field select {
       border: 1px solid #bfbfbf !important;
       background-color: #ffffff !important;
       padding: 3px 9px;
       -webkit-appearance: none;
       appearance: none;
       -moz-appearance: none; }
-      .downloadForm form .form-field select:focus {
+      #downloadForm .form-field select:focus {
         outline: 0; }
-    .downloadForm form .form-field input[type="checkbox"] {
+    #downloadForm .form-field input[type="checkbox"] {
       vertical-align: inherit;
       border: 1px solid #bfbfbf;
       -webkit-appearance: initial;
@@ -926,16 +928,16 @@ section p {
       width: 24px !important;
       height: 24px !important;
       position: relative; }
-      .downloadForm form .form-field input[type="checkbox"]:focus {
+      #downloadForm .form-field input[type="checkbox"]:focus {
         outline: 0; }
-    .downloadForm form .form-field input[type="checkbox"]:checked:after {
+    #downloadForm .form-field input[type="checkbox"]:checked:after {
       content: "\2713";
       padding-left: 5px;
       position: absolute; }
-  .downloadForm form .buttonSubmit {
+  #downloadForm .buttonSubmit {
     text-align: center;
     margin: 0 auto; }
-    .downloadForm form .buttonSubmit input[type="submit"] {
+    #downloadForm .buttonSubmit input[type="submit"] {
       -webkit-appearance: none;
       appearance: none;
       -moz-appearance: none;
@@ -953,11 +955,11 @@ section p {
       -ms-transition: background-color 0.5s ease-out;
       -o-transition: background-color 0.5s ease-out;
       transition: background-color 0.5s ease-out; }
-      .downloadForm form .buttonSubmit input[type="submit"]:hover {
+      #downloadForm .buttonSubmit input[type="submit"]:hover {
         background-color: #011980; }
-  .downloadForm form .comments {
+  #downloadForm .comments {
     width: 100%;
     margin-top: 35px !important; }
-    .downloadForm form .comments textarea {
+    #downloadForm .comments textarea {
       width: 882px;
       border: 1px solid #bfbfbf; }
