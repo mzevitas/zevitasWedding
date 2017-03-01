@@ -932,7 +932,8 @@ section p {
         display: inline; } }
   .modal .buttonSubmit {
     padding-left: 8px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    margin-bottom: 40px; }
     .modal .buttonSubmit input[type="submit"] {
       -webkit-appearance: none;
       appearance: none;
@@ -965,7 +966,9 @@ section p {
     .modal .comments textarea {
       width: 94%;
       border: 1px solid #bfbfbf;
-      resize: none; }
+      resize: none;
+      font-size: 15px;
+      padding: 5px; }
       @media (max-width: 767px) {
         .modal .comments textarea {
           width: 100%; } }
@@ -994,6 +997,9 @@ section p {
       float: right;
       font-family: "gotham_med", Arial, Helvetica, sans-serif;
       font-size: 16px; }
+    #downloadForm .mobileLogo a {
+      color: #ffffff;
+      text-decoration: none; }
   #downloadForm h1 {
     margin: 0 auto;
     margin-bottom: 23px;
@@ -1160,3 +1166,31 @@ section p {
             -o-transform: scale(1.1);
             -ms-transform: scale(1.1);
             transform: scale(1.1); }
+
+.thankyouPage h1 {
+  text-align: center !important; }
+  @media (max-width: 767px) {
+    .thankyouPage h1 {
+      line-height: 50px !important; } }
+
+.thankyouPage .backBtn {
+  margin: 0 auto;
+  max-width: 640px;
+  width: 90%;
+  text-align: center; }
+  .thankyouPage .backBtn a {
+    border: 1px solid #ffffff;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: transparent;
+    padding: 10px;
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out; }
+    .thankyouPage .backBtn a:hover {
+      background-color: rgba(245, 244, 245, 0.4);
+      color: #000000;
+      border: 1px solid #000000;
+      cursor: pointer; }

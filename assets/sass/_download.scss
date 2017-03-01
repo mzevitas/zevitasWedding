@@ -19,6 +19,7 @@
         margin: 0px auto; 
 
 
+
         padding-top: 30px;
         color: #ffffff;
         max-width: 640px;
@@ -27,6 +28,10 @@
             float: right;
         font-family: $bodyFontBold;
             font-size: 16px;
+        }
+        a{
+            color: #ffffff;
+            text-decoration: none;
         }
     }
     h1 {
@@ -236,4 +241,46 @@ padding: 50px;
             }
         }
     }
+ }
+
+ .thankyouPage {
+            
+        h1{
+            text-align: center !important;
+
+            @media #{$mobile-either} {
+                line-height: 50px !important;
+
+            }
+
+        }
+        .backBtn{
+            margin: 0 auto;
+            max-width: 640px;
+            width: 90%;
+
+            text-align: center;
+        a {
+            border: 1px solid #ffffff;
+
+            text-decoration: none;
+            color: #ffffff;
+            background-color: transparent;
+            padding: 10px;
+
+           transition: all .4s ease-in-out;
+                    -webkit-transition: all .4s ease-in-out;
+                    -moz-transition: all .4s ease-in-out;
+                    -ms-transition: all .4s ease-in-out;
+                    -o-transition: all .4s ease-in-out;
+                    &:hover {
+
+                        background-color: hsla(300, 5%, 96%, 0.4);
+                        color: #000000;
+                        border: 1px solid #000000;
+                        cursor: pointer;
+
+                    }
+        }
+        }
  }
