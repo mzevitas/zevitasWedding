@@ -1,6 +1,9 @@
 //openLogos
 .sr-panel {
     padding: 100px 0px;
+    @media #{$mobile-either} {
+        padding: 60px 0;
+    }
     &:first-child {
         padding: 0px;
     }
@@ -44,7 +47,7 @@
         text-align: center;
         p {
             font-style: italic;
-            font-size: 28px;
+            font-size: 24px;
             font-family: $serif;
             line-height:54px;
              @media #{$mobile-either}{
@@ -87,11 +90,11 @@
         }
     }
     p {
-            font-size: 17px;
+            font-size: 16px;
     line-height: 33px;
     }
     .postDiagram {
-            font-size: 15px;
+            font-size: 16px;
     line-height: 27px;
         color: #898989;
         width: 361px;
@@ -212,7 +215,7 @@
 section {
     p {
         font-family: $serif, $bodyFont;
-        font-size: 22px;
+        font-size: 24px;
         line-height: 40px;
         @media #{$mobile-either} {
             font-size: 16px;
