@@ -71,11 +71,15 @@
     letter-spacing: normal;
     text-align: left;
     color: #7d7d7d;
+    padding: 0 0 30px 0;
+}
+.legal2 {
+    padding-top: 30px;
 }
 
 .diagrams {
     width: 100%;
-    margin: 100px auto;
+    margin: 40px auto;
     text-align: center;
     img {
         width: 350px;
@@ -144,7 +148,7 @@
     .button {
         padding: 15px;
         width: 180px;
-        margin: 50px auto;
+        margin: 30px auto;
         height: 50px;
         background-color: #0030ff;
         color: #ffffff;
@@ -155,15 +159,30 @@
         -o-transition: all 0.2s ease-in-out;
         transition: all 0.2s ease-in-out;
           box-shadow: inset 0 0 0 0 #006ca0;
+ @media #{$mobile-either}{
 
+            margin: 50px auto;
+
+            
+        }
         &:hover {
             box-shadow: inset 0 0 0 2px #004a6f;
 
         }
     }
+    
 }
 
+.legalLarge {
+    padding-bottom: 0;
+}
+.legalSmall {
+    width: 361px;
+    margin: 0 auto;
+    text-align:center;
+}
 .wesProfile {
+    padding-bottom: 70px;
     .wesLeft {
         width: 45%;
         display:inline-block;

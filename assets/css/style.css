@@ -608,15 +608,22 @@ p {
   position: relative; }
 
 /*Base Styles*/
+.mobile {
+  display: none; }
+  @media (max-width: 767px) {
+    .mobile {
+      display: block; } }
+
+@media (max-width: 767px) {
+  .desktop {
+    display: none; } }
+
 #body-wrapper {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  border-top: 15px solid #000000;
-  border-left: 9px solid #000000;
-  border-right: 9px solid #000000; }
+  -moz-backface-visibility: hidden; }
 
 .content-wrapper {
   position: relative;
@@ -742,11 +749,15 @@ p {
   line-height: 20px;
   letter-spacing: normal;
   text-align: left;
-  color: #7d7d7d; }
+  color: #7d7d7d;
+  padding: 0 0 30px 0; }
+
+.legal2 {
+  padding-top: 30px; }
 
 .diagrams {
   width: 100%;
-  margin: 100px auto;
+  margin: 40px auto;
   text-align: center; }
   .diagrams img {
     width: 350px;
@@ -804,7 +815,7 @@ p {
   .diagrams .button {
     padding: 15px;
     width: 180px;
-    margin: 50px auto;
+    margin: 30px auto;
     height: 50px;
     background-color: #0030ff;
     color: #ffffff;
@@ -815,43 +826,55 @@ p {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     box-shadow: inset 0 0 0 0 #006ca0; }
+    @media (max-width: 767px) {
+      .diagrams .button {
+        margin: 50px auto; } }
     .diagrams .button:hover {
       box-shadow: inset 0 0 0 2px #004a6f; }
 
-.wesProfile .wesLeft {
-  width: 45%;
-  display: inline-block;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 20px; }
-  @media (max-width: 767px) {
-    .wesProfile .wesLeft {
-      width: 100%;
-      margin: 0 auto;
-      margin-top: 40px; } }
-  .wesProfile .wesLeft img {
-    width: 200px; }
+.legalLarge {
+  padding-bottom: 0; }
 
-.wesProfile .wesRight {
-  width: 45%;
+.legalSmall {
+  width: 361px;
   margin: 0 auto;
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 60px; }
-  @media (max-width: 767px) {
-    .wesProfile .wesRight {
-      width: 100%;
-      margin: 0 auto;
-      margin-top: 40px;
-      text-align: center; } }
-  .wesProfile .wesRight p {
-    font-size: 18px;
-    line-height: 23px; }
-  .wesProfile .wesRight a {
-    color: #0030ff; }
-  .wesProfile .wesRight .wesHeader {
-    font-family: "gotham_med", Arial, Helvetica, sans-serif;
-    letter-spacing: 3px; }
+  text-align: center; }
+
+.wesProfile {
+  padding-bottom: 70px; }
+  .wesProfile .wesLeft {
+    width: 45%;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px; }
+    @media (max-width: 767px) {
+      .wesProfile .wesLeft {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px; } }
+    .wesProfile .wesLeft img {
+      width: 200px; }
+  .wesProfile .wesRight {
+    width: 45%;
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 60px; }
+    @media (max-width: 767px) {
+      .wesProfile .wesRight {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 40px;
+        text-align: center; } }
+    .wesProfile .wesRight p {
+      font-size: 18px;
+      line-height: 23px; }
+    .wesProfile .wesRight a {
+      color: #0030ff; }
+    .wesProfile .wesRight .wesHeader {
+      font-family: "gotham_med", Arial, Helvetica, sans-serif;
+      letter-spacing: 3px; }
 
 section p {
   font-family: "miller", "Times New Roman", serif, "gotham_book", Arial, Helvetica, sans-serif;
