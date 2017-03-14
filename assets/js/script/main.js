@@ -3,7 +3,7 @@ $(document).ready(function() {
     	 scrollspeed: 45, 
     	  // mousescrollstep: 70,
     	  cursorcolor: "#0131ff",
-    	  cursoropacitymax: 0.5,
+    	  cursoropacitymax: 0.8,
     	   cursorborder: "1px solid #0131ff",
     	    cursorborderradius: "15px",
     });
