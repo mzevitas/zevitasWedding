@@ -116,14 +116,15 @@ p {
 
 /*Base Styles*/
 .mobile{
-  display: none;
-  @media #{$mobile-either}{
-    display: block;
+  display: none !important;
+  @media #{$mobile-either2}{
+    display: block !important;
   }
 }
 .desktop {
-   @media #{$mobile-either}{
-    display: none;
+
+   @media #{$mobile-either2}{
+    display: none !important;
   }
 }
 #body-wrapper{
@@ -157,6 +158,19 @@ p {
   }
 }
 
+
+.mobile2 {
+  display: none;
+}
+@media only screen and (max-device-width:770px){
+  .mobile2{
+    display: block;
+
+  }
+  .desktop2 {
+    display: none;
+  }
+}
 
 .footer{
   background-color: #000000;
