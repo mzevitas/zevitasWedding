@@ -2,9 +2,10 @@ $(document).ready(function() {
     $("html").niceScroll({
     	 scrollspeed: 45, 
     	  // mousescrollstep: 70,
-    	  cursorcolor: "#0131ff",
-    	  cursoropacitymax: 0.8,
-    	   cursorborder: "1px solid #0131ff",
+    	  cursorcolor: "#001a33",
+    	  cursoropacitymax: 1,
+           cursorwidth: "8px",
+    	   cursorborder: "1px solid #ffffff",
     	    cursorborderradius: "15px",
     });
 });
@@ -14,7 +15,7 @@ $(document).ready(function() {
 $('.email').each(
     function(i,el) {
         if (!el.value || el.value == '') {
-            el.placeholder = 'name@sapientrazorfish.com';
+            el.placeholder = 'name@sasdfsdfspientrazorfish.com';
         }
     });
 

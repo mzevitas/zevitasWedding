@@ -1,248 +1,108 @@
 //openLogos
-.sr-panel {
-    padding: 100px 0px;
+.panel {
+    padding: 50px 0px 50px 0px;
+    font-family: 'Droid Serif', serif;
+    color: #001a33;
+
     @media #{$mobile-either} {
         padding: 60px 0;
     }
     &:first-child {
         padding: 0px;
     }
-}
-
-.diagramPadding {
-    padding-bottom: 0;
-}
-
-.headerPanel {
-    #starBg {
-        width: 100%;
-    }
-
-    .mobileLogo {
-
-    font-family: $bodyFontBold;
-    line-height: 1.2em;
-    letter-spacing: .12em;
-    font-size: 12px;
-    padding: 40px 40px 0 40px;
-    }
-.desktop {
-    display: block;
-    @media #{$mobile-either} {
-        display: none;
-    }
-}
-    .mobile {
-        display: none;
-        @media #{$mobile-either} {
-            display: block;
-        }
-    }
-}
-
-.panelBlue {
-    background-color: $panelBlue;
-    .quote {
-        color: #ffffff;
-        text-align: center;
-        p {
-            font-style: italic;
-            font-size: 24px;
-            font-family: $serif;
-            line-height:54px;
-             @media #{$mobile-either}{
-                font-size: 22px;
-                line-height: 29px;
-             }
-        }
-        h3 {
-            padding-top: 20px;
-        }
-    }
-}
-
-.legal {
-    font-family: $serif;
-    font-size: 13px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 20px;
-    letter-spacing: normal;
-    text-align: left;
-    color: #7d7d7d;
-    padding: 0 0 30px 0;
-}
-.legal2 {
-    padding-top: 30px;
-}
-
-.diagrams {
-    width: 100%;
-    margin: 40px auto;
-    text-align: center;
-    img {
-        width: 350px;
-        height: 350px;
-         @media #{$tablet}{
-            width: 100%;
-            height: auto;
-        }
-         @media #{$mobile-either}{
-            width: 100%;
-            height: auto;
-        }
-    }
-    p {
-            font-size: 16px;
-    line-height: 33px;
-    }
-    .postDiagram {
-            font-size: 16px;
-    line-height: 27px;
-        color: #898989;
-        width: 361px;
-        margin: 0 auto;
-
-        @media #{$mobile-either}{
-            width: 100%;
-
-
-
-        }
-    }
-    .leftDiagram {
-        width: 48%;
-        display: inline-block;
-        vertical-align: top;
-        @media #{$tablet}{
-            width: 100%;
-            margin: 0 auto;
-        }
-        @media #{$mobile-either}{
-            width: 100%;
-            margin: 0 auto;
-        }
-    }
-    .rightDiagram {
-        width: 48%;
-        display: inline-block;
-        @media #{$tablet}{
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 40px;
-        }
-        @media #{$mobile-either}{
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 40px;
-            
-        }
-    }
-    a {
-        text-decoration: none;
-        text-align: center;
+    .page-title {
+        font-family: 'Droid Serif', serif;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 35px;
+
     }
-    .button {
-        padding: 15px;
-        width: 180px;
-        margin: 30px auto;
-        height: 50px;
-        background-color: #0030ff;
-        color: #ffffff;
-        text-decoration: none;
-        -webkit-transition: all 0.2s ease-in-out;
-        -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-        -o-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
-          box-shadow: inset 0 0 0 0 #006ca0;
- @media #{$mobile-either}{
+}
 
-            margin: 50px auto;
+.full-width {
+    width: 100%
+}
 
-            
+a {
+    color: #001a33;
+    text-decoration: none;
+    position: relative;
+    &:hover {
+        color: #001a33;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #001a33;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.2s ease-in-out 0s;
+        transition: all 0.2s ease-in-out 0s;
+    }
+    &:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+    }
+}
+
+.grid {
+    width: 100%;
+    .threeAcross {
+        img {
+            width: 30%;
+            margin: 0 auto;
+            padding: 10px;
+            @media #{$mobile-either} {
+                width: 100%;
+                padding-bottom: 30px;
+            }
         }
         &:hover {
-            box-shadow: inset 0 0 0 2px #004a6f;
-
+            background-color: transparent;
+            opacity: 0.7;
+            z-index: 1 !important;
+        }
+        &:hover:before {
+            visibility: hidden;
         }
     }
-    
-}
-
-.legalLarge {
-    padding-bottom: 0;
-}
-.legalSmall {
-    width: 361px;
-    margin: 0 auto;
-    text-align:center;
-}
-.wesProfile {
-    padding-bottom: 70px;
-    .wesLeft {
-        width: 45%;
-        display:inline-block;
+    .twoAcross{
+        img {
+            width: 48%;
             margin: 0 auto;
-    text-align: center;
-        margin-top: 20px;
-     @media #{$mobile-either}{
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 40px;
-            
+            padding: 10px;
+
+            @media #{$mobile-either} {
+                width: 100%;
+                padding-bottom: 30px;
+            }
         }
-         img {
-            width: 200px;
-
-
-         }
-
-    }
-    .wesRight {
-        width: 45%;
-        margin: 0 auto;
-        display:inline-block;
-            vertical-align: top;
-    margin-top: 60px;
-    @media #{$mobile-either}{
-            width: 100%;
-            margin: 0 auto;
-            margin-top: 40px;
-            text-align: center;
-            
+        &:hover {
+            background-color: transparent;
+            opacity: 0.7;
+            z-index: 1 !important;
         }
-
-        p{
-            font-size: 18px;
-            line-height: 23px;
-        }
-        a {
-            color: #0030ff;
-        }
-
-        .wesHeader {
-            font-family: $bodyFontBold;
-            letter-spacing: 3px;
+        &:hover:before {
+            visibility: hidden;
         }
     }
 }
 
-section {
-    p {
-        font-family: $serif, $bodyFont;
+p {
+    font-family: $serif, $bodyFont;
+    font-size: 24px;
+    line-height: 40px;
+    @media #{$mobile-either} {
+        font-size: 16px;
+        line-height: 32px;
+    }
+    @media #{$desktop-xl} {
         font-size: 24px;
         line-height: 40px;
-        @media #{$mobile-either} {
-            font-size: 16px;
-            line-height: 32px;
-        }
-        @media #{$desktop-xl} {
-            font-size: 24px;
-            line-height: 40px;
-        }
     }
 }

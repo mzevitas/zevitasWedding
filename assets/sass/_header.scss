@@ -1,0 +1,83 @@
+.header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.headerPanel {
+    width: 100%;
+    // height: 70px;
+    background-color: #001a33;
+    color: #ffffff;
+    img {
+        max-width: 960px;
+        width: 95%;
+        margin: 0 auto;
+        text-decoration: center;
+        padding-bottom: 30px;
+    }
+    .headerRight {
+        // display: inline;
+        h1 {
+            display: inline-block;
+            margin: -150px 0px 0px 40px !important;
+        }
+    }
+}
+
+.navDiv {
+    padding: 0px !important;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 2px solid #001a33;
+
+        -webkit-box-shadow: 0 4px 19px 0px hsla(209, 100%, 10%, 0.4);
+       -moz-box-shadow: 0 4px 19px 0px hsla(209, 100%, 10%, 0.4);
+            box-shadow: 0 4px 19px 0px hsla(209, 100%, 10%, 0.4);
+
+    .nav {
+        display: inline-block;
+        ul {
+            display: inline-block;
+            margin: 8px 0;
+            padding: 0px;
+            li {
+                display: inline-block;
+                a {
+                    color: #001a33;
+                    text-decoration: none;
+                    position: relative;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    a:first-child{
+                        margin-left: 0px;
+                    }
+                    a:last-child {
+                        margin-right: 0px;
+                    }
+                    &:hover {
+                        color: #001a33;
+                    }
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background-color: #001a33;
+                        visibility: hidden;
+                        -webkit-transform: scaleX(0);
+                        transform: scaleX(0);
+                        -webkit-transition: all 0.2s ease-in-out 0s;
+                        transition: all 0.2s ease-in-out 0s;
+                    }
+                    &:hover:before {
+                        visibility: visible;
+                        -webkit-transform: scaleX(1);
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+}

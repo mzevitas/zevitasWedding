@@ -7,7 +7,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 body {
@@ -18,7 +18,8 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: $headFont;
+        font-family: 'Droid Serif', serif;
+
   font-size: 1em;
   margin:0;
 }
@@ -172,61 +173,19 @@ p {
   }
 }
 
-.footer{
-  background-color: #000000;
-  color: #fff;
-  width: 100%;
-padding: 25px 0 40px 0;
-  vertical-align: middle;
-  font-family: $serif;
-.mobile{
-  display: none;
-  @media #{$mobile-either}{
-    display: block;
-  }
-}
-.desktop {
-   @media #{$mobile-either}{
-    display: none;
-  }
-}
+footer {
 
-  .footLeft {
-    width: 50%;
-    float: left;
-    padding-left: 20px;
-     @media #{$mobile-either} {
-      font-size: 16px;
-      width: 100%;
-      text-align: center;
-      float: none;
-      padding: 0;
-     }
-  }
-  .footRight {
-    width: 50%;
-    float: right;
-    padding-right: 20px;
-    @media #{$mobile-either} {
-      font-size: 16px;
-      width: 100%;
-      text-align: center;
-      float: none;
-      padding: 0;
-     }
-    a{
-      color: #ffffff;
-      text-decoration: none;
-      float: right;
-      &:hover {
-        color: #d5d5d5;
-      }
-      @media #{$mobile-either} {
-      font-size: 16px;
-      padding: 0;
-    float: none;
-      
-     }
-    }
-  }
+  background-color: #001a33;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  text-align: center;
+
+
+p {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 24px;
+  padding: 10px;
+}
 }
