@@ -7,9 +7,7 @@
     @media #{$mobile-either} {
         padding: 60px 0;
     }
-    &:first-child {
-        padding: 0px;
-    }
+    
     .page-title {
         font-family: 'Droid Serif', serif;
         font-weight: bold;

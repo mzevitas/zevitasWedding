@@ -701,7 +701,8 @@ footer {
   color: #ffffff;
   text-align: center;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  bottom: 0px; }
   footer p {
     margin-top: 0px !important;
     margin-bottom: 0px !important;
@@ -715,8 +716,6 @@ footer {
   @media (max-width: 767px) {
     .panel {
       padding: 60px 0; } }
-  .panel:first-child {
-    padding: 0px; }
   .panel .page-title {
     font-family: 'Droid Serif', serif;
     font-weight: bold;

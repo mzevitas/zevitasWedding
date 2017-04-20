@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- /build -->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 </head>
 
-<body>
+<body ng-app="wedding">
     <div id="body-wrapper" class="container-fluid">
         <!-- header images -->
         <div class="sr-panel headerPanel">
@@ -31,23 +33,22 @@
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li>&bull;</li>
-                    <li><a href="/about">Our Story</a></li>
+                    <li><a href="#!/about">Our Story</a></li>
                     <li>&bull;</li>
-                    <li><a href="/location">Location</a></li>
+                    <li><a href="#!/location">Location</a></li>
                     <li>&bull;</li>
-                    <li><a href="/stay">Stay</a></li>
+                    <li><a href="#!/stay">Stay</a></li>
                     <li>&bull;</li>
-                    <li><a href="/registry">Registry</a></li>
+                    <li><a href="#!/registry">Registry</a></li>
 
 
                 </ul>
             </div>
         </div>
-        <div class="sr-panel">
-        <img src="assets/images/lawn.jpg" alt="" class="full-width">
-
-        </div>
-        
+        <div ng-view></div>
+        <footer>
+            <p>Mike &amp; Ashby's Wedding | September 23, 2017</p>
+        </footer>
     </div>
 
     <!-- build:js assets/js/script.min.js -->
