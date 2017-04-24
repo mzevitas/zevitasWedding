@@ -634,6 +634,12 @@ h2.serif, h1.serif {
       line-height: 110px;
       margin-bottom: 55px; } }
 
+hr {
+  margin-bottom: 55px;
+  border: 1px solid rgba(0, 26, 51, 0.2);
+  width: 90%;
+  max-width: 1024px; }
+
 p {
   font-size: 0.65em;
   line-height: 1.7em;
@@ -720,6 +726,9 @@ footer {
     font-family: 'Droid Serif', serif;
     font-weight: bold;
     font-size: 35px; }
+
+.vert {
+  vertical-align: top; }
 
 .full-width {
   width: 100%; }

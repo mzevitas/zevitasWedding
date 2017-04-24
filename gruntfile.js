@@ -1,4 +1,4 @@
-module.exports = function(grunt){
+ module.exports = function(grunt){
 	grunt.initConfig({
 
 		concat : { //name of task
@@ -52,6 +52,14 @@ module.exports = function(grunt){
 		      	cwd: 'assets/images',
     			src: '**',
 		      	dest: 'dist/assets/images', 
+		      	filter: 'isFile'
+		      },
+		      {
+		      	expand: true, 
+		      	flatten: false, 
+		      	cwd: 'views',
+    			src: '**',
+		      	dest: 'dist/views', 
 		      	filter: 'isFile'
 		      },
 		      {
