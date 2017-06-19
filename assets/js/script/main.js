@@ -23,6 +23,10 @@ app.config(function($routeProvider) {
         templateUrl: 'views/registry.html',
         controller: 'PageCtrl'
     });
+    $routeProvider.when('/proposal', {
+        templateUrl: 'views/the-proposal.html',
+        controller: 'PageCtrl'
+    });
 
 
 });

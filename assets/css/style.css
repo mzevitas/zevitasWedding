@@ -727,6 +727,14 @@ footer {
     font-weight: bold;
     font-size: 35px; }
 
+.aboutImg {
+  margin: 0 auto;
+  text-align: center; }
+  .aboutImg img {
+    max-width: 400px;
+    width: 90%;
+    position: relative; }
+
 .vert {
   vertical-align: top; }
 

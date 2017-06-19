@@ -3,22 +3,31 @@
     padding: 50px 0px 50px 0px;
     font-family: 'Droid Serif', serif;
     color: #001a33;
-
     @media #{$mobile-either} {
         padding: 60px 0;
     }
-    
     .page-title {
         font-family: 'Droid Serif', serif;
         font-weight: bold;
         font-size: 35px;
-
     }
 }
 
-.vert {
-        vertical-align: top;
+.aboutImg {
+    margin: 0 auto;
+    text-align: center;
+    img {
+        max-width: 400px;
+        width: 90%;
+        position: relative;
+    }
+
 }
+
+.vert {
+    vertical-align: top;
+}
+
 .full-width {
     width: 100%
 }
@@ -72,12 +81,11 @@ a {
             visibility: hidden;
         }
     }
-    .twoAcross{
+    .twoAcross {
         img {
             width: 48%;
             margin: 0 auto;
             padding: 10px;
-
             @media #{$mobile-either} {
                 width: 100%;
                 padding-bottom: 30px;
