@@ -195,5 +195,11 @@ p {
   margin-bottom: 0px !important;
   font-size: 24px;
   padding: 10px;
+
+
+  @media #{$mobile-either}{
+    font-size: 16px;
+  }
+
 }
 }
